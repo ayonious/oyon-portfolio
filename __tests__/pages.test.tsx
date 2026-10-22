@@ -5,14 +5,14 @@ import AboutPage from "../app/about/page";
 import ContactPage from "../app/contact/page";
 
 describe("site pages", () => {
-  it("shows the home page and links to the about page", () => {
+  it("introduces Nahiyan and his work", () => {
     render(<HomePage />);
 
-    expect(screen.getByRole("heading", { name: "Home" })).toBeTruthy();
-    expect(screen.getByText("Welcome to your basic Next.js site.")).toBeTruthy();
     expect(
-      screen.getByRole("link", { name: /learn more about us/i }).getAttribute("href"),
-    ).toBe("/about");
+      screen.getByRole("heading", { name: "Hey, I'm Nahiyan!" }),
+    ).toBeTruthy();
+    expect(screen.getByText(/Senior Fullstack Software Engineer/i)).toBeTruthy();
+    expect(screen.getByText(/I currently work at Omio/i)).toBeTruthy();
   });
 
   it("describes the project on the about page", () => {

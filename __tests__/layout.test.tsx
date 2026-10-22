@@ -5,8 +5,9 @@ import RootLayout, { metadata } from "../app/layout";
 describe("root layout", () => {
   it("sets the site metadata", () => {
     expect(metadata).toMatchObject({
-      title: "Basic Next.js Site",
-      description: "A simple site with Home, About, and Contact pages.",
+      title: "Nahiyan Kamal — Software Engineer",
+      description:
+        "Personal portfolio of Nahiyan Kamal, a Senior Fullstack Software Engineer based in Berlin.",
     });
   });
 
@@ -35,5 +36,8 @@ describe("root layout", () => {
       ["Contact", "/contact"],
     ]);
     expect(document.querySelector("main")?.textContent).toBe("Test page");
+    expect(
+      document.querySelector('a[href="https://github.com/ayonious"]')?.textContent,
+    ).toBe("GitHub");
   });
 });
