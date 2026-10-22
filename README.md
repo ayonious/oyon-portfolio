@@ -1,9 +1,9 @@
 # Oyon's Portfolio
 
-[![CI](https://github.com/ayonious/nextjs-template/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/ayonious/nextjs-template/actions/workflows/ci.yml)
-[![Coverage Tests](https://github.com/ayonious/nextjs-template/actions/workflows/codecov.yml/badge.svg?branch=master)](https://github.com/ayonious/nextjs-template/actions/workflows/codecov.yml)
-[![Cypress Tests](https://github.com/ayonious/nextjs-template/actions/workflows/cypress.yml/badge.svg?branch=master)](https://github.com/ayonious/nextjs-template/actions/workflows/cypress.yml)
-[![codecov](https://codecov.io/gh/ayonious/nextjs-template/branch/master/graph/badge.svg?token=sBDqPNO0kH)](https://codecov.io/gh/ayonious/nextjs-template)
+[![CI](https://github.com/ayonious/oyon-portfolio/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/ayonious/oyon-portfolio/actions/workflows/ci.yml)
+[![Coverage Tests](https://github.com/ayonious/oyon-portfolio/actions/workflows/codecov.yml/badge.svg?branch=master)](https://github.com/ayonious/oyon-portfolio/actions/workflows/codecov.yml)
+[![Cypress Tests](https://github.com/ayonious/oyon-portfolio/actions/workflows/cypress.yml/badge.svg?branch=master)](https://github.com/ayonious/oyon-portfolio/actions/workflows/cypress.yml)
+[![codecov](https://codecov.io/gh/ayonious/oyon-portfolio/branch/master/graph/badge.svg)](https://codecov.io/gh/ayonious/oyon-portfolio)
 
 ## Purpose
 
