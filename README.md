@@ -4,6 +4,7 @@
 [![Coverage Tests](https://github.com/ayonious/oyon-portfolio/actions/workflows/codecov.yml/badge.svg?branch=master)](https://github.com/ayonious/oyon-portfolio/actions/workflows/codecov.yml)
 [![Cypress Tests](https://github.com/ayonious/oyon-portfolio/actions/workflows/cypress.yml/badge.svg?branch=master)](https://github.com/ayonious/oyon-portfolio/actions/workflows/cypress.yml)
 [![codecov](https://codecov.io/gh/ayonious/oyon-portfolio/graph/badge.svg?token=vLJAmyTSkC)](https://codecov.io/gh/ayonious/oyon-portfolio)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/62422a5e-e72d-4a67-ba0c-d6700f359014/deploy-status)](https://app.netlify.com/projects/nahiyank/deploys)
 
 ## Purpose
 
