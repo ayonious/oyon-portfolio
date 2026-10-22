@@ -5,19 +5,14 @@ import AboutPage from "../app/about/page";
 import ContactPage from "../app/contact/page";
 
 describe("site pages", () => {
-  it("introduces Nahiyan and links to his profiles", () => {
+  it("introduces Nahiyan and his work", () => {
     render(<HomePage />);
 
     expect(
       screen.getByRole("heading", { name: "Hey, I'm Nahiyan!" }),
     ).toBeTruthy();
     expect(screen.getByText(/Senior Fullstack Software Engineer/i)).toBeTruthy();
-    expect(
-      screen.getByRole("link", { name: /GitHub/i }).getAttribute("href"),
-    ).toBe("https://github.com/ayonious");
-    expect(
-      screen.getByRole("link", { name: /LinkedIn/i }).getAttribute("href"),
-    ).toBe("https://www.linkedin.com/in/nahiyan-kamal-0782743a");
+    expect(screen.getByText(/I currently work at Omio/i)).toBeTruthy();
   });
 
   it("describes the project on the about page", () => {

@@ -36,5 +36,8 @@ describe("root layout", () => {
       ["Contact", "/contact"],
     ]);
     expect(document.querySelector("main")?.textContent).toBe("Test page");
+    expect(
+      document.querySelector('a[href="https://github.com/ayonious"]')?.textContent,
+    ).toBe("GitHub");
   });
 });
