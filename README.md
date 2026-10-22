@@ -19,6 +19,12 @@ Create my personal profile and portfolio website using Next.js, TypeScript, and 
 - [Netlify](https://www.netlify.com/) for deployment
 - [Yarn](https://yarnpkg.com/) for package management
 
+## Why Tailwind CSS
+
+Tailwind CSS is a better fit than styled-components for this portfolio because most of the styling is presentational and closely tied to individual React components. Its utility classes make responsive layouts and visual changes quick to understand without introducing a runtime CSS-in-JS layer. It also keeps spacing, colors, and typography consistent while allowing the design to evolve one component at a time.
+
+For a small, mostly static site, this means fewer styling abstractions, no client-side style generation, and less maintenance as new sections are added.
+
 ## Design inspiration
 
 The layout and design direction are inspired by [Tania Rascia's personal website](https://www.taniarascia.com/), particularly its persistent profile navigation and scrollable content area. This project adapts those ideas for my own profile, experience, and projects.

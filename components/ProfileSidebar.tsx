@@ -21,7 +21,7 @@ export default function ProfileSidebar() {
 
         <div className="mt-8 flex gap-5 text-sm font-medium lg:mt-auto">
           <a href="https://github.com/ayonious">GitHub</a>
-          <a href="https://www.linkedin.com/in/nahiyan-kamal-0782743a">
+          <a href="https://www.linkedin.com/in/nahiyan-k-0782743a">
             LinkedIn
           </a>
         </div>
