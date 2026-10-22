@@ -4,8 +4,9 @@ import Link from "next/link";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Basic Next.js Site",
-  description: "A simple site with Home, About, and Contact pages.",
+  title: "Nahiyan Kamal — Software Engineer",
+  description:
+    "Personal portfolio of Nahiyan Kamal, a Senior Fullstack Software Engineer based in Berlin.",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
