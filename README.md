@@ -1,11 +1,13 @@
-# Basic Next.js site
+# Oyon's Portfolio
 
 [![CI](https://github.com/ayonious/nextjs-template/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/ayonious/nextjs-template/actions/workflows/ci.yml)
 [![Coverage Tests](https://github.com/ayonious/nextjs-template/actions/workflows/codecov.yml/badge.svg?branch=master)](https://github.com/ayonious/nextjs-template/actions/workflows/codecov.yml)
 [![Cypress Tests](https://github.com/ayonious/nextjs-template/actions/workflows/cypress.yml/badge.svg?branch=master)](https://github.com/ayonious/nextjs-template/actions/workflows/cypress.yml)
 [![codecov](https://codecov.io/gh/ayonious/nextjs-template/branch/master/graph/badge.svg?token=sBDqPNO0kH)](https://codecov.io/gh/ayonious/nextjs-template)
 
-A barebones Next.js App Router project with React, TypeScript, and simple CSS.
+## Purpose
+
+Create my personal profile and portfolio website using Next.js, TypeScript, and Tailwind CSS to showcase my background, skills, and projects.
 
 ## Run locally
 
