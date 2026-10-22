@@ -9,6 +9,20 @@
 
 Create my personal profile and portfolio website using Next.js, TypeScript, and Tailwind CSS to showcase my background, skills, and projects.
 
+## Built with
+
+- [Next.js](https://nextjs.org/) and [React](https://react.dev/) for the website
+- [TypeScript](https://www.typescriptlang.org/) for type-safe development
+- [Tailwind CSS](https://tailwindcss.com/) for styling
+- [Jest](https://jestjs.io/) and [Testing Library](https://testing-library.com/) for component tests
+- [Cypress](https://www.cypress.io/) for browser tests
+- [Netlify](https://www.netlify.com/) for deployment
+- [Yarn](https://yarnpkg.com/) for package management
+
+## Design inspiration
+
+The layout and design direction are inspired by [Tania Rascia's personal website](https://www.taniarascia.com/), particularly its persistent profile navigation and scrollable content area. This project adapts those ideas for my own profile, experience, and projects.
+
 ## Run locally
 
 ```sh
