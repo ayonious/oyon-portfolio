@@ -31,7 +31,9 @@ describe("root layout", () => {
         link.getAttribute("href"),
       ]),
     ).toEqual([
+      ["Work history", "/work"],
       ["Open-source projects", "/projects"],
+      ["Skills", "/skills"],
       ["About me", "/about"],
       ["Blog", "/blog"],
     ]);
