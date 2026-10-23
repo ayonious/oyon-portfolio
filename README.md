@@ -32,9 +32,7 @@ The layout and design direction are inspired by [Tania Rascia's personal website
 
 ## Asset credits
 
-The favicon uses the [Sprout icon from Lucide](https://lucide.dev/icons/sprout), available under the [ISC License](https://github.com/lucide-icons/lucide/blob/main/LICENSE).
-
-The sidebar navigation icons were sourced from [Icons For Free](https://iconsforfree.com/).
+All icons used in this project were sourced from [Icons For Free](https://iconsforfree.com/).
 
 ## Run locally
 
