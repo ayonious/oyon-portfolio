@@ -30,6 +30,10 @@ For a small, mostly static site, this means fewer styling abstractions, no clien
 
 The layout and design direction are inspired by [Tania Rascia's personal website](https://www.taniarascia.com/), particularly its persistent profile navigation and scrollable content area. This project adapts those ideas for my own profile, experience, and projects.
 
+## Asset credits
+
+The favicon uses the [Sprout icon from Lucide](https://lucide.dev/icons/sprout), available under the [ISC License](https://github.com/lucide-icons/lucide/blob/main/LICENSE).
+
 ## Run locally
 
 ```sh
