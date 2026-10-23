@@ -1,6 +1,58 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
+:root,
+:root[data-accent="blue"] {
+  --accent: #2a67a5;
+  --accent-soft: #dbeafe;
+}
+
+:root[data-accent="lavender"] {
+  --accent: #6a3eba;
+  --accent-soft: #ede9fe;
+}
+
+:root[data-accent="pink"] {
+  --accent: #b12d6c;
+  --accent-soft: #fce7f3;
+}
+
+:root[data-accent="amber"] {
+  --accent: #b26a34;
+  --accent-soft: #fef3c7;
+}
+
+:root[data-accent="green"] {
+  --accent: #2b7f68;
+  --accent-soft: #d1fae5;
+}
+
+:root.dark,
+:root.dark[data-accent="blue"] {
+  --accent: #6db3f5;
+  --accent-soft: #172554;
+}
+
+:root.dark[data-accent="lavender"] {
+  --accent: #e5aaf5;
+  --accent-soft: #3b1f47;
+}
+
+:root.dark[data-accent="pink"] {
+  --accent: #f277a0;
+  --accent-soft: #4a1830;
+}
+
+:root.dark[data-accent="amber"] {
+  --accent: #fede91;
+  --accent-soft: #422d14;
+}
+
+:root.dark[data-accent="green"] {
+  --accent: #94d294;
+  --accent-soft: #173629;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -18,12 +70,8 @@ html.dark body {
   background: #0f172a;
 }
 
-html.dark a {
-  color: #93c5fd;
-}
-
 a {
-  color: #175dcc;
+  color: var(--accent);
   text-underline-offset: 3px;
 }
 

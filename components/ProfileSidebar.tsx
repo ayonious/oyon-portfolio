@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ColorPalette from "./ColorPalette";
 import ThemeToggle from "./ThemeToggle";
 import {
   CactusIcon,
@@ -30,7 +31,10 @@ export default function ProfileSidebar() {
               <SailboatIcon className="shrink-0" />
               <span>Nahiyan K</span>
             </Link>
-            <ThemeToggle />
+            <div className="flex items-center">
+              <ColorPalette />
+              <ThemeToggle />
+            </div>
           </div>
           <p className="mt-3 max-w-xs text-slate-600 dark:text-slate-300">
             I&apos;m <Link href="/about">Nahiyan</Link>, a software engineer and
@@ -46,15 +50,15 @@ export default function ProfileSidebar() {
             <Link
               key={href}
               href={href}
-              className="flex items-center gap-3 rounded-xl px-3 py-2 text-base font-semibold text-slate-700 no-underline transition-colors hover:bg-slate-200 hover:text-slate-950 dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-white"
+              className="flex items-center gap-3 rounded-xl px-3 py-2 text-base font-semibold text-slate-700 no-underline transition-colors hover:bg-[var(--accent-soft)] hover:text-slate-950 dark:text-slate-200 dark:hover:text-white"
             >
-              <Icon className="shrink-0 text-[#253047] dark:text-slate-100" />
+              <Icon className="shrink-0 text-[var(--accent)]" />
               <span>{label}</span>
             </Link>
           ))}
         </nav>
 
-        <div className="mt-8 flex gap-5 text-sm font-medium dark:[&_a]:text-blue-300 lg:mt-auto">
+        <div className="mt-8 flex gap-5 text-sm font-medium lg:mt-auto">
           <a href="https://github.com/ayonious">GitHub</a>
           <a href="https://www.linkedin.com/in/nahiyan-k-0782743a">
             LinkedIn

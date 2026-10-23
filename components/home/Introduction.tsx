@@ -1,7 +1,7 @@
 export default function Introduction() {
   return (
     <section className="max-w-2xl py-8 sm:py-16">
-      <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-blue-700 dark:text-blue-300">
+      <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-[var(--accent)]">
         Berlin, Germany
       </p>
       <h1 className="text-4xl font-bold tracking-tight text-slate-950 dark:text-slate-50 sm:text-5xl">

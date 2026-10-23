@@ -41,7 +41,7 @@ export default function ThemeToggle() {
       aria-label={`Switch to ${nextTheme} theme`}
       title={`Switch to ${nextTheme} theme`}
       onClick={toggleTheme}
-      className="flex h-10 w-10 items-center justify-center rounded-xl text-[#253047] transition-colors hover:bg-slate-200 dark:text-slate-100 dark:hover:bg-slate-800"
+      className="flex h-10 w-10 items-center justify-center rounded-xl text-[var(--accent)] transition-colors hover:bg-[var(--accent-soft)]"
     >
       {theme === "light" ? <MoonIcon /> : <SunIcon />}
     </button>
