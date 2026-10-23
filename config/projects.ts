@@ -27,6 +27,7 @@ export const openSourceProjectsConfig = {
   },
   organization: {
     label: "Console Table Printer organization",
+    limit: 4,
     url: "https://github.com/console-table-printer",
     projects: [
       { name: "console-table-printer", url: "https://github.com/console-table-printer/console-table-printer", description: "Print colorful, readable tables in the console.", language: "TypeScript", stars: 227 },

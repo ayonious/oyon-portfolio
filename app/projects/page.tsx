@@ -40,14 +40,17 @@ function ProjectCard({ project }: { project: OpenSourceProject }) {
 
 function ProjectGroup({
   label,
+  limit,
   projects,
   url,
 }: {
   label: string;
+  limit?: number;
   projects: OpenSourceProject[];
   url: string;
 }) {
-  const totalStars = projects.reduce(
+  const visibleProjects = limit ? projects.slice(0, limit) : projects;
+  const totalStars = visibleProjects.reduce(
     (total, project) => total + project.stars,
     0,
   );
@@ -63,10 +66,10 @@ function ProjectGroup({
         </a>
       </div>
       <p className="mt-2 text-slate-600 dark:text-slate-300">
-        {projects.length} projects · {totalStars} stars
+        {visibleProjects.length} projects · {totalStars} stars
       </p>
       <div className="mt-6 grid gap-4 sm:grid-cols-2">
-        {projects.map((project) => (
+        {visibleProjects.map((project) => (
           <ProjectCard key={project.url} project={project} />
         ))}
       </div>
