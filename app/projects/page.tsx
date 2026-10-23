@@ -41,15 +41,22 @@ function ProjectCard({ project }: { project: OpenSourceProject }) {
 function ProjectGroup({
   label,
   limit,
+  onlyPinned,
   projects,
   url,
 }: {
   label: string;
   limit?: number;
+  onlyPinned?: boolean;
   projects: OpenSourceProject[];
   url: string;
 }) {
-  const visibleProjects = limit ? projects.slice(0, limit) : projects;
+  const filteredProjects = onlyPinned
+    ? projects.filter((project) => project.pinned)
+    : projects;
+  const visibleProjects = limit
+    ? filteredProjects.slice(0, limit)
+    : filteredProjects;
   const totalStars = visibleProjects.reduce(
     (total, project) => total + project.stars,
     0,
