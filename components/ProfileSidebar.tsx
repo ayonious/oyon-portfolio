@@ -1,14 +1,14 @@
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
 import {
-  AbacusIcon,
   CactusIcon,
   MegaphoneIcon,
   SailboatIcon,
+  WrenchIcon,
 } from "./icons/SidebarIcons";
 
 const navigationItems = [
-  { href: "/projects", label: "Projects", Icon: AbacusIcon },
+  { href: "/projects", label: "Projects", Icon: WrenchIcon },
   { href: "/about", label: "About me", Icon: CactusIcon },
   { href: "/blog", label: "Blog", Icon: MegaphoneIcon },
 ];

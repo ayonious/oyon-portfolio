@@ -30,14 +30,10 @@ export function CactusIcon(props: IconProps) {
   );
 }
 
-export function AbacusIcon(props: IconProps) {
+export function WrenchIcon(props: IconProps) {
   return (
     <svg {...sharedProps} {...props}>
-      <path d="M3 3v18M21 3v18M3 7h18M3 12h18M3 17h18" />
-      <rect x="6" y="5" width="3" height="4" rx="1" />
-      <rect x="12" y="10" width="3" height="4" rx="1" />
-      <rect x="7" y="15" width="3" height="4" rx="1" />
-      <rect x="15" y="15" width="3" height="4" rx="1" />
+      <path d="M14 4a6 6 0 0 0-7 8l-4 5a3 3 0 0 0 4 4l5-5a6 6 0 0 0 8-7l-4 3-4-4Z" />
     </svg>
   );
 }
