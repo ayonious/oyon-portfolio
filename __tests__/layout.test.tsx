@@ -31,9 +31,9 @@ describe("root layout", () => {
         link.getAttribute("href"),
       ]),
     ).toEqual([
-      ["Home", "/"],
-      ["About", "/about"],
-      ["Contact", "/contact"],
+      ["Projects", "/projects"],
+      ["About me", "/about"],
+      ["Blog", "/blog"],
     ]);
     expect(document.querySelector("main")?.textContent).toBe("Test page");
     expect(

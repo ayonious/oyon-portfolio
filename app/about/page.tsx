@@ -1,9 +1,13 @@
 export default function AboutPage() {
   return (
-    <>
-      <h1>About</h1>
-      <p>A simple starting point built with Next.js and React.</p>
-      <p>Add a little about yourself or your project here.</p>
-    </>
+    <section className="max-w-2xl py-8 sm:py-16">
+      <h1 className="text-4xl font-bold tracking-tight text-slate-950">
+        About me
+      </h1>
+      <p className="mt-6 text-lg text-slate-600">
+        I&apos;m Nahiyan, a Senior Fullstack Software Engineer based in Berlin.
+        More about my background and experience will be added here.
+      </p>
+    </section>
   );
 }

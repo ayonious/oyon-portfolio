@@ -18,8 +18,8 @@ describe("site pages", () => {
   it("describes the project on the about page", () => {
     render(<AboutPage />);
 
-    expect(screen.getByRole("heading", { name: "About" })).toBeTruthy();
-    expect(screen.getByText(/built with Next.js and React/i)).toBeTruthy();
+    expect(screen.getByRole("heading", { name: "About me" })).toBeTruthy();
+    expect(screen.getByText(/Senior Fullstack Software Engineer/i)).toBeTruthy();
   });
 
   it("provides an email link on the contact page", () => {

@@ -1,4 +1,15 @@
 import Link from "next/link";
+import {
+  AbacusIcon,
+  CactusIcon,
+  MegaphoneIcon,
+} from "./icons/SidebarIcons";
+
+const navigationItems = [
+  { href: "/projects", label: "Projects", Icon: AbacusIcon },
+  { href: "/about", label: "About me", Icon: CactusIcon },
+  { href: "/blog", label: "Blog", Icon: MegaphoneIcon },
+];
 
 export default function ProfileSidebar() {
   return (
@@ -13,10 +24,20 @@ export default function ProfileSidebar() {
           </p>
         </div>
 
-        <nav aria-label="Main navigation" className="mt-8 flex flex-wrap gap-5 lg:flex-col">
-          <Link href="/">Home</Link>
-          <Link href="/about">About</Link>
-          <Link href="/contact">Contact</Link>
+        <nav
+          aria-label="Main navigation"
+          className="mt-8 flex flex-wrap gap-2 lg:flex-col"
+        >
+          {navigationItems.map(({ href, label, Icon }) => (
+            <Link
+              key={href}
+              href={href}
+              className="flex items-center gap-3 rounded-xl px-3 py-2 text-base font-semibold text-slate-700 no-underline transition-colors hover:bg-slate-200 hover:text-slate-950"
+            >
+              <Icon className="shrink-0 text-[#253047]" />
+              <span>{label}</span>
+            </Link>
+          ))}
         </nav>
 
         <div className="mt-8 flex gap-5 text-sm font-medium lg:mt-auto">

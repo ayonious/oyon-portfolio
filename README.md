@@ -56,7 +56,9 @@ Run `yarn cypress:open` while the development server is running to use the Cypre
 ## Pages
 
 - `/` — Home (`app/page.tsx`)
-- `/about` — About (`app/about/page.tsx`)
+- `/projects` — Projects (`app/projects/page.tsx`)
+- `/about` — About me (`app/about/page.tsx`)
+- `/blog` — Blog (`app/blog/page.tsx`)
 - `/contact` — Contact (`app/contact/page.tsx`)
 
 Shared navigation lives in `app/layout.tsx` and styles in `app/globals.css`.
