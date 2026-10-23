@@ -3,14 +3,16 @@ import ThemeToggle from "./ThemeToggle";
 import {
   CactusIcon,
   BriefcaseIcon,
+  LightningIcon,
   MegaphoneIcon,
   SailboatIcon,
   WrenchIcon,
 } from "./icons/SidebarIcons";
 
 const navigationItems = [
-  { href: "/projects", label: "Open-source projects", Icon: WrenchIcon },
   { href: "/work", label: "Work history", Icon: BriefcaseIcon },
+  { href: "/projects", label: "Open-source projects", Icon: WrenchIcon },
+  { href: "/skills", label: "Skills", Icon: LightningIcon },
   { href: "/about", label: "About me", Icon: CactusIcon },
   { href: "/blog", label: "Blog", Icon: MegaphoneIcon },
 ];

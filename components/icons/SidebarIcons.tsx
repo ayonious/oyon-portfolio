@@ -71,3 +71,11 @@ export function BriefcaseIcon(props: IconProps) {
     </svg>
   );
 }
+
+export function LightningIcon(props: IconProps) {
+  return (
+    <svg {...sharedProps} height={24} strokeWidth={1.75} width={24} {...props}>
+      <path d="m13 3-9 11h7l-1 7L20 10h-7Z" />
+    </svg>
+  );
+}
