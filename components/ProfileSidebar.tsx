@@ -23,7 +23,7 @@ export default function ProfileSidebar() {
     <aside className="border-b border-slate-200 px-6 py-8 transition-colors dark:border-slate-700 dark:bg-slate-900 lg:h-screen lg:border-r lg:border-b-0 lg:px-10 lg:py-12">
       <div className="flex h-full flex-col">
         <div>
-          <div className="flex items-center justify-between gap-4">
+          <div className="flex items-center justify-between gap-4 border-b border-slate-200 pb-5 dark:border-slate-700">
             <Link
               className="flex items-center gap-2 text-2xl font-bold text-slate-950 no-underline dark:text-slate-50"
               href="/"
@@ -36,7 +36,7 @@ export default function ProfileSidebar() {
               <ThemeToggle />
             </div>
           </div>
-          <p className="mt-3 max-w-xs text-slate-600 dark:text-slate-300">
+          <p className="mt-5 max-w-xs border-b border-slate-200 pb-5 text-slate-600 dark:border-slate-700 dark:text-slate-300">
             I&apos;m <Link href="/about">Nahiyan</Link>, a software engineer and
             open-source creator. This is my digital introduction. 🙋🏻
           </p>

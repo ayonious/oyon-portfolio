@@ -65,7 +65,7 @@ export default function ColorPalette() {
       </button>
 
       {open && (
-        <div className="absolute right-0 top-12 z-20 flex gap-1 rounded-xl border border-slate-200 bg-white p-2 shadow-lg dark:border-slate-700 dark:bg-slate-900">
+        <div className="absolute right-0 top-12 z-20 flex flex-col gap-1 rounded-xl border border-slate-200 bg-white p-2 shadow-lg dark:border-slate-700 dark:bg-slate-900">
           {palette.map((option) => (
             <button
               key={option.value}
