@@ -30,7 +30,7 @@ export default function ProfileSidebar() {
           </div>
           <p className="mt-3 max-w-xs text-slate-600 dark:text-slate-300">
             I&apos;m <Link href="/about">Nahiyan</Link>, a software engineer and
-            open-source creator. This is my digital introduction. 🌱
+            open-source creator. This is my digital introduction. 🙋🏻
           </p>
         </div>
 
