@@ -8,7 +8,7 @@ import {
 } from "./icons/SidebarIcons";
 
 const navigationItems = [
-  { href: "/projects", label: "Projects", Icon: WrenchIcon },
+  { href: "/projects", label: "Open-source projects", Icon: WrenchIcon },
   { href: "/about", label: "About me", Icon: CactusIcon },
   { href: "/blog", label: "Blog", Icon: MegaphoneIcon },
 ];
