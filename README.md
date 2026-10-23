@@ -57,6 +57,7 @@ Run `yarn cypress:open` while the development server is running to use the Cypre
 
 - `/` — Home (`app/page.tsx`)
 - `/projects` — Open-source projects (`app/projects/page.tsx`)
+- `/work` — Work history (`app/work/page.tsx`)
 - `/about` — About me (`app/about/page.tsx`)
 - `/blog` — Blog (`app/blog/page.tsx`)
 - `/contact` — Contact (`app/contact/page.tsx`)

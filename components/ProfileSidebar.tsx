@@ -2,6 +2,7 @@ import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
 import {
   CactusIcon,
+  BriefcaseIcon,
   MegaphoneIcon,
   SailboatIcon,
   WrenchIcon,
@@ -9,6 +10,7 @@ import {
 
 const navigationItems = [
   { href: "/projects", label: "Open-source projects", Icon: WrenchIcon },
+  { href: "/work", label: "Work history", Icon: BriefcaseIcon },
   { href: "/about", label: "About me", Icon: CactusIcon },
   { href: "/blog", label: "Blog", Icon: MegaphoneIcon },
 ];

@@ -62,3 +62,12 @@ export function SailboatIcon(props: IconProps) {
     </svg>
   );
 }
+
+export function BriefcaseIcon(props: IconProps) {
+  return (
+    <svg {...sharedProps} height={24} strokeWidth={1.75} width={24} {...props}>
+      <rect x="3.5" y="7" width="17" height="13" rx="2" />
+      <path d="M8 7V4h8v3M3.5 12a21 21 0 0 0 17 0M12 12v3" />
+    </svg>
+  );
+}

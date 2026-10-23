@@ -32,6 +32,7 @@ describe("root layout", () => {
       ]),
     ).toEqual([
       ["Open-source projects", "/projects"],
+      ["Work history", "/work"],
       ["About me", "/about"],
       ["Blog", "/blog"],
     ]);
