@@ -58,3 +58,11 @@ export function MoonIcon(props: IconProps) {
     </svg>
   );
 }
+
+export function SailboatIcon(props: IconProps) {
+  return (
+    <svg {...sharedProps} height={26} strokeWidth={1.75} width={26} {...props}>
+      <path d="M12 3v14M12 3l-8 11h8m3-7 6 7h-6M3 17h18l-3 4H6Z" />
+    </svg>
+  );
+}

@@ -4,6 +4,7 @@ import {
   AbacusIcon,
   CactusIcon,
   MegaphoneIcon,
+  SailboatIcon,
 } from "./icons/SidebarIcons";
 
 const navigationItems = [
@@ -18,8 +19,12 @@ export default function ProfileSidebar() {
       <div className="flex h-full flex-col">
         <div>
           <div className="flex items-center justify-between gap-4">
-            <Link className="text-2xl font-bold text-slate-950 no-underline dark:text-slate-50" href="/">
-              Nahiyan Kamal
+            <Link
+              className="flex items-center gap-2 text-2xl font-bold text-slate-950 no-underline dark:text-slate-50"
+              href="/"
+            >
+              <SailboatIcon className="shrink-0" />
+              <span>Nahiyan Kamal</span>
             </Link>
             <ThemeToggle />
           </div>
