@@ -1,99 +1,96 @@
-type GitHubRepository = {
-  description: string | null;
-  fork: boolean;
-  html_url: string;
-  id: number;
-  language: string | null;
-  name: string;
-  stargazers_count: number;
-};
+import {
+  openSourceProjectsConfig,
+  type OpenSourceProject,
+} from "../../config/projects";
 
-async function getTopRepositories() {
-  try {
-    const response = await fetch(
-      "https://api.github.com/users/ayonious/repos?per_page=100&type=owner",
-      {
-        headers: { Accept: "application/vnd.github+json" },
-        next: { revalidate: 3600 },
-      },
-    );
+function ProjectCard({ project }: { project: OpenSourceProject }) {
+  return (
+    <article className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-colors dark:border-slate-700 dark:bg-slate-900">
+      <div className="flex items-start justify-between gap-4">
+        <h3 className="text-xl font-bold text-slate-950 dark:text-slate-50">
+          <a
+            href={project.url}
+            target="_blank"
+            rel="noreferrer"
+            className="no-underline hover:underline"
+          >
+            {project.name}
+          </a>
+        </h3>
+        <span
+          className="shrink-0 font-semibold text-amber-600 dark:text-amber-300"
+          aria-label={`${project.stars} stars`}
+        >
+          ★ {project.stars}
+        </span>
+      </div>
 
-    if (!response.ok) {
-      return [];
-    }
+      <p className="mt-3 text-slate-600 dark:text-slate-300">
+        {project.description}
+      </p>
 
-    const repositories = (await response.json()) as GitHubRepository[];
-
-    return repositories
-      .filter((repository) => !repository.fork)
-      .sort((first, second) => second.stargazers_count - first.stargazers_count)
-      .slice(0, 5);
-  } catch {
-    return [];
-  }
+      {project.language && (
+        <p className="mt-4 text-sm font-medium text-slate-500 dark:text-slate-400">
+          {project.language}
+        </p>
+      )}
+    </article>
+  );
 }
 
-export default async function ProjectsPage() {
-  const repositories = await getTopRepositories();
-  const totalStars = repositories.reduce(
-    (total, repository) => total + repository.stargazers_count,
+function ProjectGroup({
+  label,
+  projects,
+  url,
+}: {
+  label: string;
+  projects: OpenSourceProject[];
+  url: string;
+}) {
+  const totalStars = projects.reduce(
+    (total, project) => total + project.stars,
     0,
   );
 
   return (
-    <section className="max-w-3xl py-8 sm:py-16">
-      <h1 className="text-4xl font-bold tracking-tight text-slate-950 dark:text-slate-50">
-        Projects
-      </h1>
-      <p className="mt-4 text-lg text-slate-600 dark:text-slate-300">
-        My five most-starred open-source projects on GitHub
-        {repositories.length > 0 && ` — ${totalStars} stars altogether`}.
+    <section className="mt-12">
+      <div className="flex flex-wrap items-baseline justify-between gap-3">
+        <h2 className="text-2xl font-bold text-slate-950 dark:text-slate-50">
+          {label}
+        </h2>
+        <a href={url} target="_blank" rel="noreferrer" className="font-medium">
+          View on GitHub →
+        </a>
+      </div>
+      <p className="mt-2 text-slate-600 dark:text-slate-300">
+        {projects.length} projects · {totalStars} stars
       </p>
-
-      {repositories.length > 0 ? (
-        <div className="mt-8 grid gap-4 sm:grid-cols-2">
-          {repositories.map((repository) => (
-            <article
-              key={repository.id}
-              className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-colors dark:border-slate-700 dark:bg-slate-900"
-            >
-              <div className="flex items-start justify-between gap-4">
-                <h2 className="text-xl font-bold text-slate-950 dark:text-slate-50">
-                  <a
-                    href={repository.html_url}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="no-underline hover:underline"
-                  >
-                    {repository.name}
-                  </a>
-                </h2>
-                <span
-                  className="shrink-0 font-semibold text-amber-600 dark:text-amber-300"
-                  aria-label={`${repository.stargazers_count} stars`}
-                >
-                  ★ {repository.stargazers_count}
-                </span>
-              </div>
-
-              <p className="mt-3 text-slate-600 dark:text-slate-300">
-                {repository.description ?? "An open-source project on GitHub."}
-              </p>
-
-              {repository.language && (
-                <p className="mt-4 text-sm font-medium text-slate-500 dark:text-slate-400">
-                  {repository.language}
-                </p>
-              )}
-            </article>
-          ))}
-        </div>
-      ) : (
-        <p className="mt-8 rounded-xl border border-slate-200 p-5 text-slate-600 dark:border-slate-700 dark:text-slate-300">
-          GitHub projects are temporarily unavailable. You can view them directly
-          on <a href="https://github.com/ayonious">my GitHub profile</a>.
-        </p>
-      )}
+      <div className="mt-6 grid gap-4 sm:grid-cols-2">
+        {projects.map((project) => (
+          <ProjectCard key={project.url} project={project} />
+        ))}
+      </div>
     </section>
+  );
+}
+
+export default function ProjectsPage() {
+  const { profile, organization } = openSourceProjectsConfig;
+
+  return (
+    <div className="max-w-4xl py-8 sm:py-16">
+      <header>
+        <h1 className="text-4xl font-bold tracking-tight text-slate-950 dark:text-slate-50">
+          Open-source projects
+        </h1>
+        <p className="mt-4 text-lg text-slate-600 dark:text-slate-300">
+          Projects I maintain personally and with the Console Table Printer
+          organization.
+        </p>
+      </header>
+
+      <ProjectGroup {...profile} />
+      <ProjectGroup {...organization} />
+    </div>
   );
 }
