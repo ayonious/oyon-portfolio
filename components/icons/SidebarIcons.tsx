@@ -30,14 +30,35 @@ export function CactusIcon(props: IconProps) {
   );
 }
 
-export function AbacusIcon(props: IconProps) {
+export function WrenchIcon(props: IconProps) {
   return (
     <svg {...sharedProps} {...props}>
-      <path d="M3 3v18M21 3v18M3 7h18M3 12h18M3 17h18" />
-      <rect x="6" y="5" width="3" height="4" rx="1" />
-      <rect x="12" y="10" width="3" height="4" rx="1" />
-      <rect x="7" y="15" width="3" height="4" rx="1" />
-      <rect x="15" y="15" width="3" height="4" rx="1" />
+      <path d="M14 4a6 6 0 0 0-7 8l-4 5a3 3 0 0 0 4 4l5-5a6 6 0 0 0 8-7l-4 3-4-4Z" />
+    </svg>
+  );
+}
+
+export function SunIcon(props: IconProps) {
+  return (
+    <svg {...sharedProps} height={24} strokeWidth={1.75} width={24} {...props}>
+      <circle cx="12" cy="12" r="4" />
+      <path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.5 5.5 7 7m10 10 1.5 1.5m0-13L17 7M7 17l-1.5 1.5" />
+    </svg>
+  );
+}
+
+export function MoonIcon(props: IconProps) {
+  return (
+    <svg {...sharedProps} height={24} strokeWidth={1.75} width={24} {...props}>
+      <path d="M20 14A8.5 8.5 0 0 1 10 4a8.5 8.5 0 1 0 10 10Z" />
+    </svg>
+  );
+}
+
+export function SailboatIcon(props: IconProps) {
+  return (
+    <svg {...sharedProps} height={26} strokeWidth={1.75} width={26} {...props}>
+      <path d="M12 3v14M12 3l-8 11h8m3-7 6 7h-6M3 17h18l-3 4H6Z" />
     </svg>
   );
 }
