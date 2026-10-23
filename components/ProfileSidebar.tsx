@@ -24,7 +24,7 @@ export default function ProfileSidebar() {
               href="/"
             >
               <SailboatIcon className="shrink-0" />
-              <span>Nahiyan Kamal</span>
+              <span>Nahiyan L</span>
             </Link>
             <ThemeToggle />
           </div>
