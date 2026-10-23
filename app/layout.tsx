@@ -13,7 +13,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body>
-        <div className="lg:grid lg:h-screen lg:grid-cols-[320px_minmax(0,1fr)] lg:overflow-hidden">
+        <div className="lg:grid lg:h-screen lg:grid-cols-[420px_minmax(0,1fr)] lg:overflow-hidden">
           <ProfileSidebar />
           <main className="px-6 py-6 lg:h-screen lg:overflow-y-auto lg:px-14 lg:py-10">
             {children}
