@@ -93,14 +93,20 @@ export const aboutContent = {
     src: "/images/nahiyan-cartoon-profile.webp",
     alt: "Cartoon portrait of Nahiyan K at a black-sand beach",
   },
-  profilesTitle: "Find me online",
+  contactForm: {
+    title: "Send me a message",
+    introduction:
+      "Have an idea, question, or opportunity to discuss? Send me a note and I’ll get back to you.",
+    nameLabel: "Name",
+    emailLabel: "Email",
+    messageLabel: "Message",
+    submitLabel: "Send message",
+    sendingLabel: "Sending…",
+    successMessage: "Thanks — your message has been sent.",
+    errorMessage: "Your message could not be sent. Please try again.",
+  },
+  profilesTitle: "Connect with me on other social platforms",
   profiles: [
-    {
-      name: "GitHub",
-      emoji: "💻",
-      description: "My personal projects and open-source contributions.",
-      url: "https://github.com/ayonious",
-    },
     {
       name: "LinkedIn",
       emoji: "💼",
@@ -108,16 +114,10 @@ export const aboutContent = {
       url: "https://www.linkedin.com/in/nahiyan-k-0782743a",
     },
     {
-      name: "Goodreads",
-      emoji: "📚",
-      description: "Books I have read and want to read.",
-      url: "https://www.goodreads.com/user/show/95339067-nahiyan-k",
-    },
-    {
-      name: "Console Table Printer",
-      emoji: "🛠️",
-      description: "The open-source organization I contribute to and maintain.",
-      url: "https://github.com/console-table-printer",
+      name: "GitHub",
+      emoji: "💻",
+      description: "My personal projects and open-source contributions.",
+      url: "https://github.com/ayonious",
     },
   ],
 };

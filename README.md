@@ -49,6 +49,14 @@ yarn dev
 
 Open http://localhost:3000.
 
+## Contact form setup
+
+The About me form uses a Next.js Route Handler for server-side validation and
+rate limiting, and the Resend API to deliver messages to the configured
+recipient. Copy `.env.example` to `.env.local` for local development, or add
+the same variables to the Vercel project settings. Keep the Resend API key,
+sender address, and recipient address server-side.
+
 ## Content management
 
 Editable text, links, navigation labels, theme options, and structured profile
