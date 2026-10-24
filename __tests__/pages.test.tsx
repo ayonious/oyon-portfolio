@@ -3,6 +3,14 @@ import { describe, expect, it } from "@jest/globals";
 import HomePage from "../app/page";
 import AboutPage from "../app/about/page";
 import ContactPage from "../app/contact/page";
+import AboutThisSitePage from "../app/about-this-site/page";
+import AiPage from "../app/ai/page";
+import BlogPage from "../app/blog/page";
+import CertificationsPage from "../app/certifications/page";
+import ProjectsPage from "../app/projects/page";
+import ReadingPage from "../app/reading/page";
+import SkillsPage from "../app/skills/page";
+import WorkHistoryPage from "../app/work/page";
 
 describe("site pages", () => {
   it("introduces Nahiyan and his work", () => {
@@ -29,5 +37,81 @@ describe("site pages", () => {
     expect(
       screen.getByRole("link", { name: "hello@example.com" }).getAttribute("href"),
     ).toBe("mailto:hello@example.com");
+  });
+
+  it("documents the site dependencies and reuse guidance", () => {
+    render(<AboutThisSitePage />);
+
+    expect(screen.getByRole("heading", { name: "About this site" })).toBeTruthy();
+    expect(screen.getByRole("heading", { name: "Major technologies" })).toBeTruthy();
+    expect(
+      screen.getByRole("link", { name: "View and reuse this site on GitHub →" }),
+    ).toHaveAttribute("href", "https://github.com/ayonious/oyon-portfolio");
+  });
+
+  it("shows AI work, tools, and capabilities", () => {
+    render(<AiPage />);
+
+    expect(screen.getByRole("heading", { name: "AI" })).toBeTruthy();
+    expect(screen.getByText("LLM travel guide")).toBeTruthy();
+    expect(screen.getByText("Codex")).toBeTruthy();
+    expect(screen.getByText("LLM product integration")).toBeTruthy();
+  });
+
+  it("shows the blog introduction", () => {
+    render(<BlogPage />);
+
+    expect(screen.getByRole("heading", { name: "Blog" })).toBeTruthy();
+    expect(screen.getByText(/Notes about software engineering/i)).toBeTruthy();
+  });
+
+  it("shows certification details and credential links", () => {
+    render(<CertificationsPage />);
+
+    expect(
+      screen.getByRole("heading", { name: "telc Deutsch C1 Hochschule" }),
+    ).toBeTruthy();
+    expect(screen.getByText("Result: Befriedigend")).toBeTruthy();
+    expect(screen.getAllByRole("link", { name: "Show credential ↗" })).toHaveLength(2);
+    expect(screen.getByText("Completed")).toBeTruthy();
+  });
+
+  it("shows pinned and organization open-source projects", () => {
+    render(<ProjectsPage />);
+
+    expect(
+      screen.getByRole("heading", { name: "Pinned personal repositories" }),
+    ).toBeTruthy();
+    expect(screen.getByRole("link", { name: "oyon-portfolio" })).toBeTruthy();
+    expect(
+      screen.getByRole("heading", { name: "Console Table Printer organization" }),
+    ).toBeTruthy();
+  });
+
+  it("shows programming and leadership books", () => {
+    render(<ReadingPage />);
+
+    expect(
+      screen.getByRole("heading", { name: "Programming-related books" }),
+    ).toBeTruthy();
+    expect(screen.getByRole("link", { name: "Clean Code" })).toBeTruthy();
+    expect(screen.getByRole("link", { name: "Surrounded by Idiots" })).toBeTruthy();
+  });
+
+  it("shows grouped engineering skills", () => {
+    render(<SkillsPage />);
+
+    expect(screen.getByRole("heading", { name: "Skills" })).toBeTruthy();
+    expect(screen.getByText("TypeScript")).toBeTruthy();
+    expect(screen.getAllByText("React Native")).toHaveLength(2);
+  });
+
+  it("shows work history and STAR project details", () => {
+    render(<WorkHistoryPage />);
+
+    expect(screen.getByRole("heading", { name: "Work history" })).toBeTruthy();
+    expect(screen.getByRole("heading", { name: "Selected work projects" })).toBeTruthy();
+    expect(screen.getAllByText("Documented service scale")).toHaveLength(7);
+    expect(screen.getAllByText("Situation").length).toBeGreaterThan(0);
   });
 });
