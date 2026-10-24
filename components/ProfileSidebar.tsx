@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import ColorPalette from "./ColorPalette";
 import ThemeToggle from "./ThemeToggle";
 import {
@@ -42,6 +45,8 @@ const navigationItems = [
 ];
 
 export default function ProfileSidebar() {
+  const pathname = usePathname();
+
   return (
     <aside className="border-b border-slate-200 px-6 py-8 transition-colors dark:border-slate-700 dark:bg-slate-900 lg:h-screen lg:border-r lg:border-b-0 lg:px-10 lg:py-12">
       <div className="flex h-full flex-col">
@@ -70,14 +75,18 @@ export default function ProfileSidebar() {
           className="mt-8 flex flex-wrap gap-2 lg:flex-col"
         >
           {navigationItems.map(({ href, label, Icon, external }) => {
+            const isActive = !external && pathname === href;
             const content = (
               <>
                 <Icon className="shrink-0 text-[var(--accent)]" />
                 <span>{label}</span>
               </>
             );
-            const className =
-              "flex items-center gap-3 rounded-xl px-3 py-2 text-base font-semibold text-slate-700 no-underline transition-colors hover:bg-[var(--accent-soft)] hover:text-slate-950 dark:text-slate-200 dark:hover:text-white";
+            const className = `flex items-center gap-3 rounded-xl border px-3 py-2 text-base font-semibold no-underline transition-colors ${
+              isActive
+                ? "border-[var(--accent)] bg-[var(--accent-soft)] text-[var(--accent)]"
+                : "border-transparent text-slate-700 hover:bg-[var(--accent-soft)] hover:text-slate-950 dark:text-slate-200 dark:hover:text-white"
+            }`;
 
             return external ? (
               <a
@@ -90,7 +99,12 @@ export default function ProfileSidebar() {
                 {content}
               </a>
             ) : (
-              <Link key={href} href={href} className={className}>
+              <Link
+                key={href}
+                href={href}
+                className={className}
+                aria-current={isActive ? "page" : undefined}
+              >
                 {content}
               </Link>
             );
