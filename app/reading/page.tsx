@@ -7,33 +7,38 @@ import { pageContent } from "../../config/siteContent";
 
 function BookList({ books }: { books: Book[] }) {
   return (
-    <div className="mt-6 grid gap-4 sm:grid-cols-2">
+    <ul className="mt-5 divide-y divide-slate-200 border-y border-slate-200 dark:divide-slate-700 dark:border-slate-700">
       {books.map((book) => (
-        <article
+        <li
           key={book.url}
-          className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-slate-900"
+          className="flex gap-3 py-4"
         >
-          <h3 className="text-xl font-bold">
-            <a
-              href={book.url}
-              target="_blank"
-              rel="noreferrer"
-              className="no-underline hover:underline"
-            >
-              {book.title}
-            </a>
-          </h3>
-          <p className="mt-2 font-medium text-slate-600 dark:text-slate-300">
-            {book.authors}
-          </p>
-          {book.details && (
-            <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
-              {book.details}
+          <span aria-hidden="true" className="pt-0.5 text-lg">
+            📖
+          </span>
+          <div>
+            <h3 className="font-bold">
+              <a
+                href={book.url}
+                target="_blank"
+                rel="noreferrer"
+                className="no-underline hover:underline"
+              >
+                {book.title} <span aria-hidden="true">↗</span>
+              </a>
+            </h3>
+            <p className="text-sm text-slate-600 dark:text-slate-300">
+              {book.authors}
             </p>
-          )}
-        </article>
+            {book.details && (
+              <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
+                {book.details}
+              </p>
+            )}
+          </div>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 }
 
@@ -56,12 +61,12 @@ export default function ReadingPage() {
       </header>
 
       <section className="mt-14">
-        <h2 className="text-3xl font-bold">{pageContent.books.programmingTitle}</h2>
+        <h2 className="text-2xl font-bold">{pageContent.books.programmingTitle}</h2>
         <BookList books={allTimeFavoriteBooks} />
       </section>
 
       <section className="mt-14">
-        <h2 className="text-3xl font-bold">{pageContent.books.leadershipTitle}</h2>
+        <h2 className="text-2xl font-bold">{pageContent.books.leadershipTitle}</h2>
         <BookList books={peopleAndPsychologyBooks} />
       </section>
     </div>
