@@ -21,6 +21,8 @@ describe("site pages", () => {
     ).toBeTruthy();
     expect(screen.getByText(/Senior Fullstack Software Engineer/i)).toBeTruthy();
     expect(screen.getByText(/I currently work at Omio/i)).toBeTruthy();
+    expect(screen.getByText(/open-source tools, reusable project templates/i)).toBeTruthy();
+    expect(screen.getByText(/travel, learn languages, and read philosophy/i)).toBeTruthy();
   });
 
   it("describes the project on the about page", () => {
