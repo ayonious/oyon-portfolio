@@ -52,8 +52,8 @@ Open http://localhost:3000.
 ## Contact form setup
 
 The About me form uses a Next.js Route Handler for server-side validation and
-rate limiting, and the Resend API to deliver messages to the configured
-recipient. The route at `/api/contact` is deployed automatically as an on-demand
+the Resend API to deliver messages to the configured recipient. The route at
+`/api/contact` is deployed automatically as an on-demand
 Vercel Function, so no separate backend or always-running server is required.
 
 Create an API key in the Resend dashboard under **API Keys**. A key with
