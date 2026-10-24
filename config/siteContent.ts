@@ -190,6 +190,33 @@ export const aboutSiteContent = {
   packagesTitle: "All packages",
   packagesIntroduction:
     "Runtime and development dependencies currently listed in the project.",
+  deployment: {
+    title: "Deployment and contact delivery",
+    introduction:
+      "The portfolio and its contact workflow are deployed together on Vercel.",
+    details: [
+      {
+        title: "Vercel hosting",
+        description:
+          "Vercel builds and hosts the Next.js application, including production deployments and preview deployments for pull requests.",
+      },
+      {
+        title: "Vercel Function",
+        description:
+          "The /api/contact Route Handler becomes an on-demand Vercel Function. It starts when the form is submitted, validates the request, applies rate limiting, and stops after the request finishes.",
+      },
+      {
+        title: "Resend email delivery",
+        description:
+          "The server-side Function uses a private Resend API key to send the submitted name, email address, and message to the configured contact inbox. The visitor's address is used as the reply-to address.",
+      },
+      {
+        title: "Planned Cloudflare protection",
+        description:
+          "Cloudflare Turnstile is planned as a future spam-protection layer. It is not enabled yet, keeping the current form simple while its validation and delivery flow are established.",
+      },
+    ],
+  },
   creditsTitle: "Design and assets",
   reuse: {
     title: "Use this site for your own profile 🧰",
