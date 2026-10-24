@@ -34,11 +34,7 @@ export const programmingBooks: Book[] = [
   },
 ];
 
-export const leadershipBooks: Book[] = [];
-
-export const philosophyBooks: Book[] = [];
-
-export const psychologyBooks: Book[] = [
+export const otherBooks: Book[] = [
   {
     title: "Surrounded by Idiots",
     authors: "Thomas Erikson",
