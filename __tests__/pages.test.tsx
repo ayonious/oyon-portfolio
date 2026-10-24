@@ -104,9 +104,7 @@ describe("site pages", () => {
     expect(screen.getAllByText("React").length).toBeGreaterThanOrEqual(2);
     expect(screen.getByRole("heading", { name: "Templates" })).toBeTruthy();
     expect(screen.getByRole("link", { name: /nextjs-template/ })).toBeTruthy();
-    expect(
-      screen.getByText(/Built with TypeScript · Next.js · React · Tailwind CSS · Jest/),
-    ).toBeTruthy();
+    expect(screen.getByText("Next.js")).toBeTruthy();
     expect(
       screen.getByText(/Reusable starter repositories to help bootstrap/),
     ).toBeTruthy();

@@ -142,9 +142,17 @@ function ProjectGroup({
                   {project.description}
                 </p>
                 {getProjectTechnologies(project).length > 0 && (
-                  <p className="mt-2 text-xs font-medium text-slate-500 dark:text-slate-400">
-                    Built with {getProjectTechnologies(project).join(" · ")}
-                  </p>
+                  <div className="mt-3 flex flex-wrap gap-2" aria-label="Technologies used">
+                    {getProjectTechnologies(project).map((technology) => (
+                      <span
+                        key={technology}
+                        className="inline-flex items-center gap-1.5 rounded-full bg-slate-100 px-2.5 py-1 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300"
+                      >
+                        <BrandIcon name={technology} className="h-3.5 w-3.5" />
+                        {technology}
+                      </span>
+                    ))}
+                  </div>
                 )}
               </div>
               <div className="flex shrink-0 items-center gap-3 text-sm">
