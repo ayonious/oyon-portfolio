@@ -82,64 +82,6 @@ export default function AboutPage() {
           ))}
         </div>
       </section>
-
-      <section className="mt-14">
-        <h2 className="text-2xl font-bold">Send me a message</h2>
-        <p className="mt-3 text-slate-600 dark:text-slate-300">
-          Have a question, an open-source idea, or something you would like to
-          build together? Send me a note.
-        </p>
-        <form
-          name="contact"
-          method="POST"
-          action="/about?message=sent"
-          data-netlify="true"
-          data-netlify-honeypot="bot-field"
-          className="mt-6 space-y-5 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6 dark:border-slate-700 dark:bg-slate-900"
-        >
-          <input type="hidden" name="form-name" value="contact" />
-          <p className="hidden" aria-hidden="true">
-            <label>
-              Do not fill this out: <input name="bot-field" />
-            </label>
-          </p>
-          <div className="grid gap-5 sm:grid-cols-2">
-            <label className="font-semibold text-slate-700 dark:text-slate-200">
-              Name
-              <input
-                name="name"
-                type="text"
-                required
-                className="mt-2 w-full rounded-xl border border-slate-300 bg-transparent px-3 py-2 font-normal outline-none focus:border-[var(--accent)] dark:border-slate-600"
-              />
-            </label>
-            <label className="font-semibold text-slate-700 dark:text-slate-200">
-              Email
-              <input
-                name="email"
-                type="email"
-                required
-                className="mt-2 w-full rounded-xl border border-slate-300 bg-transparent px-3 py-2 font-normal outline-none focus:border-[var(--accent)] dark:border-slate-600"
-              />
-            </label>
-          </div>
-          <label className="block font-semibold text-slate-700 dark:text-slate-200">
-            Message
-            <textarea
-              name="message"
-              rows={5}
-              required
-              className="mt-2 w-full resize-y rounded-xl border border-slate-300 bg-transparent px-3 py-2 font-normal outline-none focus:border-[var(--accent)] dark:border-slate-600"
-            />
-          </label>
-          <button
-            type="submit"
-            className="rounded-xl bg-[var(--accent)] px-5 py-2.5 font-semibold text-white transition-opacity hover:opacity-90"
-          >
-            Send message
-          </button>
-        </form>
-      </section>
     </div>
   );
 }
