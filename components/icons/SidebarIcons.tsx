@@ -87,3 +87,13 @@ export function BooksIcon(props: IconProps) {
     </svg>
   );
 }
+
+export function DiplomaIcon(props: IconProps) {
+  return (
+    <svg {...sharedProps} height={24} strokeWidth={1} width={24} {...props}>
+      <rect x="3" y="4" width="18" height="13" rx="1.5" />
+      <path d="M7 8h10M7 12h4M14 17l-1 5 3-2 3 2-1-5" />
+      <circle cx="16" cy="14" r="3" />
+    </svg>
+  );
+}

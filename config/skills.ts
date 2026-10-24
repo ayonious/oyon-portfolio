@@ -48,11 +48,3 @@ export const skillGroups = [
     skills: ["WordPress", "Technical mentoring", "Technical interviewing"],
   },
 ];
-
-export const certifications = [
-  {
-    name: "telc Deutsch C1",
-    issuer: "telc",
-    description: "German language proficiency at CEFR level C1.",
-  },
-];

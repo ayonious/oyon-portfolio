@@ -34,10 +34,8 @@ describe("root layout", () => {
       ["Work", "/work"],
       ["Open source", "/projects"],
       ["Weather", "/weather"],
-      [
-        "Reading currently",
-        "https://www.goodreads.com/user/show/95339067-nahiyan-k",
-      ],
+      ["Reading currently", "/reading"],
+      ["Certifications", "/certifications"],
       ["About me", "/about"],
       ["Blog", "/blog"],
     ]);

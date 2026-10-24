@@ -4,6 +4,7 @@ import ThemeToggle from "./ThemeToggle";
 import {
   BooksIcon,
   BriefcaseIcon,
+  DiplomaIcon,
   LightningIcon,
   MegaphoneIcon,
   SailboatIcon,
@@ -16,10 +17,16 @@ const navigationItems = [
   { href: "/projects", label: "Open source", Icon: WrenchIcon, external: false },
   { href: "/weather", label: "Weather", Icon: LightningIcon, external: false },
   {
-    href: "https://www.goodreads.com/user/show/95339067-nahiyan-k",
+    href: "/reading",
     label: "Reading currently",
     Icon: BooksIcon,
-    external: true,
+    external: false,
+  },
+  {
+    href: "/certifications",
+    label: "Certifications",
+    Icon: DiplomaIcon,
+    external: false,
   },
   { href: "/about", label: "About me", Icon: TheaterMaskIcon, external: false },
   { href: "/blog", label: "Blog", Icon: MegaphoneIcon, external: false },

@@ -1,4 +1,4 @@
-import { certifications, skillGroups } from "../../config/skills";
+import { skillGroups } from "../../config/skills";
 
 export default function SkillsPage() {
   return (
@@ -34,30 +34,6 @@ export default function SkillsPage() {
             </ul>
           </article>
         ))}
-      </section>
-
-      <section className="mt-14">
-        <h2 className="text-3xl font-bold text-slate-950 dark:text-slate-50">
-          Certifications
-        </h2>
-        <div className="mt-6 grid gap-4 sm:grid-cols-2">
-          {certifications.map((certification) => (
-            <article
-              key={certification.name}
-              className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-slate-900"
-            >
-              <h3 className="text-xl font-bold text-slate-950 dark:text-slate-50">
-                {certification.name}
-              </h3>
-              <p className="mt-1 font-medium text-slate-500 dark:text-slate-400">
-                {certification.issuer}
-              </p>
-              <p className="mt-3 text-slate-600 dark:text-slate-300">
-                {certification.description}
-              </p>
-            </article>
-          ))}
-        </div>
       </section>
     </div>
   );
