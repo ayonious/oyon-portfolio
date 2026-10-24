@@ -8,6 +8,7 @@ import {
   LightningIcon,
   MegaphoneIcon,
   SailboatIcon,
+  SparklesIcon,
   TheaterMaskIcon,
   WrenchIcon,
 } from "./icons/SidebarIcons";
@@ -16,6 +17,7 @@ const navigationItems = [
   { href: "/work", label: "Work", Icon: BriefcaseIcon, external: false },
   { href: "/projects", label: "Open source", Icon: WrenchIcon, external: false },
   { href: "/skills", label: "Skills", Icon: LightningIcon, external: false },
+  { href: "/ai", label: "AI", Icon: SparklesIcon, external: false },
   {
     href: "/reading",
     label: "Reading currently",
