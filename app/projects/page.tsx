@@ -31,6 +31,20 @@ function ProjectCard({ project }: { project: OpenSourceProject }) {
         {project.description}
       </p>
 
+      {project.technologies && (
+        <div className="mt-4 flex flex-wrap gap-2" aria-label="Technologies used">
+          {project.technologies.map((technology) => (
+            <span
+              key={technology}
+              className="inline-flex items-center gap-1.5 rounded-full bg-slate-100 px-2.5 py-1 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300"
+            >
+              <BrandIcon name={technology} className="h-3.5 w-3.5" />
+              {technology}
+            </span>
+          ))}
+        </div>
+      )}
+
       {project.demoUrl && project.demoLabel && (
         <a
           href={project.demoUrl}
