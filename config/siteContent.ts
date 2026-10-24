@@ -108,16 +108,16 @@ export const aboutContent = {
   profilesTitle: "Connect with me on other social platforms",
   profiles: [
     {
-      name: "GitHub",
-      emoji: "💻",
-      description: "My personal projects and open-source contributions.",
-      url: "https://github.com/ayonious",
-    },
-    {
       name: "LinkedIn",
       emoji: "💼",
       description: "My professional experience and career updates.",
       url: "https://www.linkedin.com/in/nahiyan-k-0782743a",
+    },
+    {
+      name: "GitHub",
+      emoji: "💻",
+      description: "My personal projects and open-source contributions.",
+      url: "https://github.com/ayonious",
     },
   ],
 };
