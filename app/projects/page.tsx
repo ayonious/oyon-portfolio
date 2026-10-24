@@ -196,9 +196,9 @@ export default function ProjectsPage() {
       </header>
 
       <ProjectGroup {...profile} />
+      <ProjectGroup {...organization} />
       <ProjectGroup {...gamified} />
       <ProjectGroup {...templates} />
-      <ProjectGroup {...organization} />
     </div>
   );
 }

@@ -111,6 +111,14 @@ describe("site pages", () => {
     expect(
       screen.getByRole("heading", { name: "Console Table Printer organization" }),
     ).toBeTruthy();
+    expect(
+      screen.getAllByRole("heading", { level: 2 }).map((heading) => heading.textContent),
+    ).toEqual([
+      "Pinned personal repositories",
+      "Console Table Printer organization",
+      "Gamified projects",
+      "Templates",
+    ]);
   });
 
   it("shows programming and leadership books", () => {
