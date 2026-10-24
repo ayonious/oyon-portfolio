@@ -53,9 +53,39 @@ Open http://localhost:3000.
 
 The About me form uses a Next.js Route Handler for server-side validation and
 rate limiting, and the Resend API to deliver messages to the configured
-recipient. Copy `.env.example` to `.env.local` for local development, or add
-the same variables to the Vercel project settings. Keep the Resend API key,
-sender address, and recipient address server-side.
+recipient. The route at `/api/contact` is deployed automatically as an on-demand
+Vercel Function, so no separate backend or always-running server is required.
+
+Create an API key in the Resend dashboard under **API Keys**. A key with
+**Sending access** is sufficient. Copy `.env.example` to `.env.local` for local
+development and configure these values:
+
+```env
+RESEND_API_KEY=re_your_api_key
+RESEND_FROM_EMAIL=onboarding@resend.dev
+CONTACT_EMAIL=your-address@gmail.com
+```
+
+- `RESEND_API_KEY` authenticates the server when it calls Resend. Keep it secret
+  and never expose it through a `NEXT_PUBLIC_` variable or commit it to Git.
+- `RESEND_FROM_EMAIL` is the technical sender required for every email. Use
+  `onboarding@resend.dev` while testing without a custom domain. If a domain is
+  added and verified later, replace it with an address such as
+  `Portfolio <hello@example.com>`.
+- `CONTACT_EMAIL` is the inbox that receives contact-form messages and can be a
+  Gmail address. The visitor's submitted email is used as the reply-to address,
+  so replying in Gmail sends the response to the visitor.
+
+For deployment, open **Vercel → Project → Settings → Environment Variables**,
+add all three variables, and enable them for Production and Preview as needed.
+Redeploy after saving them because new environment variables do not affect an
+existing deployment.
+
+The Vercel Function starts when someone submits the form and stops after the
+request finishes. Warm requests are usually immediate; a cold start can add a
+short delay. Resend's testing sender may restrict delivery to the email address
+associated with the Resend account. A verified custom domain is required later
+for unrestricted production sending.
 
 ## Content management
 
