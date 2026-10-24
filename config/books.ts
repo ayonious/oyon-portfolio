@@ -26,23 +26,8 @@ export const allTimeFavoriteBooks: Book[] = [
 
 export const peopleAndPsychologyBooks: Book[] = [
   {
-    title: "Thinking, Fast and Slow",
-    authors: "Daniel Kahneman",
-    url: "https://www.goodreads.com/book/show/13531855-thinking-fast-and-slow",
-  },
-  {
-    title: "Influence: The Psychology of Persuasion",
-    authors: "Robert B. Cialdini",
-    url: "https://www.goodreads.com/book/show/28815-influence",
-  },
-  {
-    title: "How to Win Friends and Influence People",
-    authors: "Dale Carnegie",
-    url: "https://www.goodreads.com/book/show/33291.How_to_Win_Friends_and_Influence_People",
-  },
-  {
-    title: "Games People Play",
-    authors: "Eric Berne",
-    url: "https://www.goodreads.com/book/show/49176.Games_People_Play",
+    title: "Surrounded by Idiots",
+    authors: "Thomas Erikson",
+    url: "https://www.goodreads.com/book/show/50542352-surrounded-by-idiots",
   },
 ];
