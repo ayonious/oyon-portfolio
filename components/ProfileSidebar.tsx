@@ -120,7 +120,7 @@ export default function ProfileSidebar() {
               </a>
             ))}
           </div>
-          <p className="mt-3 text-xs text-slate-500 dark:text-slate-400">
+          <p className="mt-3 text-sm text-slate-500 dark:text-slate-400">
             {sidebarContent.footerCredit}
           </p>
         </div>
