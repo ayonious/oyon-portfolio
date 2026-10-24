@@ -94,7 +94,7 @@ export default function ProfileSidebar() {
           })}
         </nav>
 
-        <div className="mt-8 flex flex-col items-center lg:mt-auto">
+        <div className="mt-8 flex flex-col items-center border-t border-slate-200 pt-5 dark:border-slate-700 lg:mt-auto">
           <div className="flex justify-center gap-2">
             {sidebarContent.socialLinks.map((link) => (
               <a
