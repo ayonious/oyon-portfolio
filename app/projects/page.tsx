@@ -31,6 +31,17 @@ function ProjectCard({ project }: { project: OpenSourceProject }) {
         {project.description}
       </p>
 
+      {project.demoUrl && project.demoLabel && (
+        <a
+          href={project.demoUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="mt-4 inline-flex font-semibold"
+        >
+          {project.demoLabel} ↗
+        </a>
+      )}
+
       {project.language && (
         <p className="mt-4 flex items-center gap-2 text-sm font-medium text-slate-500 dark:text-slate-400">
           <BrandIcon name={project.language} className="h-4 w-4 shrink-0" />
@@ -88,7 +99,7 @@ function ProjectGroup({
 }
 
 export default function ProjectsPage() {
-  const { profile, organization } = openSourceProjectsConfig;
+  const { profile, gamified, organization } = openSourceProjectsConfig;
 
   return (
     <div className="max-w-4xl py-8 sm:py-16">
@@ -102,6 +113,7 @@ export default function ProjectsPage() {
       </header>
 
       <ProjectGroup {...profile} />
+      <ProjectGroup {...gamified} />
       <ProjectGroup {...organization} />
     </div>
   );
