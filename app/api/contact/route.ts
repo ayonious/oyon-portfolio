@@ -39,6 +39,26 @@ function buildEmailBody(name: string, email: string, message: string) {
   };
 }
 
+async function verifyTurnstile(token: string, secret: string) {
+  try {
+    const response = await fetch(
+      "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({ secret, response: token }),
+      },
+    );
+
+    if (!response.ok) return "unavailable" as const;
+
+    const result = (await response.json()) as { success?: boolean };
+    return result.success ? ("valid" as const) : ("invalid" as const);
+  } catch {
+    return "unavailable" as const;
+  }
+}
+
 export async function POST(request: Request) {
   let payload: Record<string, unknown>;
   try {
@@ -51,14 +71,23 @@ export async function POST(request: Request) {
   if (!parsed.success) {
     return jsonError("Please complete all fields.", 400);
   }
-  const { name, email, message } = parsed.data;
+  const { name, email, message, turnstileToken } = parsed.data;
 
   const resendApiKey = process.env.RESEND_API_KEY;
   const contactEmail = process.env.CONTACT_EMAIL;
   const fromEmail = process.env.RESEND_FROM_EMAIL;
+  const turnstileSecret = process.env.TURNSTILE_SECRET_KEY;
 
-  if (!resendApiKey || !contactEmail || !fromEmail) {
+  if (!resendApiKey || !contactEmail || !fromEmail || !turnstileSecret) {
     return jsonError("Contact service is not configured.", 503);
+  }
+
+  const verification = await verifyTurnstile(turnstileToken, turnstileSecret);
+  if (verification === "unavailable") {
+    return jsonError("Verification service is unavailable. Please try again.", 502);
+  }
+  if (verification === "invalid") {
+    return jsonError("Verification failed. Please try again.", 400);
   }
 
   const emailBody = buildEmailBody(name, email, message);
