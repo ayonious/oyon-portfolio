@@ -85,6 +85,7 @@ export const openSourceProjectsConfig = {
         description:
           "A Next.js starting point with a practical set of tools and project defaults.",
         language: "TypeScript",
+        technologies: ["Next.js", "React", "Tailwind CSS", "Jest"],
         stars: 0,
       },
       {
@@ -93,6 +94,7 @@ export const openSourceProjectsConfig = {
         description:
           "A React and TypeScript starter for projects that do not use Create React App.",
         language: "TypeScript",
+        technologies: ["React", "Webpack", "Babel", "Material UI"],
         stars: 0,
       },
       {
@@ -101,6 +103,7 @@ export const openSourceProjectsConfig = {
         description:
           "A minimal Express and TypeScript foundation for starting a microservice.",
         language: "TypeScript",
+        technologies: ["Node.js", "Express", "Jest"],
         stars: 0,
       },
       {
@@ -109,6 +112,7 @@ export const openSourceProjectsConfig = {
         description:
           "A NestJS bootstrap project with common boilerplate configuration ready to extend.",
         stars: 0,
+        technologies: ["NestJS", "Node.js", "TypeScript"],
       },
       {
         name: "simple-html-template",
@@ -118,6 +122,7 @@ export const openSourceProjectsConfig = {
         description:
           "A small HTML starter for quickly publishing a simple static webpage.",
         stars: 0,
+        technologies: ["HTML", "CSS", "GitHub Pages"],
       },
     ] satisfies OpenSourceProject[],
   },
@@ -127,10 +132,10 @@ export const openSourceProjectsConfig = {
     limit: 4,
     url: "https://github.com/console-table-printer",
     projects: [
-      { name: "console-table-printer", url: "https://github.com/console-table-printer/console-table-printer", description: "Print colorful, readable tables in the console.", language: "TypeScript", stars: 227 },
-      { name: "simple-wcswidth", url: "https://github.com/console-table-printer/simple-wcswidth", description: "A simple TypeScript implementation of Markus Kuhn's wcswidth function.", language: "TypeScript", stars: 5 },
-      { name: "table-printer-cli", url: "https://github.com/console-table-printer/table-printer-cli", description: "A command-line tool for printing terminal tables.", language: "TypeScript", stars: 2 },
-      { name: "console-table-docu", url: "https://github.com/console-table-printer/console-table-docu", description: "Documentation for Console Table Printer.", language: "TypeScript", stars: 1 },
+      { name: "console-table-printer", url: "https://github.com/console-table-printer/console-table-printer", description: "Print colorful, readable tables in the console.", language: "TypeScript", technologies: ["Node.js", "npm", "Jest"], stars: 227 },
+      { name: "simple-wcswidth", url: "https://github.com/console-table-printer/simple-wcswidth", description: "A simple TypeScript implementation of Markus Kuhn's wcswidth function.", language: "TypeScript", technologies: ["Node.js", "npm", "Jest"], stars: 5 },
+      { name: "table-printer-cli", url: "https://github.com/console-table-printer/table-printer-cli", description: "A command-line tool for printing terminal tables.", language: "TypeScript", technologies: ["Node.js", "CLI", "npm"], stars: 2 },
+      { name: "console-table-docu", url: "https://github.com/console-table-printer/console-table-docu", description: "Documentation for Console Table Printer.", language: "TypeScript", technologies: ["Markdown", "Node.js"], stars: 1 },
       { name: "chrome-extension-table-printer", url: "https://github.com/console-table-printer/chrome-extension-table-printer", description: "A Chrome extension for formatting JSON.", language: "JavaScript", stars: 0 },
       { name: "e2e", url: "https://github.com/console-table-printer/e2e", description: "End-to-end tests for the organization's packages and websites.", language: "TypeScript", stars: 0 },
       { name: "homebrew-console-table", url: "https://github.com/console-table-printer/homebrew-console-table", description: "The Homebrew tap for installing Console Table CLI.", language: "Ruby", stars: 0 },
