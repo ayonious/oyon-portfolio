@@ -225,6 +225,12 @@ export const aboutSiteContent = {
       role: "Interface icons",
       url: "https://iconsforfree.com/",
     },
+    {
+      name: "Simple Icons",
+      role: "Brand and technology icons (CC0; trademarks still apply)",
+      emoji: "🏷️",
+      url: "https://simpleicons.org/",
+    },
     { name: "Vercel", role: "Deployment", url: "https://vercel.com/" },
   ],
 };

@@ -18,6 +18,7 @@ Create my personal profile and portfolio website using Next.js, TypeScript, and 
 - [Cypress](https://www.cypress.io/) for browser tests
 - [Vercel](https://vercel.com/) for deployment
 - [Yarn](https://yarnpkg.com/) for package management
+- [Simple Icons](https://simpleicons.org/) for brand and technology marks
 
 ## Why Tailwind CSS
 
@@ -29,9 +30,15 @@ For a small, mostly static site, this means fewer styling abstractions, no clien
 
 The layout and design direction are inspired by [Tania Rascia's personal website](https://www.taniarascia.com/), particularly its persistent profile navigation and scrollable content area. This project adapts those ideas for my own profile, experience, and projects.
 
-## Asset credits
+## Asset credits and licenses
 
-All icons used in this project were sourced from [Icons For Free](https://iconsforfree.com/).
+The navigation, interface, and sailboat assets were sourced from
+[Icons For Free](https://iconsforfree.com/). Brand and technology marks are supplied
+by [Simple Icons](https://simpleicons.org/), whose project is released under
+[CC0 1.0](https://github.com/simple-icons/simple-icons/blob/develop/LICENSE.md).
+Individual logos can still be protected by their owners' licenses, trademarks, and
+brand guidelines; see the [Simple Icons disclaimer](https://github.com/simple-icons/simple-icons/blob/develop/DISCLAIMER.md)
+and this project's [third-party notices](THIRD_PARTY_NOTICES.md).
 
 ## Run locally
 
