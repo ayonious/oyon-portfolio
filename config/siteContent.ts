@@ -157,10 +157,9 @@ export const pageContent = {
     otherTitle: "Other books",
   },
   certifications: {
-    title: "Certifications",
+    title: "Certifications and Courses",
     introduction:
       "Language and software development credentials I have earned.",
-    credentialLabel: "Show credential ↗",
     completedLabel: "Completed",
   },
   blog: {

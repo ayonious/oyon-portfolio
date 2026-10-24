@@ -67,15 +67,17 @@ describe("site pages", () => {
     expect(screen.getByText(/Notes about software engineering/i)).toBeTruthy();
   });
 
-  it("shows certification details and credential links", () => {
+  it("shows certification details and credential IDs", () => {
     render(<CertificationsPage />);
 
     expect(
       screen.getByRole("heading", { name: "telc Deutsch C1 Hochschule" }),
     ).toBeTruthy();
     expect(screen.getByText("Result: Befriedigend")).toBeTruthy();
-    expect(screen.getAllByRole("link", { name: "Show credential ↗" })).toHaveLength(2);
-    expect(screen.getByText("Completed")).toBeTruthy();
+    expect(screen.getByText(/Credential ID: UC-HTKYP7TF/)).toBeTruthy();
+    expect(screen.getByText(/Credential ID: UC-HH4VIZK2/)).toBeTruthy();
+    expect(screen.queryByRole("link", { name: "Show credential ↗" })).toBeNull();
+    expect(screen.getAllByText("Completed")).toHaveLength(3);
   });
 
   it("shows pinned and organization open-source projects", () => {

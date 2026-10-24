@@ -27,7 +27,7 @@ export default function CertificationsPage() {
               <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
                 Issued {certification.issued}
                 {certification.credentialId && (
-                  <> · Credential ID {certification.credentialId}</>
+                  <> · Credential ID: {certification.credentialId}</>
                 )}
               </p>
               {certification.result && (
@@ -43,20 +43,9 @@ export default function CertificationsPage() {
             </div>
 
             <div className="mt-4 shrink-0 sm:mt-0 sm:text-right">
-              {certification.credentialUrl ? (
-                <a
-                  href={certification.credentialUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex rounded-lg border border-[var(--accent)] px-3 py-1.5 text-sm font-semibold no-underline hover:bg-[var(--accent-soft)]"
-                >
-                  {pageContent.certifications.credentialLabel}
-                </a>
-              ) : (
-                <span className="inline-flex rounded-full bg-[var(--accent-soft)] px-3 py-1 text-sm font-semibold text-[var(--accent)]">
-                  {pageContent.certifications.completedLabel}
-                </span>
-              )}
+              <span className="inline-flex rounded-full bg-[var(--accent-soft)] px-3 py-1 text-sm font-semibold text-[var(--accent)]">
+                {pageContent.certifications.completedLabel}
+              </span>
             </div>
           </article>
         ))}
