@@ -103,6 +103,9 @@ describe("site pages", () => {
     expect(screen.getByRole("heading", { name: "Templates" })).toBeTruthy();
     expect(screen.getByRole("link", { name: /nextjs-template/ })).toBeTruthy();
     expect(
+      screen.getByText(/Reusable starter repositories to help bootstrap/),
+    ).toBeTruthy();
+    expect(
       screen.getByRole("heading", { name: "Console Table Printer organization" }),
     ).toBeTruthy();
   });

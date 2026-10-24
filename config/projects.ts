@@ -13,6 +13,7 @@ export type OpenSourceProject = {
 export const openSourceProjectsConfig = {
   profile: {
     label: "Pinned personal repositories",
+    description: "A selection of my pinned repositories and long-running experiments.",
     onlyPinned: true,
     url: "https://github.com/ayonious",
     projects: [
@@ -34,6 +35,7 @@ export const openSourceProjectsConfig = {
   },
   gamified: {
     label: "Gamified projects",
+    description: "Playful interfaces and visual experiments that turn technical ideas into something interactive.",
     url: "https://github.com/ayonious",
     projects: [
       {
@@ -73,6 +75,7 @@ export const openSourceProjectsConfig = {
   },
   templates: {
     label: "Templates",
+    description: "Reusable starter repositories to help bootstrap new React, Next.js, Express, NestJS, and HTML projects.",
     view: "list" as const,
     url: "https://github.com/ayonious?tab=repositories&q=template",
     projects: [
@@ -120,6 +123,7 @@ export const openSourceProjectsConfig = {
   },
   organization: {
     label: "Console Table Printer organization",
+    description: "Open-source tools and documentation from the Console Table Printer organization, focused on readable terminal output.",
     limit: 4,
     url: "https://github.com/console-table-printer",
     projects: [

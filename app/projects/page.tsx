@@ -71,10 +71,12 @@ function ProjectGroup({
   limit,
   onlyPinned,
   projects,
+  description,
   view = "cards",
   url,
 }: {
   label: string;
+  description?: string;
   limit?: number;
   onlyPinned?: boolean;
   projects: OpenSourceProject[];
@@ -102,6 +104,11 @@ function ProjectGroup({
           {pageContent.projects.viewOnGitHub}
         </a>
       </div>
+      {description && (
+        <p className="mt-2 max-w-3xl text-slate-600 dark:text-slate-300">
+          {description}
+        </p>
+      )}
       <p className="mt-2 text-slate-600 dark:text-slate-300">
         {visibleProjects.length} projects · {totalStars} stars
       </p>
