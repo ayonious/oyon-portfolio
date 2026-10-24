@@ -30,6 +30,10 @@ describe("site pages", () => {
 
     expect(screen.getByRole("heading", { name: "About me" })).toBeTruthy();
     expect(screen.getByText(/Senior Fullstack Software Engineer/i)).toBeTruthy();
+    expect(screen.getByRole("heading", { name: "Send me a message" })).toBeTruthy();
+    expect(screen.getByLabelText("Name")).toBeTruthy();
+    expect(screen.getByLabelText("Email")).toBeTruthy();
+    expect(screen.getByLabelText("Message")).toBeTruthy();
   });
 
   it("provides an email link on the contact page", () => {

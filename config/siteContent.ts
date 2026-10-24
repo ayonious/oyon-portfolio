@@ -93,6 +93,19 @@ export const aboutContent = {
     src: "/images/nahiyan-cartoon-profile.webp",
     alt: "Cartoon portrait of Nahiyan K at a black-sand beach",
   },
+  contactForm: {
+    title: "Send me a message",
+    introduction:
+      "Have an idea, question, or opportunity to discuss? Send me a note and I’ll get back to you.",
+    nameLabel: "Name",
+    emailLabel: "Email",
+    messageLabel: "Message",
+    submitLabel: "Send message",
+    sendingLabel: "Sending…",
+    successMessage: "Thanks — your message has been sent.",
+    errorMessage: "Your message could not be sent. Please try again.",
+    unavailableMessage: "The contact form is not configured yet.",
+  },
   profilesTitle: "Find me online",
   profiles: [
     {

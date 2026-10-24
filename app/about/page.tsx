@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { aboutContent } from "../../config/siteContent";
 import BrandIcon from "../../components/BrandIcon";
+import ContactForm from "../../components/about/ContactForm";
 
 export default function AboutPage() {
   return (
@@ -34,6 +35,8 @@ export default function AboutPage() {
           className="aspect-square w-full rounded-3xl border border-slate-200 object-cover shadow-sm dark:border-slate-700"
         />
       </section>
+
+      <ContactForm />
 
       <section className="mt-14">
         <h2 className="text-2xl font-bold">{aboutContent.profilesTitle}</h2>
