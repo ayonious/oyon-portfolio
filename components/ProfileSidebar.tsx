@@ -21,7 +21,7 @@ const navigationItems = [
   { href: "/ai", label: "AI", Icon: RobotIcon, external: false },
   {
     href: "/reading",
-    label: "Reading currently",
+    label: "Books",
     Icon: BooksIcon,
     external: false,
   },

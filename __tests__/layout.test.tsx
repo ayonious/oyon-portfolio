@@ -35,7 +35,7 @@ describe("root layout", () => {
       ["Open source", "/projects"],
       ["Skills", "/skills"],
       ["AI", "/ai"],
-      ["Reading currently", "/reading"],
+      ["Books", "/reading"],
       ["Certifications", "/certifications"],
       ["About me", "/about"],
       ["About this site", "/about-this-site"],

@@ -40,6 +40,17 @@ export default function AboutPage() {
               workflows, and enjoy turning complicated systems into practical,
               reliable software.
             </p>
+            <p>
+              Outside engineering, I&apos;m a part-time traveler and language
+              learner. Exploring new places and languages helps me understand
+              people and see the world from different perspectives.
+            </p>
+            <p>
+              I love reading philosophy and psychology to explore the meaning
+              of life and the universe, and to reflect on why I build things. I
+              also read about human nature and how societies work because I find
+              people endlessly interesting.
+            </p>
           </div>
         </div>
         <Image
