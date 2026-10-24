@@ -13,26 +13,26 @@ export default function SkillsPage() {
         </p>
       </header>
 
-      <section className="mt-10 grid gap-4 sm:grid-cols-2">
+      <section className="mt-10 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-slate-700 dark:bg-slate-900">
         {skillGroups.map((group) => (
-          <article
+          <div
             key={group.title}
-            className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-slate-900"
+            className="border-b border-slate-200 p-5 last:border-b-0 sm:grid sm:grid-cols-[13rem_1fr] sm:gap-6 sm:p-6 dark:border-slate-700"
           >
-            <h2 className="text-xl font-bold text-slate-950 dark:text-slate-50">
+            <h2 className="text-base font-bold sm:pt-1">
               {group.title}
             </h2>
-            <ul className="mt-4 flex flex-wrap gap-2">
+            <ul className="mt-3 flex flex-wrap gap-2 sm:mt-0">
               {group.skills.map((skill) => (
                 <li
                   key={skill}
-                  className="rounded-full bg-slate-100 px-3 py-1 text-sm text-slate-700 dark:bg-slate-800 dark:text-slate-200"
+                  className="rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm font-medium text-slate-700 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200"
                 >
                   {skill}
                 </li>
               ))}
             </ul>
-          </article>
+          </div>
         ))}
       </section>
     </div>

@@ -33,7 +33,7 @@ describe("root layout", () => {
     ).toEqual([
       ["Work", "/work"],
       ["Open source", "/projects"],
-      ["Weather", "/weather"],
+      ["Skills", "/skills"],
       ["Reading currently", "/reading"],
       ["Certifications", "/certifications"],
       ["About me", "/about"],
