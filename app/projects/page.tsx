@@ -6,9 +6,17 @@ import { pageContent } from "../../config/siteContent";
 import BrandIcon from "../../components/BrandIcon";
 
 function getProjectTechnologies(project: OpenSourceProject) {
-  return [...new Set(project.technologies ?? [])].filter(
-    (technology) => technology.toLowerCase() !== project.language?.toLowerCase(),
-  );
+  const technologies = project.language
+    ? [project.language, ...(project.technologies ?? [])]
+    : project.technologies ?? [];
+  const seen = new Set<string>();
+
+  return technologies.filter((technology) => {
+    const normalized = technology.toLowerCase();
+    if (seen.has(normalized)) return false;
+    seen.add(normalized);
+    return true;
+  });
 }
 
 function ProjectCard({ project }: { project: OpenSourceProject }) {
@@ -62,12 +70,6 @@ function ProjectCard({ project }: { project: OpenSourceProject }) {
         </a>
       )}
 
-      {project.language && (
-        <span className="mt-4 inline-flex items-center gap-1.5 rounded-full bg-slate-100 px-2.5 py-1 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300">
-          <BrandIcon name={project.language} className="h-4 w-4 shrink-0" />
-          {project.language}
-        </span>
-      )}
     </article>
   );
 }
