@@ -54,6 +54,26 @@ export default function AboutThisSitePage() {
         </ul>
       </section>
 
+      <section className="mt-14 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-slate-900">
+        <h2 className="text-2xl font-bold">{aboutSiteContent.reuse.title}</h2>
+        <p className="mt-3 text-slate-600 dark:text-slate-300">
+          {aboutSiteContent.reuse.introduction}
+        </p>
+        <ul className="mt-5 list-disc space-y-2 pl-5 text-slate-600 dark:text-slate-300">
+          {aboutSiteContent.reuse.notes.map((note) => (
+            <li key={note}>{note}</li>
+          ))}
+        </ul>
+        <a
+          href={aboutSiteContent.reuse.repositoryUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="mt-6 inline-flex rounded-xl border border-[var(--accent)] px-4 py-2 font-semibold no-underline transition-colors hover:bg-[var(--accent-soft)]"
+        >
+          {aboutSiteContent.reuse.repositoryLabel}
+        </a>
+      </section>
+
       <section className="mt-14 rounded-2xl bg-[var(--accent-soft)] p-6">
         <h2 className="text-2xl font-bold">{aboutSiteContent.creditsTitle}</h2>
         <ul className="mt-4 flex flex-wrap gap-3">

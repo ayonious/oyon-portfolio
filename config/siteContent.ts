@@ -202,6 +202,18 @@ export const aboutSiteContent = {
   packagesIntroduction:
     "Runtime and development dependencies currently listed in the project.",
   creditsTitle: "Design and assets",
+  reuse: {
+    title: "Use this site for your own profile",
+    introduction:
+      "You can use this portfolio as a starting point for building your own profile site.",
+    notes: [
+      "I do not provide any guarantee for using this website, but I try to keep the project as reusable as possible.",
+      "Use the project at your own risk.",
+      "Credit the original authors, projects, and packages when required by their licenses.",
+    ],
+    repositoryLabel: "View and reuse this site on GitHub →",
+    repositoryUrl: "https://github.com/ayonious/oyon-portfolio",
+  },
   credits: [
     {
       name: "Tania Rascia's website",
