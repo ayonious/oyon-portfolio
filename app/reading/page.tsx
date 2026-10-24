@@ -1,11 +1,21 @@
 import {
-  allTimeFavoriteBooks,
-  peopleAndPsychologyBooks,
+  leadershipBooks,
+  philosophyBooks,
+  programmingBooks,
+  psychologyBooks,
   type Book,
 } from "../../config/books";
 import { pageContent } from "../../config/siteContent";
 
 function BookList({ books }: { books: Book[] }) {
+  if (books.length === 0) {
+    return (
+      <p className="mt-3 text-sm text-slate-500 dark:text-slate-400">
+        {pageContent.books.emptyListLabel}
+      </p>
+    );
+  }
+
   return (
     <ul className="mt-5 divide-y divide-slate-200 border-y border-slate-200 dark:divide-slate-700 dark:border-slate-700">
       {books.map((book) => (
@@ -35,6 +45,13 @@ function BookList({ books }: { books: Book[] }) {
                 {book.details}
               </p>
             )}
+            <ul aria-label={`Topics for ${book.title}`} className="mt-2 flex flex-wrap gap-2">
+              {book.tags.map((tag) => (
+                <li key={tag} className="text-xs font-medium text-[var(--accent)]">
+                  #{tag}
+                </li>
+              ))}
+            </ul>
           </div>
         </li>
       ))}
@@ -62,12 +79,26 @@ export default function ReadingPage() {
 
       <section className="mt-14">
         <h2 className="text-2xl font-bold">{pageContent.books.programmingTitle}</h2>
-        <BookList books={allTimeFavoriteBooks} />
+        <BookList books={programmingBooks} />
       </section>
 
       <section className="mt-14">
         <h2 className="text-2xl font-bold">{pageContent.books.leadershipTitle}</h2>
-        <BookList books={peopleAndPsychologyBooks} />
+        <BookList books={leadershipBooks} />
+      </section>
+
+      <section className="mt-14">
+        <h2 className="text-2xl font-bold">{pageContent.books.otherTitle}</h2>
+
+        <div className="mt-6">
+          <h3 className="text-xl font-bold">{pageContent.books.philosophyTitle}</h3>
+          <BookList books={philosophyBooks} />
+        </div>
+
+        <div className="mt-8">
+          <h3 className="text-xl font-bold">{pageContent.books.psychologyTitle}</h3>
+          <BookList books={psychologyBooks} />
+        </div>
       </section>
     </div>
   );

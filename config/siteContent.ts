@@ -150,6 +150,10 @@ export const pageContent = {
     goodreadsUrl: "https://www.goodreads.com/user/show/95339067-nahiyan-k",
     programmingTitle: "Programming-related books",
     leadershipTitle: "Leadership-related books",
+    otherTitle: "Other books",
+    philosophyTitle: "Philosophy",
+    psychologyTitle: "Psychology",
+    emptyListLabel: "More books will be added here.",
   },
   certifications: {
     title: "Certifications",
