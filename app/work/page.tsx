@@ -1,6 +1,7 @@
 import { workHistory } from "../../config/workHistory";
 import { workProjects } from "../../config/workProjects";
 import { pageContent } from "../../config/siteContent";
+import BrandIcon from "../../components/BrandIcon";
 
 export default function WorkHistoryPage() {
   return (
@@ -23,7 +24,8 @@ export default function WorkHistoryPage() {
             >
               <div className="flex flex-wrap items-start justify-between gap-3">
                 <div>
-                  <h2 className="text-2xl font-bold text-slate-950 dark:text-slate-50">
+                  <h2 className="flex items-center gap-2 text-2xl font-bold text-slate-950 dark:text-slate-50">
+                    <BrandIcon name={job.company} className="h-6 w-6 shrink-0" />
                     {job.company}
                   </h2>
                   <p className="mt-1 font-semibold text-slate-700 dark:text-slate-200">
@@ -45,7 +47,10 @@ export default function WorkHistoryPage() {
                       key={technology}
                       className="rounded-full border border-slate-200 px-3 py-1 text-sm text-slate-600 dark:border-slate-700 dark:text-slate-300"
                     >
-                      {technology}
+                      <span className="flex items-center gap-1.5">
+                        <BrandIcon name={technology} className="h-3.5 w-3.5 shrink-0" />
+                        {technology}
+                      </span>
                     </li>
                   ))}
                 </ul>
@@ -85,28 +90,17 @@ export default function WorkHistoryPage() {
                     key={technology}
                     className="rounded-full border border-slate-200 px-3 py-1 text-sm text-slate-600 dark:border-slate-700 dark:text-slate-300"
                   >
-                    {technology}
+                    <span className="flex items-center gap-1.5">
+                      <BrandIcon name={technology} className="h-3.5 w-3.5 shrink-0" />
+                      {technology}
+                    </span>
                   </li>
                 ))}
               </ul>
 
-              <dl className="mt-6 grid gap-4">
-                {[
-                  project.situation,
-                  project.task,
-                  project.action,
-                  project.result,
-                ].map((value, index) => (
-                  <div key={pageContent.work.starLabels[index]}>
-                    <dt className="font-bold text-slate-900 dark:text-slate-100">
-                      {pageContent.work.starLabels[index]}
-                    </dt>
-                    <dd className="mt-1 text-slate-600 dark:text-slate-300">
-                      {value}
-                    </dd>
-                  </div>
-                ))}
-              </dl>
+              <p className="mt-6 leading-7 text-slate-600 dark:text-slate-300">
+                {project.situation} {project.task} {project.action} {project.result}
+              </p>
 
               <div className="mt-6 rounded-xl bg-slate-100 p-4 dark:bg-slate-800">
                 <h4 className="font-bold text-slate-900 dark:text-slate-100">

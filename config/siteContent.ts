@@ -125,9 +125,8 @@ export const pageContent = {
       "My career building web, mobile, payments, authentication, and travel products.",
     projectsTitle: "Selected work projects",
     projectsIntroduction:
-      "Each project follows the Situation, Task, Action, Result format and includes every service-scale figure available in my career records.",
+      "Each project is presented as a concise narrative and includes every service-scale figure available in my career records.",
     scaleTitle: "Documented service scale",
-    starLabels: ["Situation", "Task", "Action", "Result"],
   },
   projects: {
     title: "Open-source projects",
@@ -152,7 +151,7 @@ export const pageContent = {
     title: "Books",
     introduction:
       "Books that shape how I think about software, leadership, people, and the world around me.",
-    goodreadsLabel: "See all my books on Goodreads →",
+    goodreadsLabel: "Let’s be friends on Goodreads →",
     goodreadsUrl: "https://www.goodreads.com/user/show/95339067-nahiyan-k",
     programmingTitle: "Programming-related books",
     otherTitle: "Other books",
@@ -186,13 +185,13 @@ export const aboutSiteContent = {
     "Runtime and development dependencies currently listed in the project.",
   creditsTitle: "Design and assets",
   reuse: {
-    title: "Use this site for your own profile",
+    title: "Use this site for your own profile 🧰",
     introduction:
       "You can use this portfolio as a starting point for building your own profile site.",
     notes: [
-      "I do not provide any guarantee for using this website, but I try to keep the project as reusable as possible.",
-      "Use the project at your own risk.",
-      "Credit the original authors, projects, and packages when required by their licenses.",
+      "♻️ I do not provide any guarantee for using this website, but I try to keep the project as reusable as possible.",
+      "⚠️ Use the project at your own risk.",
+      "📝 Credit the original authors, projects, and packages when required by their licenses.",
     ],
     repositoryLabel: "View and reuse this site on GitHub →",
     repositoryUrl: "https://github.com/ayonious/oyon-portfolio",
@@ -209,6 +208,12 @@ export const aboutSiteContent = {
       role: "Interface icons",
       emoji: "✨",
       url: "https://iconsforfree.com/",
+    },
+    {
+      name: "Simple Icons",
+      role: "Brand and technology icons (CC0; trademarks still apply)",
+      emoji: "🏷️",
+      url: "https://simpleicons.org/",
     },
     {
       name: "Vercel",

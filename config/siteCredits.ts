@@ -35,12 +35,19 @@ export const majorDependencies = [
     description:
       "Provides browser-based end-to-end testing for complete navigation and interaction flows when those tests are enabled for the project.",
   },
+  {
+    name: "Simple Icons",
+    url: "https://simpleicons.org/",
+    description:
+      "Supplies the one-color brand and technology marks shown beside social profiles and recognized skills. The library is CC0, while individual brand trademarks and usage guidelines still apply.",
+  },
 ];
 
 export const allPackages = [
   "next",
   "react",
   "react-dom",
+  "simple-icons",
   "@tailwindcss/postcss",
   "@testing-library/dom",
   "@testing-library/jest-dom",

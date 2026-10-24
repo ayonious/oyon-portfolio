@@ -1,5 +1,6 @@
 import { allPackages, majorDependencies } from "../../config/siteCredits";
 import { aboutSiteContent } from "../../config/siteContent";
+import BrandIcon from "../../components/BrandIcon";
 
 export default function AboutThisSitePage() {
   return (
@@ -13,36 +14,29 @@ export default function AboutThisSitePage() {
 
       <section className="mt-12">
         <h2 className="text-2xl font-bold">{aboutSiteContent.majorTitle}</h2>
-        <ol className="mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-slate-700 dark:bg-slate-900">
-          {majorDependencies.map((dependency, index) => (
+        <ul className="mt-5 border-t border-slate-200 dark:border-slate-700">
+          {majorDependencies.map((dependency) => (
             <li
               key={dependency.name}
-              className="grid gap-4 border-b border-slate-200 p-5 last:border-b-0 sm:grid-cols-[3rem_minmax(0,1fr)] sm:items-start dark:border-slate-700"
+              className="grid gap-2 border-b border-slate-200 py-5 sm:grid-cols-[13rem_minmax(0,1fr)] sm:gap-8 dark:border-slate-700"
             >
-              <span
-                aria-hidden="true"
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--accent-soft)] font-mono text-sm font-bold text-[var(--accent)]"
-              >
-                {String(index + 1).padStart(2, "0")}
-              </span>
-              <div>
-                <h3 className="text-xl font-bold">
-                  <a
-                    href={dependency.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="no-underline hover:underline"
-                  >
-                    {dependency.name} ↗
-                  </a>
-                </h3>
-                <p className="mt-2 text-slate-600 dark:text-slate-300">
-                  {dependency.description}
-                </p>
-              </div>
+              <h3 className="font-bold">
+                <a
+                  href={dependency.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-2 no-underline hover:underline"
+                >
+                  <BrandIcon name={dependency.name} className="h-5 w-5 shrink-0" />
+                  <span>{dependency.name} ↗</span>
+                </a>
+              </h3>
+              <p className="text-slate-600 dark:text-slate-300">
+                {dependency.description}
+              </p>
             </li>
           ))}
-        </ol>
+        </ul>
       </section>
 
       <section className="mt-14">

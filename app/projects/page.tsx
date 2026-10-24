@@ -3,6 +3,7 @@ import {
   type OpenSourceProject,
 } from "../../config/projects";
 import { pageContent } from "../../config/siteContent";
+import BrandIcon from "../../components/BrandIcon";
 
 function ProjectCard({ project }: { project: OpenSourceProject }) {
   return (
@@ -31,7 +32,8 @@ function ProjectCard({ project }: { project: OpenSourceProject }) {
       </p>
 
       {project.language && (
-        <p className="mt-4 text-sm font-medium text-slate-500 dark:text-slate-400">
+        <p className="mt-4 flex items-center gap-2 text-sm font-medium text-slate-500 dark:text-slate-400">
+          <BrandIcon name={project.language} className="h-4 w-4 shrink-0" />
           {project.language}
         </p>
       )}

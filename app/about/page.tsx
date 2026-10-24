@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { aboutContent } from "../../config/siteContent";
+import BrandIcon from "../../components/BrandIcon";
 
 export default function AboutPage() {
   return (
@@ -45,10 +46,8 @@ export default function AboutPage() {
               rel="noreferrer"
               className="rounded-2xl border border-slate-200 bg-white p-5 no-underline shadow-sm transition-colors hover:bg-[var(--accent-soft)] dark:border-slate-700 dark:bg-slate-900 dark:hover:bg-[var(--accent-soft)]"
             >
-              <h3 className="text-xl font-bold">
-                <span aria-hidden="true" className="mr-2">
-                  {profile.emoji}
-                </span>
+              <h3 className="flex items-center gap-2 text-xl font-bold">
+                <BrandIcon name={profile.name} className="h-6 w-6 shrink-0" />
                 {profile.name} →
               </h3>
               <p className="mt-2 text-slate-600 dark:text-slate-300">
