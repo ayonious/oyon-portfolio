@@ -26,6 +26,12 @@ export const programmingBooks: Book[] = [
     tags: ["Programming", "C", "SystemsProgramming"],
     url: "https://www.goodreads.com/book/show/16174690-the-c-programming-language",
   },
+  {
+    title: "Concrete Mathematics: A Foundation for Computer Science",
+    authors: "Ronald Graham, Donald Knuth, and Oren Patashnik",
+    tags: ["Mathematics", "ComputerScience", "Algorithms"],
+    url: "https://www.goodreads.com/en/book/show/112243.Concrete_Mathematics",
+  },
 ];
 
 export const leadershipBooks: Book[] = [];
