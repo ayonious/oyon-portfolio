@@ -34,16 +34,25 @@ export default function ThemeToggle() {
   };
 
   const nextTheme = theme === "light" ? "dark" : "light";
+  const actionLabel = `Switch to ${nextTheme} theme`;
 
   return (
-    <button
-      type="button"
-      aria-label={`Switch to ${nextTheme} theme`}
-      title={`Switch to ${nextTheme} theme`}
-      onClick={toggleTheme}
-      className="flex h-10 w-10 items-center justify-center rounded-xl text-[var(--accent)] transition-colors hover:bg-[var(--accent-soft)]"
-    >
-      {theme === "light" ? <MoonIcon /> : <SunIcon />}
-    </button>
+    <div className="group relative">
+      <button
+        type="button"
+        aria-label={actionLabel}
+        title={actionLabel}
+        onClick={toggleTheme}
+        className="peer flex h-10 w-10 items-center justify-center rounded-xl text-[var(--accent)] transition-colors hover:bg-[var(--accent-soft)]"
+      >
+        {theme === "light" ? <MoonIcon /> : <SunIcon />}
+      </button>
+      <span
+        role="tooltip"
+        className="pointer-events-none absolute top-12 right-0 z-30 w-max max-w-44 rounded-lg bg-slate-950 px-3 py-1.5 text-xs font-medium text-white opacity-0 shadow-lg transition-opacity group-hover:opacity-100 peer-focus-visible:opacity-100 dark:bg-slate-100 dark:text-slate-950"
+      >
+        {actionLabel}
+      </span>
+    </div>
   );
 }

@@ -55,80 +55,63 @@ export const sidebarContent = {
 export const aboutContent = {
   title: "About me",
   paragraphs: [
-    [
-      { text: "I'm Nahiyan, a " },
-      { text: "Senior Fullstack Software Engineer", href: "/work" },
-      {
-        text: " based in Berlin. I build web, mobile, backend, payment, authentication, and travel products used at scale.",
-      },
-    ],
-    [
-      { text: "I also maintain " },
-      { text: "open-source tools", href: "/projects" },
-      { text: ", create " },
-      { text: "AI-assisted engineering workflows", href: "/ai" },
-      {
-        text: ", and enjoy turning complicated systems into practical, reliable software.",
-      },
-    ],
-    [
-      { text: "Outside engineering, I'm a part-time " },
-      { text: "traveler and language learner", href: "#hobbies" },
-      {
-        text: ". Exploring new places and languages helps me understand people and see the world from different perspectives.",
-      },
-    ],
-    [
-      { text: "I love reading " },
-      { text: "philosophy and psychology", href: "/reading" },
-      {
-        text: " to explore the meaning of life and the universe, and to reflect on why I build things. I also read about human nature and how societies work because I find people endlessly interesting.",
-      },
-    ],
+    {
+      parts: [
+        { text: "I'm Nahiyan, a " },
+        { text: "Senior Fullstack Software Engineer", href: "/work" },
+        {
+          text: " based in Berlin. 👨‍💻 I build web, mobile, backend, payment, authentication, and travel products used at scale.",
+        },
+      ],
+    },
+    {
+      parts: [
+        { text: "I also maintain " },
+        { text: "open-source tools", href: "/projects" },
+        { text: " 🛠️, create " },
+        { text: "AI-assisted engineering workflows", href: "/ai" },
+        {
+          text: " 🤖, and enjoy turning complicated systems into practical, reliable software.",
+        },
+      ],
+    },
+    {
+      parts: [
+        { text: "Outside engineering, I enjoy traveling 🌍, learning languages 🗣️, and reading " },
+        { text: "philosophy and psychology", href: "/reading" },
+        {
+          text: " 🧠 to better understand people, society, and the world.",
+        },
+      ],
+    },
   ],
   image: {
     src: "/images/nahiyan-cartoon-profile.webp",
     alt: "Cartoon portrait of Nahiyan K at a black-sand beach",
   },
   profilesTitle: "Find me online",
-  hobbiesTitle: "Things I enjoy",
-  hobbies: [
-    {
-      name: "Traveling",
-      description: "Discovering places, cultures, and different ways of living.",
-    },
-    {
-      name: "Language learning",
-      description: "Learning how language changes the way people connect and think.",
-    },
-    {
-      name: "Philosophy and psychology",
-      description: "Exploring meaning, behavior, consciousness, and human nature.",
-      href: "/reading",
-    },
-    {
-      name: "Society",
-      description: "Understanding how communities, institutions, and people shape one another.",
-    },
-  ],
   profiles: [
     {
       name: "GitHub",
+      emoji: "💻",
       description: "My personal projects and open-source contributions.",
       url: "https://github.com/ayonious",
     },
     {
       name: "LinkedIn",
+      emoji: "💼",
       description: "My professional experience and career updates.",
       url: "https://www.linkedin.com/in/nahiyan-k-0782743a",
     },
     {
       name: "Goodreads",
+      emoji: "📚",
       description: "Books I have read and want to read.",
       url: "https://www.goodreads.com/user/show/95339067-nahiyan-k",
     },
     {
       name: "Console Table Printer",
+      emoji: "🛠️",
       description: "The open-source organization I contribute to and maintain.",
       url: "https://github.com/console-table-printer",
     },
@@ -172,7 +155,7 @@ export const pageContent = {
     goodreadsLabel: "See all my books on Goodreads →",
     goodreadsUrl: "https://www.goodreads.com/user/show/95339067-nahiyan-k",
     programmingTitle: "Programming-related books",
-    leadershipTitle: "Leadership-related books",
+    otherTitle: "Other books",
   },
   certifications: {
     title: "Certifications",
@@ -218,13 +201,20 @@ export const aboutSiteContent = {
     {
       name: "Tania Rascia's website",
       role: "Layout inspiration",
+      emoji: "🎨",
       url: "https://www.taniarascia.com/",
     },
     {
       name: "Icons For Free",
       role: "Interface icons",
+      emoji: "✨",
       url: "https://iconsforfree.com/",
     },
-    { name: "Vercel", role: "Deployment", url: "https://vercel.com/" },
+    {
+      name: "Vercel",
+      role: "Deployment",
+      emoji: "🚀",
+      url: "https://vercel.com/",
+    },
   ],
 };

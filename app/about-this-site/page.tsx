@@ -13,28 +13,36 @@ export default function AboutThisSitePage() {
 
       <section className="mt-12">
         <h2 className="text-2xl font-bold">{aboutSiteContent.majorTitle}</h2>
-        <div className="mt-6 grid gap-4 sm:grid-cols-2">
-          {majorDependencies.map((dependency) => (
-            <article
+        <ol className="mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-slate-700 dark:bg-slate-900">
+          {majorDependencies.map((dependency, index) => (
+            <li
               key={dependency.name}
-              className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-slate-900"
+              className="grid gap-4 border-b border-slate-200 p-5 last:border-b-0 sm:grid-cols-[3rem_minmax(0,1fr)] sm:items-start dark:border-slate-700"
             >
-              <h3 className="text-xl font-bold">
-                <a
-                  href={dependency.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="no-underline hover:underline"
-                >
-                  {dependency.name} ↗
-                </a>
-              </h3>
-              <p className="mt-3 text-slate-600 dark:text-slate-300">
-                {dependency.description}
-              </p>
-            </article>
+              <span
+                aria-hidden="true"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--accent-soft)] font-mono text-sm font-bold text-[var(--accent)]"
+              >
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <div>
+                <h3 className="text-xl font-bold">
+                  <a
+                    href={dependency.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="no-underline hover:underline"
+                  >
+                    {dependency.name} ↗
+                  </a>
+                </h3>
+                <p className="mt-2 text-slate-600 dark:text-slate-300">
+                  {dependency.description}
+                </p>
+              </div>
+            </li>
           ))}
-        </div>
+        </ol>
       </section>
 
       <section className="mt-14">
@@ -76,9 +84,12 @@ export default function AboutThisSitePage() {
 
       <section className="mt-14 rounded-2xl bg-[var(--accent-soft)] p-6">
         <h2 className="text-2xl font-bold">{aboutSiteContent.creditsTitle}</h2>
-        <ul className="mt-4 flex flex-wrap gap-3">
+        <ul className="mt-4 space-y-3">
           {aboutSiteContent.credits.map((credit) => (
             <li key={credit.url} className="text-slate-700 dark:text-slate-200">
+              <span aria-hidden="true" className="mr-2">
+                {credit.emoji}
+              </span>
               {credit.role}:{" "}
               <a href={credit.url} target="_blank" rel="noreferrer">
                 {credit.name}
