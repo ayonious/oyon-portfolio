@@ -166,7 +166,9 @@ export const pageContent = {
   blog: {
     title: "Blog",
     introduction:
-      "Notes about software engineering, projects, and things I am learning will appear here.",
+      "Read my notes about software engineering, projects, and things I am learning.",
+    linkLabel: "Visit my blog ↗",
+    url: "https://that-it-guy.netlify.app",
   },
   contact: {
     title: "Contact",
