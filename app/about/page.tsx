@@ -40,7 +40,12 @@ export default function AboutPage() {
           {aboutContent.hobbies.map((hobby) => {
             const content = (
               <>
-                <h3 className="text-lg font-bold">{hobby.name}</h3>
+                <h3 className="text-lg font-bold">
+                  <span aria-hidden="true" className="mr-2">
+                    {hobby.emoji}
+                  </span>
+                  {hobby.name}
+                </h3>
                 <p className="mt-2 text-slate-600 dark:text-slate-300">
                   {hobby.description}
                 </p>
@@ -78,7 +83,12 @@ export default function AboutPage() {
               rel="noreferrer"
               className="rounded-2xl border border-slate-200 bg-white p-5 no-underline shadow-sm transition-colors hover:bg-[var(--accent-soft)] dark:border-slate-700 dark:bg-slate-900 dark:hover:bg-[var(--accent-soft)]"
             >
-              <h3 className="text-xl font-bold">{profile.name} →</h3>
+              <h3 className="text-xl font-bold">
+                <span aria-hidden="true" className="mr-2">
+                  {profile.emoji}
+                </span>
+                {profile.name} →
+              </h3>
               <p className="mt-2 text-slate-600 dark:text-slate-300">
                 {profile.description}
               </p>

@@ -95,40 +95,48 @@ export const aboutContent = {
   hobbies: [
     {
       name: "Traveling",
+      emoji: "✈️",
       description: "Discovering places, cultures, and different ways of living.",
     },
     {
       name: "Language learning",
+      emoji: "🗣️",
       description: "Learning how language changes the way people connect and think.",
     },
     {
       name: "Philosophy and psychology",
+      emoji: "🧠",
       description: "Exploring meaning, behavior, consciousness, and human nature.",
       href: "/reading",
     },
     {
       name: "Society",
+      emoji: "🌍",
       description: "Understanding how communities, institutions, and people shape one another.",
     },
   ],
   profiles: [
     {
       name: "GitHub",
+      emoji: "💻",
       description: "My personal projects and open-source contributions.",
       url: "https://github.com/ayonious",
     },
     {
       name: "LinkedIn",
+      emoji: "💼",
       description: "My professional experience and career updates.",
       url: "https://www.linkedin.com/in/nahiyan-k-0782743a",
     },
     {
       name: "Goodreads",
+      emoji: "📚",
       description: "Books I have read and want to read.",
       url: "https://www.goodreads.com/user/show/95339067-nahiyan-k",
     },
     {
       name: "Console Table Printer",
+      emoji: "🛠️",
       description: "The open-source organization I contribute to and maintain.",
       url: "https://github.com/console-table-printer",
     },
