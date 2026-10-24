@@ -1,18 +1,18 @@
 import { aiCapabilities, aiTools, aiWork } from "../../config/ai";
+import { pageContent } from "../../config/siteContent";
 
 export default function AiPage() {
   return (
     <div className="max-w-4xl py-8 sm:py-16">
       <header>
-        <h1 className="text-4xl font-bold tracking-tight">AI</h1>
+        <h1 className="text-4xl font-bold tracking-tight">{pageContent.ai.title}</h1>
         <p className="mt-4 max-w-3xl text-lg text-slate-600 dark:text-slate-300">
-          I use AI as an engineering tool and build LLM-powered product
-          experiences, automations, reusable skills, and tool integrations.
+          {pageContent.ai.introduction}
         </p>
       </header>
 
       <section className="mt-12">
-        <h2 className="text-2xl font-bold">Production work</h2>
+        <h2 className="text-2xl font-bold">{pageContent.ai.workTitle}</h2>
         <div className="mt-6 space-y-4">
           {aiWork.map((project) => (
             <article
@@ -32,7 +32,7 @@ export default function AiPage() {
       </section>
 
       <section className="mt-14">
-        <h2 className="text-2xl font-bold">Tools I use</h2>
+        <h2 className="text-2xl font-bold">{pageContent.ai.toolsTitle}</h2>
         <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-slate-700 dark:bg-slate-900">
           {aiTools.map((tool) => (
             <div
@@ -49,7 +49,7 @@ export default function AiPage() {
       </section>
 
       <section className="mt-14">
-        <h2 className="text-2xl font-bold">AI capabilities</h2>
+        <h2 className="text-2xl font-bold">{pageContent.ai.capabilitiesTitle}</h2>
         <ul className="mt-6 flex flex-wrap gap-2">
           {aiCapabilities.map((capability) => (
             <li

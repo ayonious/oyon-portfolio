@@ -1,13 +1,10 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import ProfileSidebar from "../components/ProfileSidebar";
+import { siteMetadata } from "../config/siteContent";
 import "./globals.css";
 
-export const metadata: Metadata = {
-  title: "Nahiyan Kamal — Software Engineer",
-  description:
-    "Personal portfolio of Nahiyan Kamal, a Senior Fullstack Software Engineer based in Berlin.",
-};
+export const metadata: Metadata = siteMetadata;
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (

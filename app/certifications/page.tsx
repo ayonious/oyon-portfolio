@@ -1,12 +1,15 @@
 import { certifications } from "../../config/certifications";
+import { pageContent } from "../../config/siteContent";
 
 export default function CertificationsPage() {
   return (
     <div className="max-w-4xl py-8 sm:py-16">
       <header>
-        <h1 className="text-4xl font-bold tracking-tight">Certifications</h1>
+        <h1 className="text-4xl font-bold tracking-tight">
+          {pageContent.certifications.title}
+        </h1>
         <p className="mt-4 text-lg text-slate-600 dark:text-slate-300">
-          Language and software development credentials I have earned.
+          {pageContent.certifications.introduction}
         </p>
       </header>
 
@@ -47,11 +50,11 @@ export default function CertificationsPage() {
                   rel="noreferrer"
                   className="inline-flex rounded-lg border border-[var(--accent)] px-3 py-1.5 text-sm font-semibold no-underline hover:bg-[var(--accent-soft)]"
                 >
-                  Show credential ↗
+                  {pageContent.certifications.credentialLabel}
                 </a>
               ) : (
                 <span className="inline-flex rounded-full bg-[var(--accent-soft)] px-3 py-1 text-sm font-semibold text-[var(--accent)]">
-                  Completed
+                  {pageContent.certifications.completedLabel}
                 </span>
               )}
             </div>

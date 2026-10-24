@@ -5,6 +5,10 @@ import { usePathname } from "next/navigation";
 import ColorPalette from "./ColorPalette";
 import ThemeToggle from "./ThemeToggle";
 import {
+  sidebarContent,
+  type NavigationIcon,
+} from "../config/siteContent";
+import {
   BooksIcon,
   BriefcaseIcon,
   DiplomaIcon,
@@ -17,32 +21,17 @@ import {
   WrenchIcon,
 } from "./icons/SidebarIcons";
 
-const navigationItems = [
-  { href: "/work", label: "Work", Icon: BriefcaseIcon, external: false },
-  { href: "/projects", label: "Open source", Icon: WrenchIcon, external: false },
-  { href: "/skills", label: "Skills", Icon: LightningIcon, external: false },
-  { href: "/ai", label: "AI", Icon: RobotIcon, external: false },
-  {
-    href: "/reading",
-    label: "Books",
-    Icon: BooksIcon,
-    external: false,
-  },
-  {
-    href: "/certifications",
-    label: "Certifications",
-    Icon: DiplomaIcon,
-    external: false,
-  },
-  { href: "/about", label: "About me", Icon: TheaterMaskIcon, external: false },
-  {
-    href: "/about-this-site",
-    label: "About this site",
-    Icon: InfoIcon,
-    external: false,
-  },
-  { href: "/blog", label: "Blog", Icon: MegaphoneIcon, external: false },
-];
+const navigationIcons: Record<NavigationIcon, typeof BriefcaseIcon> = {
+  books: BooksIcon,
+  briefcase: BriefcaseIcon,
+  diploma: DiplomaIcon,
+  info: InfoIcon,
+  lightning: LightningIcon,
+  megaphone: MegaphoneIcon,
+  robot: RobotIcon,
+  theater: TheaterMaskIcon,
+  wrench: WrenchIcon,
+};
 
 export default function ProfileSidebar() {
   const pathname = usePathname();
@@ -57,7 +46,7 @@ export default function ProfileSidebar() {
               href="/"
             >
               <SailboatIcon className="shrink-0" />
-              <span>Nahiyan K</span>
+              <span>{sidebarContent.name}</span>
             </Link>
             <div className="flex items-center">
               <ColorPalette />
@@ -65,8 +54,9 @@ export default function ProfileSidebar() {
             </div>
           </div>
           <p className="mt-5 max-w-xs border-b border-slate-200 pb-5 text-slate-600 dark:border-slate-700 dark:text-slate-300">
-            I&apos;m <Link href="/about">Nahiyan</Link>, a software engineer and
-            open-source creator. This is my digital introduction. 🙋🏻
+            {sidebarContent.introduction.textBefore}
+            <Link href="/about">{sidebarContent.introduction.linkText}</Link>
+            {sidebarContent.introduction.textAfter}
           </p>
         </div>
 
@@ -74,8 +64,9 @@ export default function ProfileSidebar() {
           aria-label="Main navigation"
           className="mt-8 flex flex-wrap gap-2 lg:flex-col"
         >
-          {navigationItems.map(({ href, label, Icon, external }) => {
-            const isActive = !external && pathname === href;
+          {sidebarContent.navigation.map(({ href, label, icon }) => {
+            const Icon = navigationIcons[icon];
+            const isActive = pathname === href;
             const content = (
               <>
                 <Icon className="shrink-0 text-[var(--accent)]" />
@@ -88,17 +79,7 @@ export default function ProfileSidebar() {
                 : "border-transparent text-slate-700 hover:bg-[var(--accent-soft)] hover:text-slate-950 dark:text-slate-200 dark:hover:text-white"
             }`;
 
-            return external ? (
-              <a
-                key={href}
-                href={href}
-                target="_blank"
-                rel="noreferrer"
-                className={className}
-              >
-                {content}
-              </a>
-            ) : (
+            return (
               <Link
                 key={href}
                 href={href}
@@ -112,10 +93,11 @@ export default function ProfileSidebar() {
         </nav>
 
         <div className="mt-8 flex gap-5 text-sm font-medium lg:mt-auto">
-          <a href="https://github.com/ayonious">GitHub</a>
-          <a href="https://www.linkedin.com/in/nahiyan-k-0782743a">
-            LinkedIn
-          </a>
+          {sidebarContent.socialLinks.map((link) => (
+            <a key={link.url} href={link.url}>
+              {link.label}
+            </a>
+          ))}
         </div>
       </div>
     </aside>

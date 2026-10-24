@@ -3,6 +3,7 @@ import {
   peopleAndPsychologyBooks,
   type Book,
 } from "../../config/books";
+import { pageContent } from "../../config/siteContent";
 
 function BookList({ books }: { books: Book[] }) {
   return (
@@ -40,28 +41,27 @@ export default function ReadingPage() {
   return (
     <div className="max-w-4xl py-8 sm:py-16">
       <header>
-        <h1 className="text-4xl font-bold tracking-tight">Books</h1>
+        <h1 className="text-4xl font-bold tracking-tight">{pageContent.books.title}</h1>
         <p className="mt-4 text-lg text-slate-600 dark:text-slate-300">
-          Books that shape how I think about software, leadership, people, and
-          the world around me.
+          {pageContent.books.introduction}
         </p>
         <a
-          href="https://www.goodreads.com/user/show/95339067-nahiyan-k"
+          href={pageContent.books.goodreadsUrl}
           target="_blank"
           rel="noreferrer"
           className="mt-5 inline-flex rounded-xl border border-[var(--accent)] px-4 py-2 font-semibold text-[var(--accent)] no-underline transition-colors hover:bg-[var(--accent-soft)]"
         >
-          See all my books on Goodreads →
+          {pageContent.books.goodreadsLabel}
         </a>
       </header>
 
       <section className="mt-14">
-        <h2 className="text-3xl font-bold">Programming-related books</h2>
+        <h2 className="text-3xl font-bold">{pageContent.books.programmingTitle}</h2>
         <BookList books={allTimeFavoriteBooks} />
       </section>
 
       <section className="mt-14">
-        <h2 className="text-3xl font-bold">Leadership-related books</h2>
+        <h2 className="text-3xl font-bold">{pageContent.books.leadershipTitle}</h2>
         <BookList books={peopleAndPsychologyBooks} />
       </section>
     </div>

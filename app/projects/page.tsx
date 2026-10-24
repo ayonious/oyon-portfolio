@@ -2,6 +2,7 @@ import {
   openSourceProjectsConfig,
   type OpenSourceProject,
 } from "../../config/projects";
+import { pageContent } from "../../config/siteContent";
 
 function ProjectCard({ project }: { project: OpenSourceProject }) {
   return (
@@ -69,7 +70,7 @@ function ProjectGroup({
           {label}
         </h2>
         <a href={url} target="_blank" rel="noreferrer" className="font-medium">
-          View on GitHub →
+          {pageContent.projects.viewOnGitHub}
         </a>
       </div>
       <p className="mt-2 text-slate-600 dark:text-slate-300">
@@ -91,11 +92,10 @@ export default function ProjectsPage() {
     <div className="max-w-4xl py-8 sm:py-16">
       <header>
         <h1 className="text-4xl font-bold tracking-tight text-slate-950 dark:text-slate-50">
-          Open-source projects
+          {pageContent.projects.title}
         </h1>
         <p className="mt-4 text-lg text-slate-600 dark:text-slate-300">
-          Projects I maintain personally and with the Console Table Printer
-          organization.
+          {pageContent.projects.introduction}
         </p>
       </header>
 

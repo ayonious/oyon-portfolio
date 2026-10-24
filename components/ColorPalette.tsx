@@ -1,19 +1,10 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-
-const palette = [
-  { name: "Lavender", value: "lavender", color: "#8b5cf6" },
-  { name: "Pink", value: "pink", color: "#db2777" },
-  { name: "Amber", value: "amber", color: "#d97706" },
-  { name: "Green", value: "green", color: "#059669" },
-  { name: "Blue", value: "blue", color: "#2563eb" },
-] as const;
-
-type Accent = (typeof palette)[number]["value"];
+import { accentPalette, type Accent } from "../config/theme";
 
 function isAccent(value: string | null): value is Accent {
-  return palette.some((option) => option.value === value);
+  return accentPalette.some((option) => option.value === value);
 }
 
 function applyAccent(accent: Accent) {
@@ -45,7 +36,7 @@ export default function ColorPalette() {
     return () => document.removeEventListener("mousedown", closeOnOutsideClick);
   }, []);
 
-  const currentColor = palette.find((option) => option.value === accent)?.color;
+  const currentColor = accentPalette.find((option) => option.value === accent)?.color;
 
   return (
     <div ref={containerRef} className="relative">
@@ -66,7 +57,7 @@ export default function ColorPalette() {
 
       {open && (
         <div className="absolute right-0 top-12 z-20 flex flex-col gap-1 rounded-xl border border-slate-200 bg-white p-2 shadow-lg dark:border-slate-700 dark:bg-slate-900">
-          {palette.map((option) => (
+          {accentPalette.map((option) => (
             <button
               key={option.value}
               type="button"

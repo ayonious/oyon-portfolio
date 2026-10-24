@@ -1,10 +1,15 @@
+import { pageContent } from "../../config/siteContent";
+
 export default function ContactPage() {
   return (
     <>
-      <h1>Contact</h1>
-      <p>Have a question? Get in touch.</p>
+      <h1>{pageContent.contact.title}</h1>
+      <p>{pageContent.contact.introduction}</p>
       <p>
-        Email: <a href="mailto:hello@example.com">hello@example.com</a>
+        Email:{" "}
+        <a href={`mailto:${pageContent.contact.email}`}>
+          {pageContent.contact.email}
+        </a>
       </p>
     </>
   );

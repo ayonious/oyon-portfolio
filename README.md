@@ -42,6 +42,16 @@ yarn dev
 
 Open http://localhost:3000.
 
+## Content management
+
+Editable text, links, navigation labels, theme options, and structured profile
+data live in `config/`. Shared copy and metadata are in
+`config/siteContent.ts`; focused content such as books, projects, skills,
+certifications, and work history stays in its corresponding config file.
+
+Files in `app/` and `components/` focus on layout, rendering, and interaction.
+Repository guidance for future changes is documented in `AGENTS.md`.
+
 ## Test
 
 ```sh
@@ -66,8 +76,9 @@ Run `yarn cypress:open` while the development server is running to use the Cypre
 - `/blog` — Blog (`app/blog/page.tsx`)
 - `/contact` — Contact (`app/contact/page.tsx`)
 
-Shared navigation lives in `app/layout.tsx` and styles in `app/globals.css`.
-Replace the example email address in the Contact page with your own.
+Shared navigation content lives in `config/siteContent.ts`, its component lives
+in `components/ProfileSidebar.tsx`, and global styles live in `app/globals.css`.
+Replace the example Contact page email in `config/siteContent.ts` with your own.
 
 ## Production
 

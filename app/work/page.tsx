@@ -1,5 +1,6 @@
 import { workHistory } from "../../config/workHistory";
 import { workProjects } from "../../config/workProjects";
+import { pageContent } from "../../config/siteContent";
 
 export default function WorkHistoryPage() {
   return (
@@ -7,11 +8,10 @@ export default function WorkHistoryPage() {
       <section>
         <header>
           <h1 className="text-4xl font-bold tracking-tight text-slate-950 dark:text-slate-50">
-            Work history
+            {pageContent.work.title}
           </h1>
           <p className="mt-4 text-lg text-slate-600 dark:text-slate-300">
-            My career building web, mobile, payments, authentication, and travel
-            products.
+            {pageContent.work.introduction}
           </p>
         </header>
 
@@ -63,11 +63,10 @@ export default function WorkHistoryPage() {
 
       <section className="mt-16">
         <h2 className="text-3xl font-bold text-slate-950 dark:text-slate-50">
-          Selected work projects
+          {pageContent.work.projectsTitle}
         </h2>
         <p className="mt-3 text-slate-600 dark:text-slate-300">
-          Each project follows the Situation, Task, Action, Result format and
-          includes every service-scale figure available in my career records.
+          {pageContent.work.projectsIntroduction}
         </p>
 
         <div className="mt-8 space-y-6">
@@ -93,14 +92,14 @@ export default function WorkHistoryPage() {
 
               <dl className="mt-6 grid gap-4">
                 {[
-                  ["Situation", project.situation],
-                  ["Task", project.task],
-                  ["Action", project.action],
-                  ["Result", project.result],
-                ].map(([label, value]) => (
-                  <div key={label}>
+                  project.situation,
+                  project.task,
+                  project.action,
+                  project.result,
+                ].map((value, index) => (
+                  <div key={pageContent.work.starLabels[index]}>
                     <dt className="font-bold text-slate-900 dark:text-slate-100">
-                      {label}
+                      {pageContent.work.starLabels[index]}
                     </dt>
                     <dd className="mt-1 text-slate-600 dark:text-slate-300">
                       {value}
@@ -111,7 +110,7 @@ export default function WorkHistoryPage() {
 
               <div className="mt-6 rounded-xl bg-slate-100 p-4 dark:bg-slate-800">
                 <h4 className="font-bold text-slate-900 dark:text-slate-100">
-                  Documented service scale
+                  {pageContent.work.scaleTitle}
                 </h4>
                 <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-slate-600 dark:text-slate-300">
                   {project.scale.map((item) => (
