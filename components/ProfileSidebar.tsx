@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import ColorPalette from "./ColorPalette";
 import ThemeToggle from "./ThemeToggle";
+import BrandIcon from "./BrandIcon";
 import {
   sidebarContent,
   type NavigationIcon,
@@ -92,10 +93,24 @@ export default function ProfileSidebar() {
           })}
         </nav>
 
-        <div className="mt-8 flex gap-5 text-sm font-medium lg:mt-auto">
+        <div className="mt-8 flex gap-2 lg:mt-auto">
           {sidebarContent.socialLinks.map((link) => (
-            <a key={link.url} href={link.url}>
-              {link.label}
+            <a
+              key={link.url}
+              href={link.url}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`Open ${link.label} profile`}
+              title={`Open ${link.label} profile`}
+              className="group relative flex h-10 w-10 items-center justify-center rounded-xl no-underline transition-colors hover:bg-[var(--accent-soft)]"
+            >
+              <BrandIcon name={link.label} className="h-5 w-5" />
+              <span
+                role="tooltip"
+                className="pointer-events-none absolute bottom-12 left-1/2 z-30 w-max -translate-x-1/2 rounded-lg bg-slate-950 px-3 py-1.5 text-xs font-medium text-white opacity-0 shadow-lg transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100 dark:bg-slate-100 dark:text-slate-950"
+              >
+                {link.label}
+              </span>
             </a>
           ))}
         </div>
