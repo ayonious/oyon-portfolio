@@ -1,40 +1,58 @@
-export const packageGroups = [
+export const majorDependencies = [
   {
-    title: "Application",
-    packages: [
-      { name: "Next.js", purpose: "Application framework", url: "https://nextjs.org/" },
-      { name: "React", purpose: "Component-based user interface", url: "https://react.dev/" },
-      { name: "React DOM", purpose: "React rendering for the web", url: "https://react.dev/" },
-    ],
+    name: "Next.js",
+    url: "https://nextjs.org/",
+    description:
+      "The application framework. It provides the App Router, page structure, optimized images, metadata, static generation, and production build used throughout the portfolio.",
   },
   {
-    title: "Styling and builds",
-    packages: [
-      { name: "Tailwind CSS", purpose: "Responsive styling", url: "https://tailwindcss.com/" },
-      { name: "Tailwind CSS PostCSS", purpose: "Tailwind build integration", url: "https://tailwindcss.com/docs/installation/using-postcss" },
-      { name: "PostCSS", purpose: "CSS transformation", url: "https://postcss.org/" },
-      { name: "TypeScript", purpose: "Static type checking", url: "https://www.typescriptlang.org/" },
-      { name: "Yarn", purpose: "Package management", url: "https://classic.yarnpkg.com/" },
-    ],
+    name: "React",
+    url: "https://react.dev/",
+    description:
+      "The component system behind the interface. The sidebar, theme controls, project cards, reading lists, and content sections are built as reusable React components.",
   },
   {
-    title: "Testing",
-    packages: [
-      { name: "Jest", purpose: "Unit and component tests", url: "https://jestjs.io/" },
-      { name: "jest-environment-jsdom", purpose: "Browser-like Jest environment", url: "https://www.npmjs.com/package/jest-environment-jsdom" },
-      { name: "Testing Library DOM", purpose: "DOM-focused test helpers", url: "https://testing-library.com/docs/dom-testing-library/intro/" },
-      { name: "Testing Library React", purpose: "React component test helpers", url: "https://testing-library.com/docs/react-testing-library/intro/" },
-      { name: "Testing Library jest-dom", purpose: "Readable DOM assertions", url: "https://github.com/testing-library/jest-dom" },
-      { name: "Cypress", purpose: "End-to-end browser testing", url: "https://www.cypress.io/" },
-    ],
+    name: "TypeScript",
+    url: "https://www.typescriptlang.org/",
+    description:
+      "Adds static types to components and configuration data, helping keep projects, books, work history, certifications, and navigation consistent as the site grows.",
   },
   {
-    title: "Type definitions",
-    packages: [
-      { name: "@types/jest", purpose: "Jest types", url: "https://www.npmjs.com/package/@types/jest" },
-      { name: "@types/node", purpose: "Node.js types", url: "https://www.npmjs.com/package/@types/node" },
-      { name: "@types/react", purpose: "React types", url: "https://www.npmjs.com/package/@types/react" },
-      { name: "@types/react-dom", purpose: "React DOM types", url: "https://www.npmjs.com/package/@types/react-dom" },
-    ],
+    name: "Tailwind CSS",
+    url: "https://tailwindcss.com/",
+    description:
+      "Handles the responsive layout, spacing, typography, light and dark themes, and palette-aware styling without adding a runtime CSS-in-JS dependency.",
   },
+  {
+    name: "Jest and Testing Library",
+    url: "https://testing-library.com/",
+    description:
+      "Provide fast component and layout tests. They verify important metadata, shared navigation, links, and page structure from a user-facing perspective.",
+  },
+  {
+    name: "Cypress",
+    url: "https://www.cypress.io/",
+    description:
+      "Provides browser-based end-to-end testing for complete navigation and interaction flows when those tests are enabled for the project.",
+  },
+];
+
+export const allPackages = [
+  "next",
+  "react",
+  "react-dom",
+  "@tailwindcss/postcss",
+  "@testing-library/dom",
+  "@testing-library/jest-dom",
+  "@testing-library/react",
+  "@types/jest",
+  "@types/node",
+  "@types/react",
+  "@types/react-dom",
+  "cypress",
+  "jest",
+  "jest-environment-jsdom",
+  "postcss",
+  "tailwindcss",
+  "typescript",
 ];

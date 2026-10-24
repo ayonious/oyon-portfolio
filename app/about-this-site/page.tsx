@@ -1,4 +1,4 @@
-import { packageGroups } from "../../config/siteCredits";
+import { allPackages, majorDependencies } from "../../config/siteCredits";
 
 export default function AboutThisSitePage() {
   return (
@@ -12,33 +12,48 @@ export default function AboutThisSitePage() {
         </p>
       </header>
 
-      <div className="mt-12 space-y-10">
-        {packageGroups.map((group) => (
-          <section key={group.title}>
-            <h2 className="text-2xl font-bold">{group.title}</h2>
-            <ul className="mt-5 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-slate-700 dark:bg-slate-900">
-              {group.packages.map((item) => (
-                <li
-                  key={item.name}
-                  className="border-b border-slate-200 p-4 last:border-b-0 sm:flex sm:items-baseline sm:justify-between sm:gap-6 dark:border-slate-700"
+      <section className="mt-12">
+        <h2 className="text-2xl font-bold">Major technologies</h2>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          {majorDependencies.map((dependency) => (
+            <article
+              key={dependency.name}
+              className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-slate-900"
+            >
+              <h3 className="text-xl font-bold">
+                <a
+                  href={dependency.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="no-underline hover:underline"
                 >
-                  <a
-                    href={item.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="font-bold no-underline hover:underline"
-                  >
-                    {item.name} ↗
-                  </a>
-                  <span className="mt-1 block text-sm text-slate-500 sm:mt-0 dark:text-slate-400">
-                    {item.purpose}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </section>
-        ))}
-      </div>
+                  {dependency.name} ↗
+                </a>
+              </h3>
+              <p className="mt-3 text-slate-600 dark:text-slate-300">
+                {dependency.description}
+              </p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="mt-14">
+        <h2 className="text-2xl font-bold">All packages</h2>
+        <p className="mt-3 text-slate-600 dark:text-slate-300">
+          Runtime and development dependencies currently listed in the project.
+        </p>
+        <ul className="mt-5 flex flex-wrap gap-2 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-slate-900">
+          {allPackages.map((packageName) => (
+            <li
+              key={packageName}
+              className="rounded-lg bg-slate-100 px-3 py-1.5 font-mono text-sm text-slate-700 dark:bg-slate-800 dark:text-slate-200"
+            >
+              {packageName}
+            </li>
+          ))}
+        </ul>
+      </section>
 
       <section className="mt-14 rounded-2xl bg-[var(--accent-soft)] p-6">
         <h2 className="text-2xl font-bold">Design and assets</h2>
