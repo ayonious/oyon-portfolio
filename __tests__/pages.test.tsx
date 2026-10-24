@@ -45,8 +45,10 @@ describe("site pages", () => {
     expect(screen.getByRole("heading", { name: "About this site" })).toBeTruthy();
     expect(screen.getByRole("heading", { name: "Major technologies" })).toBeTruthy();
     expect(
-      screen.getByRole("link", { name: "View and reuse this site on GitHub →" }),
-    ).toHaveAttribute("href", "https://github.com/ayonious/oyon-portfolio");
+      screen
+        .getByRole("link", { name: "View and reuse this site on GitHub →" })
+        .getAttribute("href"),
+    ).toBe("https://github.com/ayonious/oyon-portfolio");
   });
 
   it("shows AI work, tools, and capabilities", () => {
