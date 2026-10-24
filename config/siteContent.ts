@@ -125,9 +125,8 @@ export const pageContent = {
       "My career building web, mobile, payments, authentication, and travel products.",
     projectsTitle: "Selected work projects",
     projectsIntroduction:
-      "Each project follows the Situation, Task, Action, Result format and includes every service-scale figure available in my career records.",
+      "Each project is presented as a concise narrative and includes every service-scale figure available in my career records.",
     scaleTitle: "Documented service scale",
-    starLabels: ["Situation", "Task", "Action", "Result"],
   },
   projects: {
     title: "Open-source projects",

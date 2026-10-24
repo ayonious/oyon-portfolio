@@ -114,6 +114,6 @@ describe("site pages", () => {
     expect(screen.getByRole("heading", { name: "Work history" })).toBeTruthy();
     expect(screen.getByRole("heading", { name: "Selected work projects" })).toBeTruthy();
     expect(screen.getAllByText("Documented service scale")).toHaveLength(7);
-    expect(screen.getAllByText("Situation").length).toBeGreaterThan(0);
+    expect(screen.getByText(/Built a centralized backend service/)).toBeTruthy();
   });
 });
