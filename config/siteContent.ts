@@ -119,18 +119,6 @@ export const aboutContent = {
       description: "My professional experience and career updates.",
       url: "https://www.linkedin.com/in/nahiyan-k-0782743a",
     },
-    {
-      name: "Goodreads",
-      emoji: "📚",
-      description: "Books I have read and want to read.",
-      url: "https://www.goodreads.com/user/show/95339067-nahiyan-k",
-    },
-    {
-      name: "Console Table Printer",
-      emoji: "🛠️",
-      description: "The open-source organization I contribute to and maintain.",
-      url: "https://github.com/console-table-printer",
-    },
   ],
 };
 
