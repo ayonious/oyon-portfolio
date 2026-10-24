@@ -49,9 +49,9 @@ export default function ReadingPage() {
           href="https://www.goodreads.com/user/show/95339067-nahiyan-k"
           target="_blank"
           rel="noreferrer"
-          className="mt-5 inline-flex rounded-xl bg-[var(--accent)] px-4 py-2 font-semibold text-white no-underline"
+          className="mt-5 inline-flex rounded-xl border border-[var(--accent)] px-4 py-2 font-semibold text-[var(--accent)] no-underline transition-colors hover:bg-[var(--accent-soft)]"
         >
-          View my Goodreads profile →
+          See all my books on Goodreads →
         </a>
       </header>
 
