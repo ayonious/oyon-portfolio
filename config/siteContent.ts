@@ -106,6 +106,8 @@ export const aboutContent = {
     sendingLabel: "Sending…",
     successMessage: "Thanks — your message has been sent.",
     errorMessage: "Your message could not be sent. Please try again.",
+    verificationUnavailable:
+      "The contact form verification is not configured yet.",
   },
   profilesTitle: "Connect with me on other social platforms",
   profiles: [
@@ -211,9 +213,9 @@ export const aboutSiteContent = {
           "The server-side Function uses a private Resend API key to send the submitted name, email address, and message to the configured contact inbox. The visitor's address is used as the reply-to address.",
       },
       {
-        title: "Planned Cloudflare protection",
+        title: "Cloudflare Turnstile",
         description:
-          "Cloudflare Turnstile is planned as a future spam-protection layer. It is not enabled yet, keeping the current form simple while its validation and delivery flow are established.",
+          "The contact form uses Cloudflare Turnstile as a spam-protection layer. The browser receives a temporary token, and the Vercel Function verifies it with Cloudflare before sending any email.",
       },
     ],
   },

@@ -51,21 +51,28 @@ Open http://localhost:3000.
 
 ## Contact form setup
 
-The About me form uses a Next.js Route Handler for server-side validation and
-the Resend API to deliver messages to the configured recipient. The route at
-`/api/contact` is deployed automatically as an on-demand
-Vercel Function, so no separate backend or always-running server is required.
+The About me form uses Cloudflare Turnstile for bot verification, a Next.js
+Route Handler for server-side validation, and the Resend API to deliver messages
+to the configured recipient. The route at `/api/contact` is deployed
+automatically as an on-demand Vercel Function, so no separate backend or
+always-running server is required.
 
 Create an API key in the Resend dashboard under **API Keys**. A key with
 **Sending access** is sufficient. Copy `.env.example` to `.env.local` for local
 development and configure these values:
 
 ```env
+NEXT_PUBLIC_TURNSTILE_SITE_KEY=your_public_site_key
+TURNSTILE_SECRET_KEY=your_private_secret_key
 RESEND_API_KEY=re_your_api_key
 RESEND_FROM_EMAIL=onboarding@resend.dev
 CONTACT_EMAIL=your-address@gmail.com
 ```
 
+- `NEXT_PUBLIC_TURNSTILE_SITE_KEY` identifies the Turnstile widget in the
+  browser. It is intentionally public.
+- `TURNSTILE_SECRET_KEY` stays inside the Vercel Function and authenticates
+  server-side token verification with Cloudflare.
 - `RESEND_API_KEY` authenticates the server when it calls Resend. Keep it secret
   and never expose it through a `NEXT_PUBLIC_` variable or commit it to Git.
 - `RESEND_FROM_EMAIL` is the technical sender required for every email. Use
@@ -76,10 +83,17 @@ CONTACT_EMAIL=your-address@gmail.com
   Gmail address. The visitor's submitted email is used as the reply-to address,
   so replying in Gmail sends the response to the visitor.
 
+Create a Managed Turnstile widget in the Cloudflare dashboard and add the stable
+Vercel hostname as an allowed hostname. For local development and automated
+tests, `.env.example` contains Cloudflare's official always-pass test keys. Do
+not use those test keys in production.
+
 For deployment, open **Vercel → Project → Settings → Environment Variables**,
-add all three variables, and enable them for Production and Preview as needed.
+add all five variables, and enable them for Production and Preview as needed.
 Redeploy after saving them because new environment variables do not affect an
-existing deployment.
+existing deployment. The Function validates each temporary Turnstile token with
+Cloudflare before it calls Resend. Tokens are single-use and expire after five
+minutes.
 
 The Vercel Function starts when someone submits the form and stops after the
 request finishes. Warm requests are usually immediate; a cold start can add a
