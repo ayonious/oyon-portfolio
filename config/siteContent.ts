@@ -149,7 +149,7 @@ export const pageContent = {
     goodreadsLabel: "See all my books on Goodreads →",
     goodreadsUrl: "https://www.goodreads.com/user/show/95339067-nahiyan-k",
     programmingTitle: "Programming-related books",
-    leadershipTitle: "Leadership-related books",
+    leadershipTitle: "Leadership and soft-skills books",
     otherTitle: "Other books",
     philosophyTitle: "Philosophy",
     psychologyTitle: "Psychology",
