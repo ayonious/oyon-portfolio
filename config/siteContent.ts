@@ -153,7 +153,7 @@ export const pageContent = {
       "Books that shape how I think about software, leadership, people, and the world around me.",
     goodreadsLabel: "Let’s be friends on Goodreads →",
     goodreadsUrl: "https://www.goodreads.com/user/show/95339067-nahiyan-k",
-    programmingTitle: "Programming-related books",
+    programmingTitle: "Software Engineering and Computer Science related books",
     otherTitle: "Other books",
   },
   certifications: {

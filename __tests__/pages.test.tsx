@@ -109,7 +109,9 @@ describe("site pages", () => {
     render(<ReadingPage />);
 
     expect(
-      screen.getByRole("heading", { name: "Programming-related books" }),
+      screen.getByRole("heading", {
+        name: "Software Engineering and Computer Science related books",
+      }),
     ).toBeTruthy();
     expect(screen.getByRole("link", { name: "Clean Code" })).toBeTruthy();
     expect(screen.getByRole("link", { name: "Surrounded by Idiots" })).toBeTruthy();
