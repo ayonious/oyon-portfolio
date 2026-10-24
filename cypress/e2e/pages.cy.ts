@@ -40,7 +40,7 @@ describe("portfolio pages", () => {
       label: "About me",
       path: "/about",
       heading: "About me",
-      content: "Things I enjoy",
+      content: "Outside engineering",
     },
     {
       label: "About this site",

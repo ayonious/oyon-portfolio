@@ -72,17 +72,10 @@ export const aboutContent = {
       },
     ],
     [
-      { text: "Outside engineering, I'm a part-time " },
-      { text: "traveler and language learner", href: "#hobbies" },
-      {
-        text: ". Exploring new places and languages helps me understand people and see the world from different perspectives.",
-      },
-    ],
-    [
-      { text: "I love reading " },
+      { text: "Outside engineering, I enjoy traveling, learning languages, and reading " },
       { text: "philosophy and psychology", href: "/reading" },
       {
-        text: " to explore the meaning of life and the universe, and to reflect on why I build things. I also read about human nature and how societies work because I find people endlessly interesting.",
+        text: " to better understand people, society, and the world.",
       },
     ],
   ],
@@ -91,30 +84,6 @@ export const aboutContent = {
     alt: "Cartoon portrait of Nahiyan K at a black-sand beach",
   },
   profilesTitle: "Find me online",
-  hobbiesTitle: "Things I enjoy",
-  hobbies: [
-    {
-      name: "Traveling",
-      emoji: "✈️",
-      description: "Discovering places, cultures, and different ways of living.",
-    },
-    {
-      name: "Language learning",
-      emoji: "🗣️",
-      description: "Learning how language changes the way people connect and think.",
-    },
-    {
-      name: "Philosophy and psychology",
-      emoji: "🧠",
-      description: "Exploring meaning, behavior, consciousness, and human nature.",
-      href: "/reading",
-    },
-    {
-      name: "Society",
-      emoji: "🌍",
-      description: "Understanding how communities, institutions, and people shape one another.",
-    },
-  ],
   profiles: [
     {
       name: "GitHub",
