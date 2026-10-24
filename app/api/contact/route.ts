@@ -3,28 +3,6 @@ import { contactEmailContent } from "../../../config/contactEmail";
 
 export const runtime = "nodejs";
 
-const RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000;
-const RATE_LIMIT_MAX_REQUESTS = 5;
-const requestCounts = new Map<string, { count: number; resetAt: number }>();
-
-function getClientKey(request: Request) {
-  const forwardedFor = request.headers.get("x-forwarded-for");
-  return forwardedFor?.split(",")[0]?.trim() || "unknown";
-}
-
-function isRateLimited(key: string) {
-  const now = Date.now();
-  const current = requestCounts.get(key);
-
-  if (!current || current.resetAt <= now) {
-    requestCounts.set(key, { count: 1, resetAt: now + RATE_LIMIT_WINDOW_MS });
-    return false;
-  }
-
-  current.count += 1;
-  return current.count > RATE_LIMIT_MAX_REQUESTS;
-}
-
 function jsonError(message: string, status: number) {
   return Response.json({ message }, { status });
 }
@@ -62,12 +40,6 @@ function buildEmailBody(name: string, email: string, message: string) {
 }
 
 export async function POST(request: Request) {
-  const clientKey = getClientKey(request);
-
-  if (isRateLimited(clientKey)) {
-    return jsonError("Too many messages. Please try again later.", 429);
-  }
-
   let payload: Record<string, unknown>;
   try {
     payload = await request.json();

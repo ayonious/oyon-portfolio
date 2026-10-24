@@ -9,15 +9,8 @@ const originalEnvironment = {
   CONTACT_EMAIL: process.env.CONTACT_EMAIL,
 };
 
-function requestWith(
-  payload: Record<string, unknown>,
-  ipAddress?: string,
-): Request {
+function requestWith(payload: Record<string, unknown>): Request {
   return {
-    headers: {
-      get: (name: string) =>
-        name === "x-forwarded-for" ? (ipAddress ?? null) : null,
-    },
     json: async () => payload,
   } as unknown as Request;
 }
@@ -50,7 +43,7 @@ describe("contact API route", () => {
 
   it("rejects fields that do not match the shared schema", async () => {
     const response = await POST(
-      requestWith({ name: "", email: "not-an-email", message: "short" }, "validation"),
+      requestWith({ name: "", email: "not-an-email", message: "short" }),
     );
 
     expect(response.status).toBe(400);
@@ -67,10 +60,11 @@ describe("contact API route", () => {
     delete process.env[variable];
 
     const response = await POST(
-      requestWith(
-        { name: "Visitor", email: "visitor@example.com", message: "Hello from the form" },
-        `missing-${variable}`,
-      ),
+      requestWith({
+        name: "Visitor",
+        email: "visitor@example.com",
+        message: "Hello from the form",
+      }),
     );
 
     expect(response.status).toBe(503);
@@ -80,10 +74,11 @@ describe("contact API route", () => {
     jest.spyOn(global, "fetch").mockResolvedValue({ ok: false } as Response);
 
     const response = await POST(
-      requestWith(
-        { name: "Visitor", email: "visitor@example.com", message: "Hello from the form" },
-        "resend-error",
-      ),
+      requestWith({
+        name: "Visitor",
+        email: "visitor@example.com",
+        message: "Hello from the form",
+      }),
     );
 
     expect(response.status).toBe(502);
@@ -104,7 +99,6 @@ describe("contact API route", () => {
           email: "visitor@example.com",
           message: "Hello <script>&\nThis came from the portfolio.",
         },
-        "successful-delivery",
       ),
     );
 
@@ -125,21 +119,4 @@ describe("contact API route", () => {
     expect(body.html).toContain("Hello &lt;script&gt;&amp;<br />This came from the portfolio.");
   });
 
-  it("limits repeated requests and accepts them after the window resets", async () => {
-    jest.spyOn(global, "fetch").mockResolvedValue({ ok: true } as Response);
-    const now = jest.spyOn(Date, "now").mockReturnValue(1_000);
-    const request = () =>
-      requestWith(
-        { name: "Visitor", email: "visitor@example.com", message: "Hello from the form" },
-        "rate-limited-client, proxy",
-      );
-
-    for (let attempt = 0; attempt < 5; attempt += 1) {
-      expect((await POST(request())).status).toBe(200);
-    }
-
-    expect((await POST(request())).status).toBe(429);
-    now.mockReturnValue(15 * 60 * 1_000 + 1_001);
-    expect((await POST(request())).status).toBe(200);
-  });
 });
