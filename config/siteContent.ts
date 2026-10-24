@@ -39,9 +39,9 @@ export const sidebarContent = {
     { href: "/ai", label: "AI", icon: "robot" },
     { href: "/reading", label: "Books", icon: "books" },
     { href: "/certifications", label: "Certifications", icon: "diploma" },
+    { href: "/blog", label: "Blog", icon: "megaphone" },
     { href: "/about", label: "About me", icon: "theater" },
     { href: "/about-this-site", label: "About this site", icon: "paw" },
-    { href: "/blog", label: "Blog", icon: "megaphone" },
   ] satisfies Array<{ href: string; label: string; icon: NavigationIcon }>,
   socialLinks: [
     { label: "GitHub", url: "https://github.com/ayonious" },

@@ -37,9 +37,9 @@ describe("root layout", () => {
       ["AI", "/ai"],
       ["Books", "/reading"],
       ["Certifications", "/certifications"],
+      ["Blog", "/blog"],
       ["About me", "/about"],
       ["About this site", "/about-this-site"],
-      ["Blog", "/blog"],
     ]);
     expect(document.querySelector("main")?.textContent).toBe("Test page");
     expect(
