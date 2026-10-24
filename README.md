@@ -55,7 +55,8 @@ The About me form uses Cloudflare Turnstile for bot verification, a Next.js
 Route Handler for server-side validation, and the Resend API to deliver messages
 to the configured recipient. The route at `/api/contact` is deployed
 automatically as an on-demand Vercel Function, so no separate backend or
-always-running server is required.
+always-running server is required. A Vercel Firewall rate-limit rule protects
+the endpoint before excessive requests reach the Function.
 
 Create an API key in the Resend dashboard under **API Keys**. A key with
 **Sending access** is sufficient. Copy `.env.example` to `.env.local` for local
@@ -93,7 +94,8 @@ add all five variables, and enable them for Production and Preview as needed.
 Redeploy after saving them because new environment variables do not affect an
 existing deployment. The Function validates each temporary Turnstile token with
 Cloudflare before it calls Resend. Tokens are single-use and expire after five
-minutes.
+minutes. Rate limiting is configured in Vercel rather than in application code,
+so rejected requests are stopped before the Function executes.
 
 The Vercel Function starts when someone submits the form and stops after the
 request finishes. Warm requests are usually immediate; a cold start can add a
