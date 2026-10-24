@@ -32,7 +32,7 @@ export const openSourceProjectsConfig = {
     ] satisfies OpenSourceProject[],
   },
   gamified: {
-    label: "Gamified projects",
+    label: "Fun Projects and Games",
     url: "https://github.com/ayonious",
     projects: [
       {

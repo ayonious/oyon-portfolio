@@ -91,7 +91,7 @@ describe("site pages", () => {
     ).toBeTruthy();
     expect(screen.getByRole("link", { name: "oyon-portfolio" })).toBeTruthy();
     expect(
-      screen.getByRole("heading", { name: "Gamified projects" }),
+      screen.getByRole("heading", { name: "Fun Projects and Games" }),
     ).toBeTruthy();
     expect(
       screen
