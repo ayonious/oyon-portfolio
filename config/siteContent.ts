@@ -56,34 +56,31 @@ export const aboutContent = {
   title: "About me",
   paragraphs: [
     {
-      emoji: "👨‍💻",
       parts: [
         { text: "I'm Nahiyan, a " },
         { text: "Senior Fullstack Software Engineer", href: "/work" },
         {
-          text: " based in Berlin. I build web, mobile, backend, payment, authentication, and travel products used at scale.",
+          text: " based in Berlin. 👨‍💻 I build web, mobile, backend, payment, authentication, and travel products used at scale.",
         },
       ],
     },
     {
-      emoji: "🛠️",
       parts: [
         { text: "I also maintain " },
         { text: "open-source tools", href: "/projects" },
-        { text: ", create " },
+        { text: " 🛠️, create " },
         { text: "AI-assisted engineering workflows", href: "/ai" },
         {
-          text: ", and enjoy turning complicated systems into practical, reliable software.",
+          text: " 🤖, and enjoy turning complicated systems into practical, reliable software.",
         },
       ],
     },
     {
-      emoji: "🌍",
       parts: [
-        { text: "Outside engineering, I enjoy traveling, learning languages, and reading " },
+        { text: "Outside engineering, I enjoy traveling 🌍, learning languages 🗣️, and reading " },
         { text: "philosophy and psychology", href: "/reading" },
         {
-          text: " to better understand people, society, and the world.",
+          text: " 🧠 to better understand people, society, and the world.",
         },
       ],
     },
