@@ -3,6 +3,7 @@ export type Certification = {
   issuer: string;
   issued: string;
   description?: string;
+  result?: string;
   credentialId?: string;
   credentialUrl?: string;
 };
@@ -11,7 +12,8 @@ export const certifications: Certification[] = [
   {
     name: "telc Deutsch C1 Hochschule",
     issuer: "telc",
-    issued: "2026",
+    issued: "15 May 2026",
+    result: "Befriedigend",
     description: "German language proficiency at CEFR level C1.",
   },
   {

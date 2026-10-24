@@ -27,6 +27,11 @@ export default function CertificationsPage() {
                   <> · Credential ID {certification.credentialId}</>
                 )}
               </p>
+              {certification.result && (
+                <p className="mt-2 text-sm font-semibold text-slate-600 dark:text-slate-300">
+                  Result: {certification.result}
+                </p>
+              )}
               {certification.description && (
                 <p className="mt-3 text-slate-600 dark:text-slate-300">
                   {certification.description}
