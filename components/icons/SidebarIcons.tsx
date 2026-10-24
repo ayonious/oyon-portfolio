@@ -22,6 +22,15 @@ export function MegaphoneIcon(props: IconProps) {
   );
 }
 
+export function MailIcon(props: IconProps) {
+  return (
+    <svg {...sharedProps} height={16} strokeWidth={2} width={16} {...props}>
+      <rect x="3.5" y="5.5" width="17" height="13" rx="2" />
+      <path d="m4 7 8 6 8-6" />
+    </svg>
+  );
+}
+
 export function TheaterMaskIcon(props: IconProps) {
   return (
     <svg {...sharedProps} height={24} strokeWidth={1} width={24} {...props}>

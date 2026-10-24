@@ -53,7 +53,9 @@ export const sidebarContent = {
       label: "LinkedIn",
       url: "https://www.linkedin.com/in/nahiyan-k-0782743a",
     },
+    { label: "Mail", url: "/about#contact" },
   ],
+  footerCredit: "Made with ❤️ by NK",
 };
 
 export const aboutContent = {
