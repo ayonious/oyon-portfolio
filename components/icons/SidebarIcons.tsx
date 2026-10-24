@@ -109,11 +109,14 @@ export function RobotIcon(props: IconProps) {
   );
 }
 
-export function InfoIcon(props: IconProps) {
+export function PawIcon(props: IconProps) {
   return (
     <svg {...sharedProps} height={24} strokeWidth={1} width={24} {...props}>
-      <circle cx="12" cy="12" r="9" />
-      <path d="M12 11v6M12 7h.01" />
+      <path d="M6 17c0-3 3-7 6-7s6 4 6 7c0 6-4 1-6 1s-6 5-6-1Z" />
+      <circle cx="4" cy="10" r="2" />
+      <circle cx="9" cy="5" r="2" />
+      <circle cx="15" cy="5" r="2" />
+      <circle cx="20" cy="10" r="2" />
     </svg>
   );
 }

@@ -21,7 +21,7 @@ export type NavigationIcon =
   | "books"
   | "diploma"
   | "theater"
-  | "info"
+  | "paw"
   | "megaphone";
 
 export const sidebarContent = {
@@ -40,7 +40,7 @@ export const sidebarContent = {
     { href: "/reading", label: "Books", icon: "books" },
     { href: "/certifications", label: "Certifications", icon: "diploma" },
     { href: "/about", label: "About me", icon: "theater" },
-    { href: "/about-this-site", label: "About this site", icon: "info" },
+    { href: "/about-this-site", label: "About this site", icon: "paw" },
     { href: "/blog", label: "Blog", icon: "megaphone" },
   ] satisfies Array<{ href: string; label: string; icon: NavigationIcon }>,
   socialLinks: [
@@ -55,16 +55,62 @@ export const sidebarContent = {
 export const aboutContent = {
   title: "About me",
   paragraphs: [
-    "I'm Nahiyan, a Senior Fullstack Software Engineer based in Berlin. I build web, mobile, backend, payment, authentication, and travel products used at scale.",
-    "I also maintain open-source tools, create AI-assisted engineering workflows, and enjoy turning complicated systems into practical, reliable software.",
-    "Outside engineering, I'm a part-time traveler and language learner. Exploring new places and languages helps me understand people and see the world from different perspectives.",
-    "I love reading philosophy and psychology to explore the meaning of life and the universe, and to reflect on why I build things. I also read about human nature and how societies work because I find people endlessly interesting.",
+    [
+      { text: "I'm Nahiyan, a " },
+      { text: "Senior Fullstack Software Engineer", href: "/work" },
+      {
+        text: " based in Berlin. I build web, mobile, backend, payment, authentication, and travel products used at scale.",
+      },
+    ],
+    [
+      { text: "I also maintain " },
+      { text: "open-source tools", href: "/projects" },
+      { text: ", create " },
+      { text: "AI-assisted engineering workflows", href: "/ai" },
+      {
+        text: ", and enjoy turning complicated systems into practical, reliable software.",
+      },
+    ],
+    [
+      { text: "Outside engineering, I'm a part-time " },
+      { text: "traveler and language learner", href: "#hobbies" },
+      {
+        text: ". Exploring new places and languages helps me understand people and see the world from different perspectives.",
+      },
+    ],
+    [
+      { text: "I love reading " },
+      { text: "philosophy and psychology", href: "/reading" },
+      {
+        text: " to explore the meaning of life and the universe, and to reflect on why I build things. I also read about human nature and how societies work because I find people endlessly interesting.",
+      },
+    ],
   ],
   image: {
     src: "/images/nahiyan-cartoon-profile.webp",
     alt: "Cartoon portrait of Nahiyan K at a black-sand beach",
   },
   profilesTitle: "Find me online",
+  hobbiesTitle: "Things I enjoy",
+  hobbies: [
+    {
+      name: "Traveling",
+      description: "Discovering places, cultures, and different ways of living.",
+    },
+    {
+      name: "Language learning",
+      description: "Learning how language changes the way people connect and think.",
+    },
+    {
+      name: "Philosophy and psychology",
+      description: "Exploring meaning, behavior, consciousness, and human nature.",
+      href: "/reading",
+    },
+    {
+      name: "Society",
+      description: "Understanding how communities, institutions, and people shape one another.",
+    },
+  ],
   profiles: [
     {
       name: "GitHub",
