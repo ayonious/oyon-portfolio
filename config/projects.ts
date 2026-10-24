@@ -6,6 +6,7 @@ export type OpenSourceProject = {
   name: string;
   pinned?: boolean;
   stars: number;
+  technologies?: string[];
   url: string;
 };
 
@@ -25,7 +26,7 @@ export const openSourceProjectsConfig = {
       { name: "react-context-example", url: "https://github.com/ayonious/react-context-example", description: "An example of changing themes with React Context.", language: "TypeScript", stars: 3 },
       { name: "saltstack-best-practices-basics", url: "https://github.com/ayonious/saltstack-best-practices-basics", description: "Simple examples for learning SaltStack.", stars: 2 },
       { name: "that-it-guy-tech-blog", url: "https://github.com/ayonious/that-it-guy-tech-blog", description: "My personal technology blog.", language: "MDX", pinned: true, stars: 2 },
-      { name: "oyon-portfolio", url: "https://github.com/ayonious/oyon-portfolio", description: "My personal portfolio built with Next.js, TypeScript, and Tailwind CSS.", language: "TypeScript", pinned: true, stars: 0 },
+      { name: "oyon-portfolio", url: "https://github.com/ayonious/oyon-portfolio", description: "My personal portfolio built with Next.js, TypeScript, and Tailwind CSS.", language: "TypeScript", technologies: ["Next.js", "React", "Tailwind CSS", "Jest", "Cypress", "Vercel"], pinned: true, stars: 0 },
       { name: "git-network-trainline", url: "https://github.com/ayonious/git-network-trainline", description: "Show a city's train lines as a Git network.", language: "JavaScript", stars: 0 },
       { name: "gradle-tutorial", url: "https://github.com/ayonious/gradle-tutorial", description: "Examples for learning useful Gradle features.", language: "Java", stars: 1 },
       { name: "interview-cheatsheet", url: "https://github.com/ayonious/interview-cheatsheet", description: "A collection of common technical interview questions.", language: "TypeScript", stars: 1 },

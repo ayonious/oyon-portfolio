@@ -90,6 +90,7 @@ describe("site pages", () => {
       screen.getByRole("heading", { name: "Pinned personal repositories" }),
     ).toBeTruthy();
     expect(screen.getByRole("link", { name: "oyon-portfolio" })).toBeTruthy();
+    expect(screen.getByText("Next.js")).toBeTruthy();
     expect(
       screen.getByRole("heading", { name: "Gamified projects" }),
     ).toBeTruthy();
