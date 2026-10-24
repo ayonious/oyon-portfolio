@@ -33,12 +33,14 @@ function ProjectCard({ project }: { project: OpenSourceProject }) {
             {project.name}
           </a>
         </h3>
-        <span
-          className="shrink-0 font-semibold text-amber-600 dark:text-amber-300"
-          aria-label={`${project.stars} stars`}
-        >
-          ★ {project.stars}
-        </span>
+        {project.stars > 0 && (
+          <span
+            className="shrink-0 font-semibold text-amber-600 dark:text-amber-300"
+            aria-label={`${project.stars} stars`}
+          >
+            ★ {project.stars}
+          </span>
+        )}
       </div>
 
       <p className="mt-3 text-slate-600 dark:text-slate-300">
@@ -151,9 +153,11 @@ function ProjectGroup({
                     {project.demoLabel} ↗
                   </a>
                 )}
-                <span className="font-semibold text-amber-600 dark:text-amber-300">
-                  ★ {project.stars}
-                </span>
+                {project.stars > 0 && (
+                  <span className="font-semibold text-amber-600 dark:text-amber-300">
+                    ★ {project.stars}
+                  </span>
+                )}
               </div>
             </li>
           ))}
