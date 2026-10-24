@@ -9,6 +9,14 @@ export default function BlogPage() {
       <p className="mt-6 text-lg text-slate-600 dark:text-slate-300">
         {pageContent.blog.introduction}
       </p>
+      <a
+        href={pageContent.blog.url}
+        target="_blank"
+        rel="noreferrer"
+        className="mt-8 inline-flex rounded-xl bg-[var(--accent)] px-5 py-3 font-semibold text-white no-underline transition-opacity hover:opacity-85"
+      >
+        {pageContent.blog.linkLabel}
+      </a>
     </section>
   );
 }
