@@ -98,23 +98,24 @@ export default function WorkHistoryPage() {
                 ))}
               </ul>
 
-              <dl className="mt-6 grid gap-4">
-                {[
-                  project.situation,
-                  project.task,
-                  project.action,
-                  project.result,
-                ].map((value, index) => (
-                  <div key={pageContent.work.starLabels[index]}>
-                    <dt className="font-bold text-slate-900 dark:text-slate-100">
-                      {pageContent.work.starLabels[index]}
-                    </dt>
-                    <dd className="mt-1 text-slate-600 dark:text-slate-300">
-                      {value}
-                    </dd>
-                  </div>
-                ))}
-              </dl>
+              <p className="mt-6 leading-7 text-slate-600 dark:text-slate-300">
+                <strong className="text-slate-900 dark:text-slate-100">
+                  {pageContent.work.starLabels[0]}
+                </strong>
+                : {project.situation}{" "}
+                <strong className="text-slate-900 dark:text-slate-100">
+                  {pageContent.work.starLabels[1]}
+                </strong>
+                : {project.task}{" "}
+                <strong className="text-slate-900 dark:text-slate-100">
+                  {pageContent.work.starLabels[2]}
+                </strong>
+                : {project.action}{" "}
+                <strong className="text-slate-900 dark:text-slate-100">
+                  {pageContent.work.starLabels[3]}
+                </strong>
+                : {project.result}
+              </p>
 
               <div className="mt-6 rounded-xl bg-slate-100 p-4 dark:bg-slate-800">
                 <h4 className="font-bold text-slate-900 dark:text-slate-100">
