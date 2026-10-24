@@ -67,6 +67,53 @@ export const openSourceProjectsConfig = {
       },
     ] satisfies OpenSourceProject[],
   },
+  templates: {
+    label: "Templates",
+    view: "list" as const,
+    url: "https://github.com/ayonious?tab=repositories&q=template",
+    projects: [
+      {
+        name: "nextjs-template",
+        url: "https://github.com/ayonious/nextjs-template",
+        description:
+          "A Next.js starting point with a practical set of tools and project defaults.",
+        language: "TypeScript",
+        stars: 0,
+      },
+      {
+        name: "template-react-ts",
+        url: "https://github.com/ayonious/template-react-ts",
+        description:
+          "A React and TypeScript starter for projects that do not use Create React App.",
+        language: "TypeScript",
+        stars: 0,
+      },
+      {
+        name: "template-express-microservice-ts",
+        url: "https://github.com/ayonious/template-express-microservice-ts",
+        description:
+          "A minimal Express and TypeScript foundation for starting a microservice.",
+        language: "TypeScript",
+        stars: 0,
+      },
+      {
+        name: "nestjs-bootstrap",
+        url: "https://github.com/ayonious/nestjs-bootstrap",
+        description:
+          "A NestJS bootstrap project with common boilerplate configuration ready to extend.",
+        stars: 0,
+      },
+      {
+        name: "simple-html-template",
+        url: "https://github.com/ayonious/simple-html-template",
+        demoUrl: "https://ayonious.github.io/simple-html-template",
+        demoLabel: "View the example page",
+        description:
+          "A small HTML starter for quickly publishing a simple static webpage.",
+        stars: 0,
+      },
+    ] satisfies OpenSourceProject[],
+  },
   organization: {
     label: "Console Table Printer organization",
     limit: 4,
