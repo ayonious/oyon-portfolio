@@ -42,11 +42,6 @@ export async function POST(request: Request) {
     return jsonError("Invalid request.", 400);
   }
 
-  // Quietly accept bots that complete the honeypot so they do not learn which check failed.
-  if (typeof payload.website === "string" && payload.website.trim()) {
-    return Response.json({ message: "Message received." });
-  }
-
   const parsed = contactSchema.safeParse(payload);
   if (!parsed.success) {
     return jsonError("Please complete all fields.", 400);

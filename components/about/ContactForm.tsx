@@ -44,10 +44,6 @@ export default function ContactForm() {
           <textarea id="contact-message" rows={6} {...register("message")} className="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 outline-none transition-colors focus:border-[var(--accent)] dark:border-slate-700 dark:bg-slate-900" />
           {errors.message && <p className="mt-1 text-sm text-red-700 dark:text-red-300">{errors.message.message}</p>}
         </div>
-        <div aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
-          <label htmlFor="contact-website">Website</label>
-          <input id="contact-website" tabIndex={-1} autoComplete="off" {...register("website")} />
-        </div>
         <button type="submit" disabled={isSubmitting} className="rounded-xl bg-[var(--accent)] px-5 py-3 font-semibold !text-white transition-opacity hover:opacity-85 disabled:cursor-not-allowed disabled:opacity-50">
           {isSubmitting ? aboutContent.contactForm.sendingLabel : aboutContent.contactForm.submitLabel}
         </button>
