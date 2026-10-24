@@ -1,5 +1,3 @@
-import { headers } from "next/headers";
-
 export const runtime = "nodejs";
 
 const RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000;
@@ -50,47 +48,23 @@ export async function POST(request: Request) {
   const name = typeof payload.name === "string" ? payload.name.trim() : "";
   const email = typeof payload.email === "string" ? payload.email.trim() : "";
   const message = typeof payload.message === "string" ? payload.message.trim() : "";
-  const turnstileToken =
-    typeof payload.turnstileToken === "string" ? payload.turnstileToken : "";
-
   if (
     !name ||
     name.length > 100 ||
     !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ||
     email.length > 254 ||
     message.length < 10 ||
-    message.length > 5000 ||
-    !turnstileToken
+    message.length > 5000
   ) {
-    return jsonError("Please complete all fields and verification.", 400);
+    return jsonError("Please complete all fields.", 400);
   }
 
-  const turnstileSecret = process.env.TURNSTILE_SECRET_KEY;
   const resendApiKey = process.env.RESEND_API_KEY;
   const contactEmail = process.env.CONTACT_EMAIL;
   const fromEmail = process.env.RESEND_FROM_EMAIL;
 
-  if (!turnstileSecret || !resendApiKey || !contactEmail || !fromEmail) {
+  if (!resendApiKey || !contactEmail || !fromEmail) {
     return jsonError("Contact service is not configured.", 503);
-  }
-
-  const requestHeaders = await headers();
-  const turnstileResponse = await fetch(
-    "https://challenges.cloudflare.com/turnstile/v0/siteverify",
-    {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams({
-        secret: turnstileSecret,
-        response: turnstileToken,
-        remoteip: requestHeaders.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "",
-      }),
-    },
-  );
-
-  const turnstileResult = (await turnstileResponse.json()) as { success?: boolean };
-  if (!turnstileResponse.ok || !turnstileResult.success) {
-    return jsonError("Verification failed. Please try again.", 400);
   }
 
   const resendResponse = await fetch("https://api.resend.com/emails", {

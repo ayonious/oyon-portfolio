@@ -51,13 +51,11 @@ Open http://localhost:3000.
 
 ## Contact form setup
 
-The About me form uses Cloudflare Turnstile to verify visitors, a Next.js Route
-Handler for server-side validation, rate limiting, and honeypot protection, and
-the Resend API to deliver messages to the configured recipient. Copy
-`.env.example` to `.env.local` for local development, or add the same variables
-to the Vercel project settings. `NEXT_PUBLIC_TURNSTILE_SITE_KEY` is public; keep
-the Turnstile secret, Resend API key, sender address, and recipient address
-server-side.
+The About me form uses a Next.js Route Handler for server-side validation, rate
+limiting, and honeypot protection, and the Resend API to deliver messages to the
+configured recipient. Copy `.env.example` to `.env.local` for local development,
+or add the same variables to the Vercel project settings. Keep the Resend API
+key, sender address, and recipient address server-side.
 
 ## Content management
 

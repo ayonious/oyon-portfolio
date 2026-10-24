@@ -104,7 +104,6 @@ export const aboutContent = {
     sendingLabel: "Sending…",
     successMessage: "Thanks — your message has been sent.",
     errorMessage: "Your message could not be sent. Please try again.",
-    unavailableMessage: "The contact form is not configured yet.",
   },
   profilesTitle: "Find me online",
   profiles: [

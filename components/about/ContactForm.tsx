@@ -1,6 +1,5 @@
 "use client";
 
-import Script from "next/script";
 import { FormEvent, useState } from "react";
 import { aboutContent } from "../../config/siteContent";
 
@@ -8,7 +7,6 @@ type FormStatus = "idle" | "sending" | "success" | "error";
 
 export default function ContactForm() {
   const [status, setStatus] = useState<FormStatus>("idle");
-  const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -16,7 +14,6 @@ export default function ContactForm() {
 
     const form = event.currentTarget;
     const formData = new FormData(form);
-    const turnstileToken = String(formData.get("cf-turnstile-response") ?? "");
 
     try {
       const response = await fetch("/api/contact", {
@@ -27,7 +24,6 @@ export default function ContactForm() {
           email: formData.get("email"),
           message: formData.get("message"),
           website: formData.get("website"),
-          turnstileToken,
         }),
       });
 
@@ -41,10 +37,6 @@ export default function ContactForm() {
 
   return (
     <section className="mt-14 max-w-2xl">
-      <Script
-        src="https://challenges.cloudflare.com/turnstile/v0/api.js"
-        strategy="afterInteractive"
-      />
       <h2 className="text-2xl font-bold">{aboutContent.contactForm.title}</h2>
       <p className="mt-3 text-slate-600 dark:text-slate-300">
         {aboutContent.contactForm.introduction}
@@ -101,17 +93,9 @@ export default function ContactForm() {
           <input id="contact-website" name="website" tabIndex={-1} autoComplete="off" />
         </div>
 
-        {siteKey ? (
-          <div className="cf-turnstile" data-sitekey={siteKey} />
-        ) : (
-          <p className="text-sm text-amber-700 dark:text-amber-300">
-            {aboutContent.contactForm.unavailableMessage}
-          </p>
-        )}
-
         <button
           type="submit"
-          disabled={status === "sending" || !siteKey}
+          disabled={status === "sending"}
           className="rounded-xl bg-[var(--accent)] px-5 py-3 font-semibold !text-white transition-opacity hover:opacity-85 disabled:cursor-not-allowed disabled:opacity-50"
         >
           {status === "sending"
