@@ -5,6 +5,20 @@ import {
 import { pageContent } from "../../config/siteContent";
 import BrandIcon from "../../components/BrandIcon";
 
+function getProjectTechnologies(project: OpenSourceProject) {
+  const technologies = project.language
+    ? [project.language, ...(project.technologies ?? [])]
+    : project.technologies ?? [];
+  const seen = new Set<string>();
+
+  return technologies.filter((technology) => {
+    const normalized = technology.toLowerCase();
+    if (seen.has(normalized)) return false;
+    seen.add(normalized);
+    return true;
+  });
+}
+
 function ProjectCard({ project }: { project: OpenSourceProject }) {
   return (
     <article className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-colors dark:border-slate-700 dark:bg-slate-900">
@@ -19,21 +33,23 @@ function ProjectCard({ project }: { project: OpenSourceProject }) {
             {project.name}
           </a>
         </h3>
-        <span
-          className="shrink-0 font-semibold text-amber-600 dark:text-amber-300"
-          aria-label={`${project.stars} stars`}
-        >
-          ★ {project.stars}
-        </span>
+        {project.stars > 0 && (
+          <span
+            className="shrink-0 font-semibold text-amber-600 dark:text-amber-300"
+            aria-label={`${project.stars} stars`}
+          >
+            ★ {project.stars}
+          </span>
+        )}
       </div>
 
       <p className="mt-3 text-slate-600 dark:text-slate-300">
         {project.description}
       </p>
 
-      {project.technologies && (
+      {getProjectTechnologies(project).length > 0 && (
         <div className="mt-4 flex flex-wrap gap-2" aria-label="Technologies used">
-          {project.technologies.map((technology) => (
+          {getProjectTechnologies(project).map((technology) => (
             <span
               key={technology}
               className="inline-flex items-center gap-1.5 rounded-full bg-slate-100 px-2.5 py-1 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300"
@@ -56,26 +72,6 @@ function ProjectCard({ project }: { project: OpenSourceProject }) {
         </a>
       )}
 
-      {project.technologies && (
-        <div className="mt-4 flex flex-wrap gap-2" aria-label="Technologies used">
-          {project.technologies.map((technology) => (
-            <span
-              key={technology}
-              className="inline-flex items-center gap-1.5 rounded-full bg-slate-100 px-2.5 py-1 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300"
-            >
-              <BrandIcon name={technology} className="h-3.5 w-3.5" />
-              {technology}
-            </span>
-          ))}
-        </div>
-      )}
-
-      {project.language && (
-        <p className="mt-4 flex items-center gap-2 text-sm font-medium text-slate-500 dark:text-slate-400">
-          <BrandIcon name={project.language} className="h-4 w-4 shrink-0" />
-          {project.language}
-        </p>
-      )}
     </article>
   );
 }
@@ -86,6 +82,7 @@ function ProjectGroup({
   onlyPinned,
   projects,
   description,
+  showStats = true,
   view = "cards",
   url,
 }: {
@@ -94,6 +91,7 @@ function ProjectGroup({
   limit?: number;
   onlyPinned?: boolean;
   projects: OpenSourceProject[];
+  showStats?: boolean;
   view?: "cards" | "list";
   url: string;
 }) {
@@ -123,9 +121,11 @@ function ProjectGroup({
           {description}
         </p>
       )}
-      <p className="mt-2 text-slate-600 dark:text-slate-300">
-        {visibleProjects.length} projects · {totalStars} stars
-      </p>
+      {showStats && (
+        <p className="mt-2 text-slate-600 dark:text-slate-300">
+          {visibleProjects.length} projects · {totalStars} stars
+        </p>
+      )}
       {view === "list" ? (
         <ul className="mt-6 divide-y divide-slate-200 border-y border-slate-200 dark:divide-slate-700 dark:border-slate-700">
           {visibleProjects.map((project) => (
@@ -145,10 +145,18 @@ function ProjectGroup({
                 <p className="mt-1 text-sm text-slate-600 dark:text-slate-300">
                   {project.description}
                 </p>
-                {project.technologies && (
-                  <p className="mt-2 text-xs font-medium text-slate-500 dark:text-slate-400">
-                    Built with {project.technologies.join(" · ")}
-                  </p>
+                {getProjectTechnologies(project).length > 0 && (
+                  <div className="mt-3 flex flex-wrap gap-2" aria-label="Technologies used">
+                    {getProjectTechnologies(project).map((technology) => (
+                      <span
+                        key={technology}
+                        className="inline-flex items-center gap-1.5 rounded-full bg-slate-100 px-2.5 py-1 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300"
+                      >
+                        <BrandIcon name={technology} className="h-3.5 w-3.5" />
+                        {technology}
+                      </span>
+                    ))}
+                  </div>
                 )}
               </div>
               <div className="flex shrink-0 items-center gap-3 text-sm">
@@ -157,9 +165,11 @@ function ProjectGroup({
                     {project.demoLabel} ↗
                   </a>
                 )}
-                <span className="font-semibold text-amber-600 dark:text-amber-300">
-                  ★ {project.stars}
-                </span>
+                {project.stars > 0 && (
+                  <span className="font-semibold text-amber-600 dark:text-amber-300">
+                    ★ {project.stars}
+                  </span>
+                )}
               </div>
             </li>
           ))}
@@ -190,9 +200,9 @@ export default function ProjectsPage() {
       </header>
 
       <ProjectGroup {...profile} />
+      <ProjectGroup {...organization} />
       <ProjectGroup {...gamified} />
       <ProjectGroup {...templates} />
-      <ProjectGroup {...organization} />
     </div>
   );
 }

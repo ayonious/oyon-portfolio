@@ -41,7 +41,13 @@ export const skillGroups = [
   },
   {
     title: "Product domains",
-    skills: ["Payments", "Authentication", "Fraud prevention", "Travel technology"],
+    skills: [
+      "Payments",
+      "Authentication",
+      "Fraud prevention",
+      "Travel technology",
+      "E-commerce",
+    ],
   },
   {
     title: "Other",

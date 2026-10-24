@@ -21,6 +21,8 @@ describe("site pages", () => {
     ).toBeTruthy();
     expect(screen.getByText(/Senior Fullstack Software Engineer/i)).toBeTruthy();
     expect(screen.getByText(/I currently work at Omio/i)).toBeTruthy();
+    expect(screen.getByText(/open-source tools, reusable project templates/i)).toBeTruthy();
+    expect(screen.getByText(/travel, learn languages, and read philosophy/i)).toBeTruthy();
   });
 
   it("describes the project on the about page", () => {
@@ -104,13 +106,21 @@ describe("site pages", () => {
     expect(screen.getAllByText("React").length).toBeGreaterThanOrEqual(2);
     expect(screen.getByRole("heading", { name: "Templates" })).toBeTruthy();
     expect(screen.getByRole("link", { name: /nextjs-template/ })).toBeTruthy();
-    expect(screen.getByText(/Built with Next.js · React · Tailwind CSS · Jest/)).toBeTruthy();
+    expect(screen.getByText("Next.js")).toBeTruthy();
     expect(
       screen.getByText(/Reusable starter repositories to help bootstrap/),
     ).toBeTruthy();
     expect(
       screen.getByRole("heading", { name: "Console Table Printer organization" }),
     ).toBeTruthy();
+    expect(
+      screen.getAllByRole("heading", { level: 2 }).map((heading) => heading.textContent),
+    ).toEqual([
+      "Pinned personal repositories",
+      "Console Table Printer organization",
+      "Gamified projects",
+      "Templates",
+    ]);
   });
 
   it("shows programming and leadership books", () => {

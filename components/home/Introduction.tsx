@@ -15,6 +15,12 @@ export default function Introduction() {
       <p className="mt-4 text-lg leading-8 text-slate-600 dark:text-slate-300">
         {homeContent.currentWork}
       </p>
+      <p className="mt-4 text-lg leading-8 text-slate-600 dark:text-slate-300">
+        {homeContent.openSource}
+      </p>
+      <p className="mt-4 text-lg leading-8 text-slate-600 dark:text-slate-300">
+        {homeContent.outsideWork}
+      </p>
     </section>
   );
 }
