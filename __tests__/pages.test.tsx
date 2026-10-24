@@ -100,6 +100,7 @@ describe("site pages", () => {
     ).toBe("https://exploringbug.netlify.app");
     expect(screen.getByRole("heading", { name: "Templates" })).toBeTruthy();
     expect(screen.getByRole("link", { name: /nextjs-template/ })).toBeTruthy();
+    expect(screen.getByText(/Built with Next.js · React · Tailwind CSS · Jest/)).toBeTruthy();
     expect(
       screen.getByRole("heading", { name: "Console Table Printer organization" }),
     ).toBeTruthy();
