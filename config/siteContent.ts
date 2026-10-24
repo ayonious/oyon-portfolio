@@ -49,11 +49,11 @@ export const sidebarContent = {
   ] satisfies Array<{ href: string; label: string; icon: NavigationIcon }>,
   socialLinks: [
     { label: "GitHub", url: "https://github.com/ayonious" },
-    { label: "Mail", url: "/about#contact" },
     {
       label: "LinkedIn",
       url: "https://www.linkedin.com/in/nahiyan-k-0782743a",
     },
+    { label: "Mail", url: "/about#contact" },
   ],
 };
 
