@@ -9,7 +9,7 @@ export type Certification = {
 
 export const certifications: Certification[] = [
   {
-    name: "German telc C1",
+    name: "telc Deutsch C1 Hochschule",
     issuer: "telc",
     issued: "2026",
     description: "German language proficiency at CEFR level C1.",
