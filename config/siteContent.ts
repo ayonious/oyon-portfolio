@@ -21,7 +21,7 @@ export type NavigationIcon =
   | "books"
   | "diploma"
   | "theater"
-  | "info"
+  | "paw"
   | "megaphone";
 
 export const sidebarContent = {
@@ -40,7 +40,7 @@ export const sidebarContent = {
     { href: "/reading", label: "Books", icon: "books" },
     { href: "/certifications", label: "Certifications", icon: "diploma" },
     { href: "/about", label: "About me", icon: "theater" },
-    { href: "/about-this-site", label: "About this site", icon: "info" },
+    { href: "/about-this-site", label: "About this site", icon: "paw" },
     { href: "/blog", label: "Blog", icon: "megaphone" },
   ] satisfies Array<{ href: string; label: string; icon: NavigationIcon }>,
   socialLinks: [
