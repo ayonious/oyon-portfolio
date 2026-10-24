@@ -7,7 +7,7 @@ describe("root layout", () => {
     expect(metadata).toMatchObject({
       title: "Nahiyan Kamal — Software Engineer",
       description:
-        "Personal portfolio of Nahiyan Kamal, a Senior Fullstack Software Engineer based in Berlin.",
+        "Personal portfolio of Nahiyan Kamal, a Senior Fullstack Software Engineer based in Munich.",
     });
   });
 

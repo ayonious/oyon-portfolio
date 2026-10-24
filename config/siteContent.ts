@@ -1,11 +1,11 @@
 export const siteMetadata = {
   title: "Nahiyan Kamal — Software Engineer",
   description:
-    "Personal portfolio of Nahiyan Kamal, a Senior Fullstack Software Engineer based in Berlin.",
+    "Personal portfolio of Nahiyan Kamal, a Senior Fullstack Software Engineer based in Munich.",
 };
 
 export const homeContent = {
-  location: "Berlin, Germany",
+  location: "Munich, Germany",
   title: "Hey, I'm Nahiyan!",
   introduction:
     "I'm a Senior Fullstack Software Engineer who builds reliable web and mobile products with TypeScript, React, React Native, and Node.js.",
@@ -60,7 +60,7 @@ export const aboutContent = {
         { text: "I'm Nahiyan, a " },
         { text: "Senior Fullstack Software Engineer", href: "/work" },
         {
-          text: " based in Berlin. 👨‍💻 I build web, mobile, backend, payment, authentication, and travel products used at scale.",
+          text: " based in Munich. 👨‍💻 I build web, mobile, backend, payment, authentication, and travel products used at scale.",
         },
       ],
     },
