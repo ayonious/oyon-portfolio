@@ -36,30 +36,31 @@ export default function AboutPage() {
         />
       </section>
 
-      <ContactForm />
-
-      <section className="mt-14">
+      <section className="mt-14 border-y border-slate-200 py-8 dark:border-slate-700">
         <h2 className="text-2xl font-bold">{aboutContent.profilesTitle}</h2>
-        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+        <div className="mt-5 divide-y divide-slate-200 dark:divide-slate-700">
           {aboutContent.profiles.map((profile) => (
             <a
               key={profile.url}
               href={profile.url}
               target="_blank"
               rel="noreferrer"
-              className="rounded-2xl border border-slate-200 bg-white p-5 no-underline shadow-sm transition-colors hover:bg-[var(--accent-soft)] dark:border-slate-700 dark:bg-slate-900 dark:hover:bg-[var(--accent-soft)]"
+              className="flex items-center gap-4 py-4 no-underline transition-colors hover:text-[var(--accent)]"
             >
-              <h3 className="flex items-center gap-2 text-xl font-bold">
-                <BrandIcon name={profile.name} className="h-6 w-6 shrink-0" />
-                {profile.name} →
-              </h3>
-              <p className="mt-2 text-slate-600 dark:text-slate-300">
-                {profile.description}
-              </p>
+              <BrandIcon name={profile.name} className="h-6 w-6 shrink-0" />
+              <span className="min-w-0 flex-1">
+                <span className="block text-lg font-bold">{profile.name}</span>
+                <span className="mt-1 block text-sm text-slate-600 dark:text-slate-300">
+                  {profile.description}
+                </span>
+              </span>
+              <span aria-hidden="true" className="text-lg">→</span>
             </a>
           ))}
         </div>
       </section>
+
+      <ContactForm />
     </div>
   );
 }

@@ -105,7 +105,7 @@ export const aboutContent = {
     successMessage: "Thanks — your message has been sent.",
     errorMessage: "Your message could not be sent. Please try again.",
   },
-  profilesTitle: "Find me online",
+  profilesTitle: "Connect with me on other social platforms",
   profiles: [
     {
       name: "GitHub",
