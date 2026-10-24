@@ -40,10 +40,10 @@ export default function ReadingPage() {
   return (
     <div className="max-w-4xl py-8 sm:py-16">
       <header>
-        <h1 className="text-4xl font-bold tracking-tight">Reading currently</h1>
+        <h1 className="text-4xl font-bold tracking-tight">Books</h1>
         <p className="mt-4 text-lg text-slate-600 dark:text-slate-300">
-          Books that have shaped how I think about software, people, and the
-          world around me.
+          Books that shape how I think about software, leadership, people, and
+          the world around me.
         </p>
         <a
           href="https://www.goodreads.com/user/show/95339067-nahiyan-k"
@@ -56,12 +56,12 @@ export default function ReadingPage() {
       </header>
 
       <section className="mt-14">
-        <h2 className="text-3xl font-bold">All-time favorites</h2>
+        <h2 className="text-3xl font-bold">Programming-related books</h2>
         <BookList books={allTimeFavoriteBooks} />
       </section>
 
       <section className="mt-14">
-        <h2 className="text-3xl font-bold">People and psychology</h2>
+        <h2 className="text-3xl font-bold">Leadership-related books</h2>
         <BookList books={peopleAndPsychologyBooks} />
       </section>
     </div>
