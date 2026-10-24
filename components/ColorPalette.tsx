@@ -46,7 +46,7 @@ export default function ColorPalette() {
         aria-expanded={open}
         title="Choose accent color"
         onClick={() => setOpen((current) => !current)}
-        className="flex h-10 w-10 items-center justify-center rounded-xl transition-colors hover:bg-[var(--accent-soft)]"
+        className="peer flex h-10 w-10 items-center justify-center rounded-xl transition-colors hover:bg-[var(--accent-soft)]"
       >
         <span
           aria-hidden="true"
@@ -58,7 +58,7 @@ export default function ColorPalette() {
       {!open && (
         <span
           role="tooltip"
-          className="pointer-events-none absolute top-12 left-1/2 z-30 w-max max-w-44 -translate-x-1/2 rounded-lg bg-slate-950 px-3 py-1.5 text-xs font-medium text-white opacity-0 shadow-lg transition-opacity group-hover:opacity-100 group-focus-within:opacity-100 dark:bg-slate-100 dark:text-slate-950"
+          className="pointer-events-none absolute top-12 left-1/2 z-30 w-max max-w-44 -translate-x-1/2 rounded-lg bg-slate-950 px-3 py-1.5 text-xs font-medium text-white opacity-0 shadow-lg transition-opacity group-hover:opacity-100 peer-focus-visible:opacity-100 dark:bg-slate-100 dark:text-slate-950"
         >
           Choose color palette
         </span>
