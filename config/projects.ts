@@ -76,6 +76,7 @@ export const openSourceProjectsConfig = {
   templates: {
     label: "Templates",
     description: "Reusable starter repositories to help bootstrap new React, Next.js, Express, NestJS, and HTML projects.",
+    showStats: false,
     view: "list" as const,
     url: "https://github.com/ayonious?tab=repositories&q=template",
     projects: [

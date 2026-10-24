@@ -82,6 +82,7 @@ function ProjectGroup({
   onlyPinned,
   projects,
   description,
+  showStats = true,
   view = "cards",
   url,
 }: {
@@ -90,6 +91,7 @@ function ProjectGroup({
   limit?: number;
   onlyPinned?: boolean;
   projects: OpenSourceProject[];
+  showStats?: boolean;
   view?: "cards" | "list";
   url: string;
 }) {
@@ -119,9 +121,11 @@ function ProjectGroup({
           {description}
         </p>
       )}
-      <p className="mt-2 text-slate-600 dark:text-slate-300">
-        {visibleProjects.length} projects · {totalStars} stars
-      </p>
+      {showStats && (
+        <p className="mt-2 text-slate-600 dark:text-slate-300">
+          {visibleProjects.length} projects · {totalStars} stars
+        </p>
+      )}
       {view === "list" ? (
         <ul className="mt-6 divide-y divide-slate-200 border-y border-slate-200 dark:divide-slate-700 dark:border-slate-700">
           {visibleProjects.map((project) => (
