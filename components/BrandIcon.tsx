@@ -11,11 +11,13 @@ import {
   siGooglecloud,
   siGrafana,
   siJest,
+  siJavascript,
   siKibana,
   siKotlin,
   siKubernetes,
   siMysql,
   siNodedotjs,
+  siNextdotjs,
   siNpm,
   siPhp,
   siPostgresql,
@@ -28,6 +30,7 @@ import {
   siYarn,
   type SimpleIcon,
 } from "simple-icons";
+import type { CSSProperties } from "react";
 
 const icons: Record<string, SimpleIcon> = {
   Anthropic: siAnthropic,
@@ -37,18 +40,21 @@ const icons: Record<string, SimpleIcon> = {
   Docker: siDocker,
   "Express.js": siExpress,
   GitHub: siGithub,
+  "Console Table Printer": siGithub,
   Goodreads: siGoodreads,
   BigQuery: siGooglebigquery,
   "Google Cloud": siGooglecloud,
   "Google Cloud Storage": siGooglecloud,
   Grafana: siGrafana,
   Jest: siJest,
+  JavaScript: siJavascript,
   Kibana: siKibana,
   Kotlin: siKotlin,
   "Kotlin with AI assistance": siKotlin,
   Kubernetes: siKubernetes,
   MySQL: siMysql,
   "Node.js": siNodedotjs,
+  "Next.js": siNextdotjs,
   npm: siNpm,
   PHP: siPhp,
   PostgreSQL: siPostgresql,
@@ -88,11 +94,23 @@ export default function BrandIcon({ name, className = "h-5 w-5" }: BrandIconProp
     return null;
   }
 
+  const darkColor = ["Express.js", "GitHub", "Console Table Printer", "Next.js"].includes(
+    name,
+  )
+    ? "#ffffff"
+    : `#${icon.hex}`;
+
   return (
     <svg
       aria-hidden="true"
       viewBox="0 0 24 24"
-      className={className}
+      className={`${className} text-[var(--brand-color)] dark:text-[var(--brand-dark-color)]`}
+      style={
+        {
+          "--brand-color": `#${icon.hex}`,
+          "--brand-dark-color": darkColor,
+        } as CSSProperties
+      }
       fill="currentColor"
     >
       <path d={icon.path} />
