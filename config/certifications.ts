@@ -4,7 +4,6 @@ export type Certification = {
   issued: string;
   description?: string;
   result?: string;
-  credentialId?: string;
 };
 
 export const certifications: Certification[] = [
@@ -19,12 +18,16 @@ export const certifications: Certification[] = [
     name: "Learn and Understand NodeJS",
     issuer: "Udemy",
     issued: "November 2018",
-    credentialId: "UC-HTKYP7TF",
   },
   {
     name: "Node with React: Fullstack Web Development",
     issuer: "Udemy",
     issued: "November 2018",
-    credentialId: "UC-HH4VIZK2",
+  },
+  {
+    name: "Introduction to Psychology",
+    issuer: "Coursera",
+    issued: "Completed",
+    description: "An introduction to the foundations of psychology and human behavior.",
   },
 ];

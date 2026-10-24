@@ -26,9 +26,6 @@ export default function CertificationsPage() {
               </p>
               <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
                 Issued {certification.issued}
-                {certification.credentialId && (
-                  <> · Credential ID: {certification.credentialId}</>
-                )}
               </p>
               {certification.result && (
                 <p className="mt-2 text-sm font-semibold text-slate-600 dark:text-slate-300">

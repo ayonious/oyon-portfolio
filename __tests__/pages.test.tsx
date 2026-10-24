@@ -70,17 +70,19 @@ describe("site pages", () => {
     ).toContain("!text-white");
   });
 
-  it("shows certification details and credential IDs", () => {
+  it("shows certifications and completed courses without credential IDs", () => {
     render(<CertificationsPage />);
 
     expect(
       screen.getByRole("heading", { name: "telc Deutsch C1 Hochschule" }),
     ).toBeTruthy();
     expect(screen.getByText("Result: Befriedigend")).toBeTruthy();
-    expect(screen.getByText(/Credential ID: UC-HTKYP7TF/)).toBeTruthy();
-    expect(screen.getByText(/Credential ID: UC-HH4VIZK2/)).toBeTruthy();
+    expect(
+      screen.getByRole("heading", { name: "Introduction to Psychology" }),
+    ).toBeTruthy();
+    expect(screen.queryByText(/Credential ID/)).toBeNull();
     expect(screen.queryByRole("link", { name: "Show credential ↗" })).toBeNull();
-    expect(screen.getAllByText("Completed")).toHaveLength(3);
+    expect(screen.getAllByText("Completed")).toHaveLength(4);
   });
 
   it("shows pinned and organization open-source projects", () => {
