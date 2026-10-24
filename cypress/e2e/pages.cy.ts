@@ -28,7 +28,7 @@ describe("portfolio pages", () => {
       label: "Books",
       path: "/reading",
       heading: "Books",
-      content: "Programming-related books",
+      content: "Software Engineering and Computer Science related books",
     },
     {
       label: "Certifications",
@@ -52,7 +52,7 @@ describe("portfolio pages", () => {
       label: "Blog",
       path: "/blog",
       heading: "Blog",
-      content: "Notes about software engineering",
+      content: "Read my notes about software engineering",
     },
   ];
 
@@ -63,7 +63,7 @@ describe("portfolio pages", () => {
   it("shows the current homepage introduction", () => {
     cy.contains("h1", "Hey, I'm Nahiyan!").should("be.visible");
     cy.contains("Senior Fullstack Software Engineer").should("be.visible");
-    cy.contains("Berlin, Germany").should("be.visible");
+    cy.contains("Munich, Germany").should("be.visible");
   });
 
   pages.forEach(({ label, path, heading, content }) => {
