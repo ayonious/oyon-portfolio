@@ -39,7 +39,7 @@ export default function ColorPalette() {
   const currentColor = accentPalette.find((option) => option.value === accent)?.color;
 
   return (
-    <div ref={containerRef} className="relative">
+    <div ref={containerRef} className="group relative">
       <button
         type="button"
         aria-label="Choose accent color"
@@ -54,6 +54,15 @@ export default function ColorPalette() {
           style={{ backgroundColor: currentColor }}
         />
       </button>
+
+      {!open && (
+        <span
+          role="tooltip"
+          className="pointer-events-none absolute top-12 left-1/2 z-30 w-max max-w-44 -translate-x-1/2 rounded-lg bg-slate-950 px-3 py-1.5 text-xs font-medium text-white opacity-0 shadow-lg transition-opacity group-hover:opacity-100 group-focus-within:opacity-100 dark:bg-slate-100 dark:text-slate-950"
+        >
+          Choose color palette
+        </span>
+      )}
 
       {open && (
         <div className="absolute top-12 left-1/2 z-20 flex -translate-x-1/2 flex-col gap-1 rounded-xl border border-slate-200 bg-white p-2 shadow-lg dark:border-slate-700 dark:bg-slate-900">
