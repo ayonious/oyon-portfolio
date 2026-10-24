@@ -38,7 +38,7 @@ export default function ProfileSidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="border-b border-slate-200 px-6 py-8 transition-colors dark:border-slate-700 dark:bg-slate-900 sm:px-8 lg:h-screen lg:border-r lg:border-b-0 lg:px-8 lg:py-12 lg:pl-10">
+    <aside className="border-b border-slate-200 px-6 py-8 transition-colors dark:border-slate-700 dark:bg-slate-900 sm:px-8 lg:sticky lg:top-0 lg:h-screen lg:overflow-y-auto lg:border-r lg:border-b-0 lg:px-7 lg:py-10">
       <div className="flex h-full flex-col">
         <div>
           <div className="flex items-center justify-between gap-4 border-b border-slate-200 pb-5 dark:border-slate-700">

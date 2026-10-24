@@ -10,9 +10,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body>
-        <div className="lg:grid lg:h-screen lg:grid-cols-[360px_minmax(0,1fr)] lg:overflow-hidden">
+        <div className="lg:mx-auto lg:grid lg:max-w-[1360px] lg:grid-cols-[300px_minmax(0,1fr)]">
           <ProfileSidebar />
-          <main className="px-6 py-6 sm:px-8 lg:h-screen lg:overflow-y-auto lg:px-10 lg:py-10 xl:px-14">
+          <main className="px-6 py-6 sm:px-8 lg:px-10 lg:py-10 xl:px-14">
             {children}
           </main>
         </div>
