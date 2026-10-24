@@ -2,20 +2,27 @@ import Link from "next/link";
 import ColorPalette from "./ColorPalette";
 import ThemeToggle from "./ThemeToggle";
 import {
-  CactusIcon,
+  BooksIcon,
   BriefcaseIcon,
   LightningIcon,
   MegaphoneIcon,
   SailboatIcon,
+  TheaterMaskIcon,
   WrenchIcon,
 } from "./icons/SidebarIcons";
 
 const navigationItems = [
-  { href: "/work", label: "Work history", Icon: BriefcaseIcon },
-  { href: "/projects", label: "Open-source projects", Icon: WrenchIcon },
-  { href: "/skills", label: "Skills", Icon: LightningIcon },
-  { href: "/about", label: "About me", Icon: CactusIcon },
-  { href: "/blog", label: "Blog", Icon: MegaphoneIcon },
+  { href: "/work", label: "Work", Icon: BriefcaseIcon, external: false },
+  { href: "/projects", label: "Open source", Icon: WrenchIcon, external: false },
+  { href: "/weather", label: "Weather", Icon: LightningIcon, external: false },
+  {
+    href: "https://www.goodreads.com/user/show/95339067-nahiyan-k",
+    label: "Reading currently",
+    Icon: BooksIcon,
+    external: true,
+  },
+  { href: "/about", label: "About me", Icon: TheaterMaskIcon, external: false },
+  { href: "/blog", label: "Blog", Icon: MegaphoneIcon, external: false },
 ];
 
 export default function ProfileSidebar() {
@@ -46,16 +53,32 @@ export default function ProfileSidebar() {
           aria-label="Main navigation"
           className="mt-8 flex flex-wrap gap-2 lg:flex-col"
         >
-          {navigationItems.map(({ href, label, Icon }) => (
-            <Link
-              key={href}
-              href={href}
-              className="flex items-center gap-3 rounded-xl px-3 py-2 text-base font-semibold text-slate-700 no-underline transition-colors hover:bg-[var(--accent-soft)] hover:text-slate-950 dark:text-slate-200 dark:hover:text-white"
-            >
-              <Icon className="shrink-0 text-[var(--accent)]" />
-              <span>{label}</span>
-            </Link>
-          ))}
+          {navigationItems.map(({ href, label, Icon, external }) => {
+            const content = (
+              <>
+                <Icon className="shrink-0 text-[var(--accent)]" />
+                <span>{label}</span>
+              </>
+            );
+            const className =
+              "flex items-center gap-3 rounded-xl px-3 py-2 text-base font-semibold text-slate-700 no-underline transition-colors hover:bg-[var(--accent-soft)] hover:text-slate-950 dark:text-slate-200 dark:hover:text-white";
+
+            return external ? (
+              <a
+                key={href}
+                href={href}
+                target="_blank"
+                rel="noreferrer"
+                className={className}
+              >
+                {content}
+              </a>
+            ) : (
+              <Link key={href} href={href} className={className}>
+                {content}
+              </Link>
+            );
+          })}
         </nav>
 
         <div className="mt-8 flex gap-5 text-sm font-medium lg:mt-auto">

@@ -16,23 +16,23 @@ const sharedProps: IconProps = {
 
 export function MegaphoneIcon(props: IconProps) {
   return (
-    <svg {...sharedProps} {...props}>
+    <svg {...sharedProps} height={24} strokeWidth={1} width={24} {...props}>
       <path d="M4 9h5l10-5v16L9 15H4ZM9 9v6M6 15l1 5h4l-2-5" />
     </svg>
   );
 }
 
-export function CactusIcon(props: IconProps) {
+export function TheaterMaskIcon(props: IconProps) {
   return (
-    <svg {...sharedProps} {...props}>
-      <path d="M9 21V6a3 3 0 0 1 6 0v15M9 13H6a3 3 0 0 1-3-3V7M15 16h3a3 3 0 0 0 3-3v-3M6 21h12" />
+    <svg {...sharedProps} height={24} strokeWidth={1} width={24} {...props}>
+      <path d="M3 4c4 2 7 2 11 0v9c-5 8-11 4-11-1ZM6 9h.01M11 9h.01M6 12c2 3 4 3 5 0M14 8c3 1 5 0 7-1v10c-3 6-8 6-11 2M17 12h.01M15 18c2-3 4-3 5 0" />
     </svg>
   );
 }
 
 export function WrenchIcon(props: IconProps) {
   return (
-    <svg {...sharedProps} {...props}>
+    <svg {...sharedProps} height={24} strokeWidth={1} width={24} {...props}>
       <path d="M14 4a6 6 0 0 0-7 8l-4 5a3 3 0 0 0 4 4l5-5a6 6 0 0 0 8-7l-4 3-4-4Z" />
     </svg>
   );
@@ -65,7 +65,7 @@ export function SailboatIcon(props: IconProps) {
 
 export function BriefcaseIcon(props: IconProps) {
   return (
-    <svg {...sharedProps} height={24} strokeWidth={1.75} width={24} {...props}>
+    <svg {...sharedProps} height={24} strokeWidth={1} width={24} {...props}>
       <rect x="3.5" y="7" width="17" height="13" rx="2" />
       <path d="M8 7V4h8v3M3.5 12a21 21 0 0 0 17 0M12 12v3" />
     </svg>
@@ -74,8 +74,16 @@ export function BriefcaseIcon(props: IconProps) {
 
 export function LightningIcon(props: IconProps) {
   return (
-    <svg {...sharedProps} height={24} strokeWidth={1.75} width={24} {...props}>
+    <svg {...sharedProps} height={24} strokeWidth={1} width={24} {...props}>
       <path d="m13 3-9 11h7l-1 7L20 10h-7Z" />
+    </svg>
+  );
+}
+
+export function BooksIcon(props: IconProps) {
+  return (
+    <svg {...sharedProps} height={24} strokeWidth={1} width={24} {...props}>
+      <path d="M3 4h4v17H3ZM10 3h4v18h-4ZM17 5l3-1 2 16-3 1ZM3 17h4M10 7h4" />
     </svg>
   );
 }
