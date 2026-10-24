@@ -10,8 +10,12 @@ export default function AboutPage() {
           <h1 className="text-4xl font-bold tracking-tight">{aboutContent.title}</h1>
           <div className="mt-6 space-y-4 text-lg text-slate-600 dark:text-slate-300">
             {aboutContent.paragraphs.map((paragraph, paragraphIndex) => (
-              <p key={paragraphIndex}>
-                {paragraph.map((part, partIndex) =>
+              <p key={paragraphIndex} className="flex gap-3">
+                <span aria-hidden="true" className="shrink-0">
+                  {paragraph.emoji}
+                </span>
+                <span>
+                {paragraph.parts.map((part, partIndex) =>
                   part.href ? (
                     <Link key={partIndex} href={part.href}>
                       {part.text}
@@ -20,6 +24,7 @@ export default function AboutPage() {
                     <span key={partIndex}>{part.text}</span>
                   ),
                 )}
+                </span>
               </p>
             ))}
           </div>
