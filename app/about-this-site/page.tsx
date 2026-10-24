@@ -79,6 +79,9 @@ export default function AboutThisSitePage() {
         <ul className="mt-4 space-y-3">
           {aboutSiteContent.credits.map((credit) => (
             <li key={credit.url} className="text-slate-700 dark:text-slate-200">
+              <span aria-hidden="true" className="mr-2">
+                {credit.emoji}
+              </span>
               {credit.role}:{" "}
               <a href={credit.url} target="_blank" rel="noreferrer">
                 {credit.name}

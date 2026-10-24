@@ -218,13 +218,20 @@ export const aboutSiteContent = {
     {
       name: "Tania Rascia's website",
       role: "Layout inspiration",
+      emoji: "🎨",
       url: "https://www.taniarascia.com/",
     },
     {
       name: "Icons For Free",
       role: "Interface icons",
+      emoji: "✨",
       url: "https://iconsforfree.com/",
     },
-    { name: "Vercel", role: "Deployment", url: "https://vercel.com/" },
+    {
+      name: "Vercel",
+      role: "Deployment",
+      emoji: "🚀",
+      url: "https://vercel.com/",
+    },
   ],
 };
