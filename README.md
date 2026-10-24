@@ -16,7 +16,7 @@ Create my personal profile and portfolio website using Next.js, TypeScript, and 
 - [Tailwind CSS](https://tailwindcss.com/) for styling
 - [Jest](https://jestjs.io/) and [Testing Library](https://testing-library.com/) for component tests
 - [Cypress](https://www.cypress.io/) for browser tests
-- [Netlify](https://www.netlify.com/) for deployment
+- [Vercel](https://vercel.com/) for deployment
 - [Yarn](https://yarnpkg.com/) for package management
 
 ## Why Tailwind CSS

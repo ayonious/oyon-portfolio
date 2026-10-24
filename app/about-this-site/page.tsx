@@ -47,7 +47,7 @@ export default function AboutThisSitePage() {
           <a href="https://www.taniarascia.com/">Tania Rascia&apos;s website</a>.
           Interface icons were sourced from{" "}
           <a href="https://iconsforfree.com/">Icons For Free</a>, and the site
-          is deployed with <a href="https://www.netlify.com/">Netlify</a>.
+          is deployed with <a href="https://vercel.com/">Vercel</a>.
         </p>
       </section>
     </div>
