@@ -1,34 +1,23 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
 import { aboutContent } from "../../config/siteContent";
+import { contactSchema, ContactFormData } from "../../config/contactSchema";
 
-type FormStatus = "idle" | "sending" | "success" | "error";
+type FormStatus = "idle" | "success" | "error";
 
 export default function ContactForm() {
   const [status, setStatus] = useState<FormStatus>("idle");
+  const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm<ContactFormData>({ resolver: zodResolver(contactSchema) });
 
-  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setStatus("sending");
-
-    const form = event.currentTarget;
-    const formData = new FormData(form);
-
+  async function onSubmit(values: ContactFormData) {
+    setStatus("idle");
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: formData.get("name"),
-          email: formData.get("email"),
-          message: formData.get("message"),
-          website: formData.get("website"),
-        }),
-      });
-
+      const response = await fetch("/api/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(values) });
       if (!response.ok) throw new Error("Contact request failed");
-      form.reset();
+      reset();
       setStatus("success");
     } catch {
       setStatus("error");
@@ -38,81 +27,32 @@ export default function ContactForm() {
   return (
     <section className="mt-14 max-w-2xl">
       <h2 className="text-2xl font-bold">{aboutContent.contactForm.title}</h2>
-      <p className="mt-3 text-slate-600 dark:text-slate-300">
-        {aboutContent.contactForm.introduction}
-      </p>
-
-      <form onSubmit={handleSubmit} className="mt-6 space-y-5">
+      <p className="mt-3 text-slate-600 dark:text-slate-300">{aboutContent.contactForm.introduction}</p>
+      <form onSubmit={handleSubmit(onSubmit)} className="mt-6 space-y-5" noValidate>
         <div>
-          <label htmlFor="contact-name" className="text-sm font-semibold">
-            {aboutContent.contactForm.nameLabel}
-          </label>
-          <input
-            id="contact-name"
-            name="name"
-            type="text"
-            required
-            maxLength={100}
-            autoComplete="name"
-            className="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 outline-none transition-colors focus:border-[var(--accent)] dark:border-slate-700 dark:bg-slate-900"
-          />
+          <label htmlFor="contact-name" className="text-sm font-semibold">{aboutContent.contactForm.nameLabel}</label>
+          <input id="contact-name" type="text" autoComplete="name" {...register("name")} className="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 outline-none transition-colors focus:border-[var(--accent)] dark:border-slate-700 dark:bg-slate-900" />
+          {errors.name && <p className="mt-1 text-sm text-red-700 dark:text-red-300">{errors.name.message}</p>}
         </div>
-
         <div>
-          <label htmlFor="contact-email" className="text-sm font-semibold">
-            {aboutContent.contactForm.emailLabel}
-          </label>
-          <input
-            id="contact-email"
-            name="email"
-            type="email"
-            required
-            maxLength={254}
-            autoComplete="email"
-            className="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 outline-none transition-colors focus:border-[var(--accent)] dark:border-slate-700 dark:bg-slate-900"
-          />
+          <label htmlFor="contact-email" className="text-sm font-semibold">{aboutContent.contactForm.emailLabel}</label>
+          <input id="contact-email" type="email" autoComplete="email" {...register("email")} className="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 outline-none transition-colors focus:border-[var(--accent)] dark:border-slate-700 dark:bg-slate-900" />
+          {errors.email && <p className="mt-1 text-sm text-red-700 dark:text-red-300">{errors.email.message}</p>}
         </div>
-
         <div>
-          <label htmlFor="contact-message" className="text-sm font-semibold">
-            {aboutContent.contactForm.messageLabel}
-          </label>
-          <textarea
-            id="contact-message"
-            name="message"
-            required
-            minLength={10}
-            maxLength={5000}
-            rows={6}
-            className="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 outline-none transition-colors focus:border-[var(--accent)] dark:border-slate-700 dark:bg-slate-900"
-          />
+          <label htmlFor="contact-message" className="text-sm font-semibold">{aboutContent.contactForm.messageLabel}</label>
+          <textarea id="contact-message" rows={6} {...register("message")} className="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 outline-none transition-colors focus:border-[var(--accent)] dark:border-slate-700 dark:bg-slate-900" />
+          {errors.message && <p className="mt-1 text-sm text-red-700 dark:text-red-300">{errors.message.message}</p>}
         </div>
-
         <div aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
           <label htmlFor="contact-website">Website</label>
-          <input id="contact-website" name="website" tabIndex={-1} autoComplete="off" />
+          <input id="contact-website" tabIndex={-1} autoComplete="off" {...register("website")} />
         </div>
-
-        <button
-          type="submit"
-          disabled={status === "sending"}
-          className="rounded-xl bg-[var(--accent)] px-5 py-3 font-semibold !text-white transition-opacity hover:opacity-85 disabled:cursor-not-allowed disabled:opacity-50"
-        >
-          {status === "sending"
-            ? aboutContent.contactForm.sendingLabel
-            : aboutContent.contactForm.submitLabel}
+        <button type="submit" disabled={isSubmitting} className="rounded-xl bg-[var(--accent)] px-5 py-3 font-semibold !text-white transition-opacity hover:opacity-85 disabled:cursor-not-allowed disabled:opacity-50">
+          {isSubmitting ? aboutContent.contactForm.sendingLabel : aboutContent.contactForm.submitLabel}
         </button>
-
-        {status === "success" && (
-          <p role="status" className="text-sm font-medium text-emerald-700 dark:text-emerald-300">
-            {aboutContent.contactForm.successMessage}
-          </p>
-        )}
-        {status === "error" && (
-          <p role="alert" className="text-sm font-medium text-red-700 dark:text-red-300">
-            {aboutContent.contactForm.errorMessage}
-          </p>
-        )}
+        {status === "success" && <p role="status" className="text-sm font-medium text-emerald-700 dark:text-emerald-300">{aboutContent.contactForm.successMessage}</p>}
+        {status === "error" && <p role="alert" className="text-sm font-medium text-red-700 dark:text-red-300">{aboutContent.contactForm.errorMessage}</p>}
       </form>
     </section>
   );

@@ -1,3 +1,5 @@
+import { contactSchema } from "../../../config/contactSchema";
+
 export const runtime = "nodejs";
 
 const RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000;
@@ -45,19 +47,11 @@ export async function POST(request: Request) {
     return Response.json({ message: "Message received." });
   }
 
-  const name = typeof payload.name === "string" ? payload.name.trim() : "";
-  const email = typeof payload.email === "string" ? payload.email.trim() : "";
-  const message = typeof payload.message === "string" ? payload.message.trim() : "";
-  if (
-    !name ||
-    name.length > 100 ||
-    !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ||
-    email.length > 254 ||
-    message.length < 10 ||
-    message.length > 5000
-  ) {
+  const parsed = contactSchema.safeParse(payload);
+  if (!parsed.success) {
     return jsonError("Please complete all fields.", 400);
   }
+  const { name, email, message } = parsed.data;
 
   const resendApiKey = process.env.RESEND_API_KEY;
   const contactEmail = process.env.CONTACT_EMAIL;
