@@ -106,6 +106,8 @@ export const aboutContent = {
     sendingLabel: "Sending…",
     successMessage: "Thanks — your message has been sent.",
     errorMessage: "Your message could not be sent. Please try again.",
+    verificationUnavailable:
+      "The contact form verification is not configured yet.",
   },
   profilesTitle: "Connect with me on other social platforms",
   profiles: [
@@ -190,6 +192,33 @@ export const aboutSiteContent = {
   packagesTitle: "All packages",
   packagesIntroduction:
     "Runtime and development dependencies currently listed in the project.",
+  deployment: {
+    title: "Deployment and contact delivery",
+    introduction:
+      "The portfolio and its contact workflow are deployed together on Vercel.",
+    details: [
+      {
+        title: "Vercel hosting",
+        description:
+          "Vercel builds and hosts the Next.js application, including production deployments and preview deployments for pull requests.",
+      },
+      {
+        title: "Vercel Function",
+        description:
+          "The /api/contact Route Handler becomes an on-demand Vercel Function. It starts when the form is submitted, validates the request, and stops after the request finishes. Platform-level rate limiting can be added through Vercel later.",
+      },
+      {
+        title: "Resend email delivery",
+        description:
+          "The server-side Function uses a private Resend API key to send the submitted name, email address, and message to the configured contact inbox. The visitor's address is used as the reply-to address.",
+      },
+      {
+        title: "Cloudflare Turnstile",
+        description:
+          "The contact form uses Cloudflare Turnstile as a spam-protection layer. The browser receives a temporary token, and the Vercel Function verifies it with Cloudflare before sending any email.",
+      },
+    ],
+  },
   creditsTitle: "Design and assets",
   reuse: {
     title: "Use this site for your own profile 🧰",

@@ -56,6 +56,26 @@ export default function AboutThisSitePage() {
         </ul>
       </section>
 
+      <section className="mt-14">
+        <h2 className="text-2xl font-bold">{aboutSiteContent.deployment.title}</h2>
+        <p className="mt-3 text-slate-600 dark:text-slate-300">
+          {aboutSiteContent.deployment.introduction}
+        </p>
+        <ul className="mt-5 border-t border-slate-200 dark:border-slate-700">
+          {aboutSiteContent.deployment.details.map((detail) => (
+            <li
+              key={detail.title}
+              className="grid gap-2 border-b border-slate-200 py-5 sm:grid-cols-[13rem_minmax(0,1fr)] sm:gap-8 dark:border-slate-700"
+            >
+              <h3 className="font-bold">{detail.title}</h3>
+              <p className="text-slate-600 dark:text-slate-300">
+                {detail.description}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
       <section className="mt-14 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-slate-900">
         <h2 className="text-2xl font-bold">{aboutSiteContent.reuse.title}</h2>
         <p className="mt-3 text-slate-600 dark:text-slate-300">
