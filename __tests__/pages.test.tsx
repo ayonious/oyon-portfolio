@@ -98,6 +98,7 @@ describe("site pages", () => {
         .getByRole("link", { name: "Play Explorer Bug ↗" })
         .getAttribute("href"),
     ).toBe("https://exploringbug.netlify.app");
+    expect(screen.getAllByText("React").length).toBeGreaterThanOrEqual(2);
     expect(screen.getByRole("heading", { name: "Templates" })).toBeTruthy();
     expect(screen.getByRole("link", { name: /nextjs-template/ })).toBeTruthy();
     expect(
