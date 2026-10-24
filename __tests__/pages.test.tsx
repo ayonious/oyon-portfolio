@@ -86,6 +86,16 @@ describe("site pages", () => {
     ).toBeTruthy();
     expect(screen.getByRole("link", { name: "oyon-portfolio" })).toBeTruthy();
     expect(
+      screen.getByRole("heading", { name: "Gamified projects" }),
+    ).toBeTruthy();
+    expect(
+      screen
+        .getByRole("link", { name: "Play Explorer Bug ↗" })
+        .getAttribute("href"),
+    ).toBe("https://exploringbug.netlify.app");
+    expect(screen.getByRole("heading", { name: "Templates" })).toBeTruthy();
+    expect(screen.getByRole("link", { name: /nextjs-template/ })).toBeTruthy();
+    expect(
       screen.getByRole("heading", { name: "Console Table Printer organization" }),
     ).toBeTruthy();
   });

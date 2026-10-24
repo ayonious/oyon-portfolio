@@ -31,6 +31,17 @@ function ProjectCard({ project }: { project: OpenSourceProject }) {
         {project.description}
       </p>
 
+      {project.demoUrl && project.demoLabel && (
+        <a
+          href={project.demoUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="mt-4 inline-flex font-semibold"
+        >
+          {project.demoLabel} ↗
+        </a>
+      )}
+
       {project.language && (
         <p className="mt-4 flex items-center gap-2 text-sm font-medium text-slate-500 dark:text-slate-400">
           <BrandIcon name={project.language} className="h-4 w-4 shrink-0" />
@@ -46,12 +57,14 @@ function ProjectGroup({
   limit,
   onlyPinned,
   projects,
+  view = "cards",
   url,
 }: {
   label: string;
   limit?: number;
   onlyPinned?: boolean;
   projects: OpenSourceProject[];
+  view?: "cards" | "list";
   url: string;
 }) {
   const filteredProjects = onlyPinned
@@ -78,17 +91,52 @@ function ProjectGroup({
       <p className="mt-2 text-slate-600 dark:text-slate-300">
         {visibleProjects.length} projects · {totalStars} stars
       </p>
-      <div className="mt-6 grid gap-4 sm:grid-cols-2">
-        {visibleProjects.map((project) => (
-          <ProjectCard key={project.url} project={project} />
-        ))}
-      </div>
+      {view === "list" ? (
+        <ul className="mt-6 divide-y divide-slate-200 border-y border-slate-200 dark:divide-slate-700 dark:border-slate-700">
+          {visibleProjects.map((project) => (
+            <li
+              key={project.url}
+              className="flex flex-wrap items-center justify-between gap-4 py-4"
+            >
+              <div className="min-w-0">
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="font-semibold"
+                >
+                  {project.name} ↗
+                </a>
+                <p className="mt-1 text-sm text-slate-600 dark:text-slate-300">
+                  {project.description}
+                </p>
+              </div>
+              <div className="flex shrink-0 items-center gap-3 text-sm">
+                {project.demoUrl && project.demoLabel && (
+                  <a href={project.demoUrl} target="_blank" rel="noreferrer">
+                    {project.demoLabel} ↗
+                  </a>
+                )}
+                <span className="font-semibold text-amber-600 dark:text-amber-300">
+                  ★ {project.stars}
+                </span>
+              </div>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          {visibleProjects.map((project) => (
+            <ProjectCard key={project.url} project={project} />
+          ))}
+        </div>
+      )}
     </section>
   );
 }
 
 export default function ProjectsPage() {
-  const { profile, organization } = openSourceProjectsConfig;
+  const { profile, gamified, templates, organization } = openSourceProjectsConfig;
 
   return (
     <div className="max-w-4xl py-8 sm:py-16">
@@ -102,6 +150,8 @@ export default function ProjectsPage() {
       </header>
 
       <ProjectGroup {...profile} />
+      <ProjectGroup {...gamified} />
+      <ProjectGroup {...templates} />
       <ProjectGroup {...organization} />
     </div>
   );
