@@ -65,6 +65,9 @@ describe("site pages", () => {
 
     expect(screen.getByRole("heading", { name: "Blog" })).toBeTruthy();
     expect(screen.getByText(/Notes about software engineering/i)).toBeTruthy();
+    expect(
+      screen.getByRole("link", { name: "Visit my blog ↗" }).className,
+    ).toContain("!text-white");
   });
 
   it("shows certification details and credential links", () => {

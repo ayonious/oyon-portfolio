@@ -35,7 +35,7 @@ export default function BlogPage() {
         href={pageContent.blog.url}
         target="_blank"
         rel="noreferrer"
-        className="mt-8 inline-flex rounded-xl bg-[var(--accent)] px-5 py-3 font-semibold text-white no-underline transition-opacity hover:opacity-85"
+        className="mt-8 inline-flex rounded-xl bg-[var(--accent)] px-5 py-3 font-semibold !text-white no-underline transition-opacity hover:opacity-85"
       >
         {pageContent.blog.linkLabel}
       </a>
