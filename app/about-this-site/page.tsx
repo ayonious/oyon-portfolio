@@ -1,5 +1,6 @@
 import { allPackages, majorDependencies } from "../../config/siteCredits";
 import { aboutSiteContent } from "../../config/siteContent";
+import BrandIcon from "../../components/BrandIcon";
 
 export default function AboutThisSitePage() {
   return (
@@ -13,28 +14,29 @@ export default function AboutThisSitePage() {
 
       <section className="mt-12">
         <h2 className="text-2xl font-bold">{aboutSiteContent.majorTitle}</h2>
-        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+        <ul className="mt-5 border-t border-slate-200 dark:border-slate-700">
           {majorDependencies.map((dependency) => (
-            <article
+            <li
               key={dependency.name}
-              className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-slate-900"
+              className="grid gap-2 border-b border-slate-200 py-5 sm:grid-cols-[13rem_minmax(0,1fr)] sm:gap-8 dark:border-slate-700"
             >
-              <h3 className="text-xl font-bold">
+              <h3 className="font-bold">
                 <a
                   href={dependency.url}
                   target="_blank"
                   rel="noreferrer"
-                  className="no-underline hover:underline"
+                  className="flex items-center gap-2 no-underline hover:underline"
                 >
-                  {dependency.name} ↗
+                  <BrandIcon name={dependency.name} className="h-5 w-5 shrink-0" />
+                  <span>{dependency.name} ↗</span>
                 </a>
               </h3>
-              <p className="mt-3 text-slate-600 dark:text-slate-300">
+              <p className="text-slate-600 dark:text-slate-300">
                 {dependency.description}
               </p>
-            </article>
+            </li>
           ))}
-        </div>
+        </ul>
       </section>
 
       <section className="mt-14">
