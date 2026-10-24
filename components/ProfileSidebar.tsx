@@ -5,10 +5,11 @@ import {
   BooksIcon,
   BriefcaseIcon,
   DiplomaIcon,
+  InfoIcon,
   LightningIcon,
   MegaphoneIcon,
   SailboatIcon,
-  SparklesIcon,
+  RobotIcon,
   TheaterMaskIcon,
   WrenchIcon,
 } from "./icons/SidebarIcons";
@@ -17,7 +18,7 @@ const navigationItems = [
   { href: "/work", label: "Work", Icon: BriefcaseIcon, external: false },
   { href: "/projects", label: "Open source", Icon: WrenchIcon, external: false },
   { href: "/skills", label: "Skills", Icon: LightningIcon, external: false },
-  { href: "/ai", label: "AI", Icon: SparklesIcon, external: false },
+  { href: "/ai", label: "AI", Icon: RobotIcon, external: false },
   {
     href: "/reading",
     label: "Reading currently",
@@ -31,6 +32,12 @@ const navigationItems = [
     external: false,
   },
   { href: "/about", label: "About me", Icon: TheaterMaskIcon, external: false },
+  {
+    href: "/about-this-site",
+    label: "About this site",
+    Icon: InfoIcon,
+    external: false,
+  },
   { href: "/blog", label: "Blog", Icon: MegaphoneIcon, external: false },
 ];
 

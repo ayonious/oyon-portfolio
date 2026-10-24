@@ -56,12 +56,12 @@ export default function ReadingPage() {
       </header>
 
       <section className="mt-14">
-        <h2 className="text-3xl font-bold">All-time favorites</h2>
+        <h2 className="text-3xl font-bold">Programming-related books</h2>
         <BookList books={allTimeFavoriteBooks} />
       </section>
 
       <section className="mt-14">
-        <h2 className="text-3xl font-bold">People and psychology</h2>
+        <h2 className="text-3xl font-bold">Leadership-related books</h2>
         <BookList books={peopleAndPsychologyBooks} />
       </section>
     </div>

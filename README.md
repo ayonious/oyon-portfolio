@@ -62,6 +62,7 @@ Run `yarn cypress:open` while the development server is running to use the Cypre
 - `/reading` — Favorite books and Goodreads profile (`app/reading/page.tsx`)
 - `/certifications` — Certifications and credentials (`app/certifications/page.tsx`)
 - `/about` — About me (`app/about/page.tsx`)
+- `/about-this-site` — Packages and project acknowledgements (`app/about-this-site/page.tsx`)
 - `/blog` — Blog (`app/blog/page.tsx`)
 - `/contact` — Contact (`app/contact/page.tsx`)
 

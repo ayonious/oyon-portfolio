@@ -98,11 +98,22 @@ export function DiplomaIcon(props: IconProps) {
   );
 }
 
-export function SparklesIcon(props: IconProps) {
+export function RobotIcon(props: IconProps) {
   return (
     <svg {...sharedProps} height={24} strokeWidth={1} width={24} {...props}>
-      <path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5Z" />
-      <path d="M20 2v4M18 4h4" />
+      <rect x="4" y="7" width="16" height="13" rx="1.5" />
+      <path d="M12 7V3M10 3h4M2 11v5M22 11v5M9 16h6" />
+      <circle cx="8" cy="12" r="1" />
+      <circle cx="16" cy="12" r="1" />
+    </svg>
+  );
+}
+
+export function InfoIcon(props: IconProps) {
+  return (
+    <svg {...sharedProps} height={24} strokeWidth={1} width={24} {...props}>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M12 11v6M12 7h.01" />
     </svg>
   );
 }
