@@ -45,5 +45,8 @@ describe("root layout", () => {
     expect(
       document.querySelector('a[href="https://github.com/ayonious"]')?.textContent,
     ).toBe("GitHub");
+    expect(document.querySelector('a[href="/about#contact"]')?.textContent).toBe(
+      "Mail",
+    );
   });
 });

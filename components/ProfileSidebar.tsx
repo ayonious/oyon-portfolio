@@ -15,6 +15,7 @@ import {
   DiplomaIcon,
   PawIcon,
   LightningIcon,
+  MailIcon,
   MegaphoneIcon,
   SailboatIcon,
   RobotIcon,
@@ -98,13 +99,17 @@ export default function ProfileSidebar() {
             <a
               key={link.url}
               href={link.url}
-              target="_blank"
-              rel="noreferrer"
-              aria-label={`Open ${link.label} profile`}
-              title={`Open ${link.label} profile`}
+              target={link.url.startsWith("http") ? "_blank" : undefined}
+              rel={link.url.startsWith("http") ? "noreferrer" : undefined}
+              aria-label={link.label === "Mail" ? "Open contact form" : `Open ${link.label} profile`}
+              title={link.label === "Mail" ? "Open contact form" : `Open ${link.label} profile`}
               className="group relative flex h-10 w-10 items-center justify-center rounded-xl no-underline transition-colors hover:bg-[var(--accent-soft)]"
             >
-              <BrandIcon name={link.label} className="h-5 w-5" />
+              {link.label === "Mail" ? (
+                <MailIcon className="h-5 w-5 text-[var(--accent)]" />
+              ) : (
+                <BrandIcon name={link.label} className="h-5 w-5" />
+              )}
               <span
                 role="tooltip"
                 className="pointer-events-none absolute bottom-12 left-1/2 z-30 w-max -translate-x-1/2 rounded-lg bg-slate-950 px-3 py-1.5 text-xs font-medium text-white opacity-0 shadow-lg transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100 dark:bg-slate-100 dark:text-slate-950"

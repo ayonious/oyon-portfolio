@@ -25,7 +25,7 @@ export default function ContactForm() {
   }
 
   return (
-    <section className="mt-14 max-w-2xl">
+    <section id="contact" className="mt-14 max-w-2xl scroll-mt-8">
       <h2 className="text-2xl font-bold">{aboutContent.contactForm.title}</h2>
       <p className="mt-3 text-slate-600 dark:text-slate-300">{aboutContent.contactForm.introduction}</p>
       <form onSubmit={handleSubmit(onSubmit)} className="mt-6 space-y-5" noValidate>
