@@ -10,36 +10,46 @@ export default function CertificationsPage() {
         </p>
       </header>
 
-      <section className="mt-10 grid gap-4 sm:grid-cols-2">
+      <section className="mt-10 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-slate-700 dark:bg-slate-900">
         {certifications.map((certification) => (
           <article
             key={certification.name}
-            className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-slate-900"
+            className="border-b border-slate-200 p-5 last:border-b-0 sm:flex sm:items-start sm:justify-between sm:gap-8 sm:p-6 dark:border-slate-700"
           >
-            <h2 className="text-xl font-bold">{certification.name}</h2>
-            <p className="mt-1 font-medium text-slate-600 dark:text-slate-300">
-              {certification.issuer} · Issued {certification.issued}
-            </p>
-            {certification.description && (
-              <p className="mt-3 text-slate-600 dark:text-slate-300">
-                {certification.description}
+            <div className="min-w-0">
+              <h2 className="text-xl font-bold">{certification.name}</h2>
+              <p className="mt-1 font-medium text-slate-600 dark:text-slate-300">
+                {certification.issuer}
               </p>
-            )}
-            {certification.credentialId && (
-              <p className="mt-3 text-sm text-slate-500 dark:text-slate-400">
-                Credential ID {certification.credentialId}
+              <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
+                Issued {certification.issued}
+                {certification.credentialId && (
+                  <> · Credential ID {certification.credentialId}</>
+                )}
               </p>
-            )}
-            {certification.credentialUrl && (
-              <a
-                href={certification.credentialUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-4 inline-flex font-semibold"
-              >
-                Show credential →
-              </a>
-            )}
+              {certification.description && (
+                <p className="mt-3 text-slate-600 dark:text-slate-300">
+                  {certification.description}
+                </p>
+              )}
+            </div>
+
+            <div className="mt-4 shrink-0 sm:mt-0 sm:text-right">
+              {certification.credentialUrl ? (
+                <a
+                  href={certification.credentialUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex rounded-lg border border-[var(--accent)] px-3 py-1.5 text-sm font-semibold no-underline hover:bg-[var(--accent-soft)]"
+                >
+                  Show credential ↗
+                </a>
+              ) : (
+                <span className="inline-flex rounded-full bg-[var(--accent-soft)] px-3 py-1 text-sm font-semibold text-[var(--accent)]">
+                  Completed
+                </span>
+              )}
+            </div>
           </article>
         ))}
       </section>
