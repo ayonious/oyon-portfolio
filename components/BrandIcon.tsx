@@ -1,5 +1,8 @@
 import {
+  siAdyen,
   siAnthropic,
+  siBookingdotcom,
+  siBraintree,
   siCouchbase,
   siCursor,
   siCypress,
@@ -33,7 +36,10 @@ import {
 import type { CSSProperties } from "react";
 
 const icons: Record<string, SimpleIcon> = {
+  Adyen: siAdyen,
   Anthropic: siAnthropic,
+  "Booking.com": siBookingdotcom,
+  Braintree: siBraintree,
   Couchbase: siCouchbase,
   Cursor: siCursor,
   Cypress: siCypress,
