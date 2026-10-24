@@ -78,9 +78,12 @@ export default function AboutThisSitePage() {
 
       <section className="mt-14 rounded-2xl bg-[var(--accent-soft)] p-6">
         <h2 className="text-2xl font-bold">{aboutSiteContent.creditsTitle}</h2>
-        <ul className="mt-4 flex flex-wrap gap-3">
+        <ul className="mt-4 space-y-3">
           {aboutSiteContent.credits.map((credit) => (
             <li key={credit.url} className="text-slate-700 dark:text-slate-200">
+              <span aria-hidden="true" className="mr-2">
+                {credit.emoji}
+              </span>
               {credit.role}:{" "}
               <a href={credit.url} target="_blank" rel="noreferrer">
                 {credit.name}

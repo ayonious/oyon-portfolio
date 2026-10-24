@@ -12,7 +12,7 @@ export default function AboutPage() {
           <div className="mt-6 space-y-4 text-lg text-slate-600 dark:text-slate-300">
             {aboutContent.paragraphs.map((paragraph, paragraphIndex) => (
               <p key={paragraphIndex}>
-                {paragraph.map((part, partIndex) =>
+                {paragraph.parts.map((part, partIndex) =>
                   part.href ? (
                     <Link key={partIndex} href={part.href}>
                       {part.text}
@@ -33,39 +33,6 @@ export default function AboutPage() {
           priority
           className="aspect-square w-full rounded-3xl border border-slate-200 object-cover shadow-sm dark:border-slate-700"
         />
-      </section>
-
-      <section id="hobbies" className="mt-14 scroll-mt-8">
-        <h2 className="text-2xl font-bold">{aboutContent.hobbiesTitle}</h2>
-        <div className="mt-6 grid gap-4 sm:grid-cols-2">
-          {aboutContent.hobbies.map((hobby) => {
-            const content = (
-              <>
-                <h3 className="text-lg font-bold">{hobby.name}</h3>
-                <p className="mt-2 text-slate-600 dark:text-slate-300">
-                  {hobby.description}
-                </p>
-              </>
-            );
-
-            return hobby.href ? (
-              <Link
-                key={hobby.name}
-                href={hobby.href}
-                className="rounded-2xl border border-slate-200 bg-white p-5 no-underline shadow-sm transition-colors hover:bg-[var(--accent-soft)] dark:border-slate-700 dark:bg-slate-900"
-              >
-                {content}
-              </Link>
-            ) : (
-              <article
-                key={hobby.name}
-                className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-slate-900"
-              >
-                {content}
-              </article>
-            );
-          })}
-        </div>
       </section>
 
       <section className="mt-14">
