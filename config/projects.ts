@@ -6,6 +6,7 @@ export type OpenSourceProject = {
   name: string;
   pinned?: boolean;
   stars: number;
+  technologies?: string[];
   url: string;
 };
 
@@ -43,6 +44,7 @@ export const openSourceProjectsConfig = {
         description:
           "Explore randomly generated names from different regions in an interactive React app.",
         language: "TypeScript",
+        technologies: ["React", "Material UI", "Cypress", "Netlify"],
         stars: 4,
       },
       {
@@ -53,6 +55,7 @@ export const openSourceProjectsConfig = {
         description:
           "Move a small bug around a two-dimensional world while exploring keyboard interaction and interface boundaries.",
         language: "TypeScript",
+        technologies: ["React", "Styled Components", "React Testing Library", "Netlify"],
         stars: 0,
       },
       {
@@ -63,6 +66,7 @@ export const openSourceProjectsConfig = {
         description:
           "Turn a city's railway lines into a navigable Git network graph using graph theory and Git branches.",
         language: "JavaScript",
+        technologies: ["Node.js", "Git", "Graph theory"],
         stars: 0,
       },
     ] satisfies OpenSourceProject[],
