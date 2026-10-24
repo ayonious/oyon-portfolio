@@ -5,7 +5,6 @@ export type Certification = {
   description?: string;
   result?: string;
   credentialId?: string;
-  credentialUrl?: string;
 };
 
 export const certifications: Certification[] = [
@@ -21,13 +20,11 @@ export const certifications: Certification[] = [
     issuer: "Udemy",
     issued: "November 2018",
     credentialId: "UC-HTKYP7TF",
-    credentialUrl: "https://www.udemy.com/certificate/UC-HTKYP7TF/",
   },
   {
     name: "Node with React: Fullstack Web Development",
     issuer: "Udemy",
     issued: "November 2018",
     credentialId: "UC-HH4VIZK2",
-    credentialUrl: "https://www.udemy.com/certificate/UC-HH4VIZK2/",
   },
 ];
