@@ -205,7 +205,7 @@ export const aboutSiteContent = {
       {
         title: "Vercel Function",
         description:
-          "The /api/contact Route Handler becomes an on-demand Vercel Function. It starts when the form is submitted, validates the request, and stops after the request finishes. Platform-level rate limiting can be added through Vercel later.",
+          "The /api/contact Route Handler becomes an on-demand Vercel Function. It starts when the form is submitted, validates the request, and stops after the request finishes. A Vercel Firewall rate-limit rule protects the endpoint before excessive requests reach the Function.",
       },
       {
         title: "Resend email delivery",
