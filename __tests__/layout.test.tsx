@@ -31,9 +31,13 @@ describe("root layout", () => {
         link.getAttribute("href"),
       ]),
     ).toEqual([
-      ["Work history", "/work"],
-      ["Open-source projects", "/projects"],
-      ["Skills", "/skills"],
+      ["Work", "/work"],
+      ["Open source", "/projects"],
+      ["Weather", "/weather"],
+      [
+        "Reading currently",
+        "https://www.goodreads.com/user/show/95339067-nahiyan-k",
+      ],
       ["About me", "/about"],
       ["Blog", "/blog"],
     ]);
