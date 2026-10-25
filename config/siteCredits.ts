@@ -44,10 +44,13 @@ export const majorDependencies = [
 ];
 
 export const allPackages = [
+  "@hookform/resolvers",
+  "react-hook-form",
   "next",
   "react",
   "react-dom",
   "simple-icons",
+  "zod",
   "@tailwindcss/postcss",
   "@testing-library/dom",
   "@testing-library/jest-dom",
