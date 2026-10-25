@@ -72,9 +72,30 @@ only when Cloudflare returns the boolean response `success: true`. Invalid,
 expired, reused, malformed, and unverifiable tokens stop before an email is
 sent.
 
-Sending an actual email locally still requires a valid `RESEND_API_KEY`,
-`RESEND_FROM_EMAIL`, and `CONTACT_EMAIL` in `.env.local`. Restart `yarn dev`
-after changing environment variables.
+Sending an actual email to your own inbox with `yarn dev` still requires a
+valid `RESEND_API_KEY`, `RESEND_FROM_EMAIL`, and `CONTACT_EMAIL` in
+`.env.local`. Restart the development server after changing environment
+variables.
+
+For a safe local end-to-end test, add only a private Resend API key to
+`.env.local`:
+
+```env
+RESEND_API_KEY=re_your_api_key
+```
+
+Then run:
+
+```sh
+yarn dev:sandbox
+```
+
+This command supplies Cloudflare's always-pass test credentials and sends mail
+to Resend's `delivered@resend.dev` test recipient from `onboarding@resend.dev`.
+It exercises the real contact endpoint and records a successful delivery event
+in Resend without sending a message to a real inbox. Resend does not provide a
+public sandbox API token, so a real account API key with Sending access is still
+required and must remain in `.env.local`.
 
 ## Contact form setup
 
