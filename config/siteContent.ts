@@ -55,7 +55,7 @@ export const sidebarContent = {
     },
     { label: "Mail", url: "/about#contact" },
   ],
-  footerCredit: "Made with ❤️ by NK",
+  footerCredit: "Made with ❤️ by Nahiyan",
 };
 
 export const aboutContent = {
