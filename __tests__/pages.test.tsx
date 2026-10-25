@@ -2,7 +2,6 @@ import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "@jest/globals";
 import HomePage from "../app/page";
 import AboutPage from "../app/about/page";
-import ContactPage from "../app/contact/page";
 import AboutThisSitePage from "../app/about-this-site/page";
 import AiPage from "../app/ai/page";
 import BlogPage from "../app/blog/page";
@@ -34,15 +33,6 @@ describe("site pages", () => {
     expect(screen.getByLabelText("Name")).toBeTruthy();
     expect(screen.getByLabelText("Email")).toBeTruthy();
     expect(screen.getByLabelText("Message")).toBeTruthy();
-  });
-
-  it("provides an email link on the contact page", () => {
-    render(<ContactPage />);
-
-    expect(screen.getByRole("heading", { name: "Contact" })).toBeTruthy();
-    expect(
-      screen.getByRole("link", { name: "hello@example.com" }).getAttribute("href"),
-    ).toBe("mailto:hello@example.com");
   });
 
   it("documents the site dependencies and reuse guidance", () => {

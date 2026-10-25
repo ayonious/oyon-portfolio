@@ -177,11 +177,6 @@ export const pageContent = {
     linkLabel: "Visit my blog ↗",
     url: "https://that-it-guy.netlify.app",
   },
-  contact: {
-    title: "Contact",
-    introduction: "Have a question? Get in touch.",
-    email: "hello@example.com",
-  },
 };
 
 export const aboutSiteContent = {

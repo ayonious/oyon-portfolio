@@ -52,8 +52,8 @@ async function verifyTurnstile(token: string, secret: string) {
 
     if (!response.ok) return "unavailable" as const;
 
-    const result = (await response.json()) as { success?: boolean };
-    return result.success ? ("valid" as const) : ("invalid" as const);
+    const result = (await response.json()) as { success?: unknown };
+    return result.success === true ? ("valid" as const) : ("invalid" as const);
   } catch {
     return "unavailable" as const;
   }
@@ -86,7 +86,7 @@ export async function POST(request: Request) {
   if (verification === "unavailable") {
     return jsonError("Verification service is unavailable. Please try again.", 502);
   }
-  if (verification === "invalid") {
+  if (verification !== "valid") {
     return jsonError("Verification failed. Please try again.", 400);
   }
 

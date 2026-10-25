@@ -42,12 +42,39 @@ and this project's [third-party notices](THIRD_PARTY_NOTICES.md).
 
 ## Run locally
 
+Install the project dependencies, copy the example environment configuration,
+and start the Next.js development server:
+
 ```sh
 yarn install
+cp .env.example .env.local
 yarn dev
 ```
 
-Open http://localhost:3000.
+Open [http://localhost:3000](http://localhost:3000). The example environment
+file uses Cloudflare Turnstile's official sandbox credentials, so the contact
+form can complete bot verification on localhost:
+
+```env
+NEXT_PUBLIC_TURNSTILE_SITE_KEY=1x00000000000000000000AA
+TURNSTILE_SECRET_KEY=1x0000000000000000000000000000000AA
+```
+
+This sitekey and secret key combination always returns a successful test
+verification. It must only be used locally or in automated tests. To test the
+failure path, Cloudflare also provides the always-fail sitekey
+`2x00000000000000000000AB` and secret key
+`2x0000000000000000000000000000000AA`.
+
+The application does not trust the browser result by itself. `/api/contact`
+sends every token to Cloudflare's Siteverify endpoint and continues to Resend
+only when Cloudflare returns the boolean response `success: true`. Invalid,
+expired, reused, malformed, and unverifiable tokens stop before an email is
+sent.
+
+Sending an actual email locally still requires a valid `RESEND_API_KEY`,
+`RESEND_FROM_EMAIL`, and `CONTACT_EMAIL` in `.env.local`. Restart `yarn dev`
+after changing environment variables.
 
 ## Contact form setup
 
@@ -135,11 +162,11 @@ Run `yarn cypress:open` while the development server is running to use the Cypre
 - `/about` — About me (`app/about/page.tsx`)
 - `/about-this-site` — Packages and project acknowledgements (`app/about-this-site/page.tsx`)
 - `/blog` — Blog (`app/blog/page.tsx`)
-- `/contact` — Contact (`app/contact/page.tsx`)
 
 Shared navigation content lives in `config/siteContent.ts`, its component lives
 in `components/ProfileSidebar.tsx`, and global styles live in `app/globals.css`.
-Replace the example Contact page email in `config/siteContent.ts` with your own.
+The contact form is the final section of `/about`, and its server endpoint is
+`/api/contact`.
 
 ## Production
 
