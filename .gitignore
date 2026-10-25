@@ -2,7 +2,6 @@ node_modules/
 .next/
 out/
 coverage/
-storybook-static/
 .env*
 !.env.example
 .DS_Store

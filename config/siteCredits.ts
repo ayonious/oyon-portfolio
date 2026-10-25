@@ -36,12 +36,6 @@ export const majorDependencies = [
       "Provides browser-based end-to-end testing for complete navigation and interaction flows when those tests are enabled for the project.",
   },
   {
-    name: "Storybook",
-    url: "https://storybook.js.org/",
-    description:
-      "Renders page-specific and shared interface components in isolation, making their states easier to understand, review, and develop without navigating through the complete website.",
-  },
-  {
     name: "Simple Icons",
     url: "https://simpleicons.org/",
     description:
@@ -51,14 +45,11 @@ export const majorDependencies = [
 
 export const allPackages = [
   "@hookform/resolvers",
-  "@storybook/addon-a11y",
-  "@storybook/nextjs-vite",
   "react-hook-form",
   "next",
   "react",
   "react-dom",
   "simple-icons",
-  "storybook",
   "zod",
   "@tailwindcss/postcss",
   "@testing-library/dom",
@@ -74,5 +65,4 @@ export const allPackages = [
   "postcss",
   "tailwindcss",
   "typescript",
-  "vite",
 ];
