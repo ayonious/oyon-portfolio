@@ -113,14 +113,14 @@ export default function ProfileSidebar() {
                 )}
                 <span
                   role="tooltip"
-                  className="pointer-events-none absolute bottom-12 left-1/2 z-30 w-max -translate-x-1/2 rounded-lg bg-slate-950 px-3 py-1.5 text-xs font-medium text-white opacity-0 shadow-lg transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100 dark:bg-slate-100 dark:text-slate-950"
+                  className="sidebar-tooltip absolute bottom-12 left-1/2 w-max -translate-x-1/2 group-hover:opacity-100 group-focus-visible:opacity-100"
                 >
                   {link.label}
                 </span>
               </a>
             ))}
           </div>
-          <p className="mt-3 text-sm text-slate-500 dark:text-slate-400">
+          <p className="mt-3 text-[length:var(--sidebar-label-font-size)] text-slate-500 dark:text-slate-400">
             {sidebarContent.footerCredit}
           </p>
         </div>

@@ -4,7 +4,16 @@ export default function CertificationItem({ certification, completedLabel }: { c
   return (
     <article className="border-b border-slate-200 p-5 last:border-b-0 sm:flex sm:items-start sm:justify-between sm:gap-8 sm:p-6 dark:border-slate-700">
       <div className="min-w-0">
-        <h2 className="text-xl font-bold">{certification.name}</h2>
+        <h2 className="text-xl font-bold">
+          <a
+            href={certification.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-sm text-[var(--accent)] underline decoration-[var(--accent)]/40 underline-offset-4 hover:decoration-current focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--accent)]"
+          >
+            {certification.name} <span aria-hidden="true">↗</span>
+          </a>
+        </h2>
         <p className="mt-1 font-medium text-slate-600 dark:text-slate-300">{certification.issuer}</p>
         <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">Issued {certification.issued}</p>
         {certification.result && <p className="mt-2 text-sm font-semibold text-slate-600 dark:text-slate-300">Result: {certification.result}</p>}

@@ -1,6 +1,10 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
+:root {
+  --sidebar-label-font-size: 0.875rem;
+}
+
 :root,
 :root[data-accent="blue"] {
   --accent: #2a67a5;
@@ -92,4 +96,11 @@ h6 {
 h1 {
   margin-top: 0;
   line-height: 1.2;
+}
+
+@layer components {
+  .sidebar-tooltip {
+    @apply pointer-events-none z-30 rounded-lg bg-slate-950 px-3 py-1.5 font-medium text-white opacity-0 shadow-lg transition-opacity dark:bg-slate-100 dark:text-slate-950;
+    font-size: var(--sidebar-label-font-size);
+  }
 }
