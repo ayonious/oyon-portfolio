@@ -16,6 +16,7 @@ Create my personal profile and portfolio website using Next.js, TypeScript, and 
 - [Tailwind CSS](https://tailwindcss.com/) for styling
 - [Jest](https://jestjs.io/) and [Testing Library](https://testing-library.com/) for component tests
 - [Cypress](https://www.cypress.io/) for browser tests
+- [Storybook](https://storybook.js.org/) for developing components in isolation
 - [Vercel](https://vercel.com/) for deployment
 - [Yarn](https://yarnpkg.com/) for package management
 - [Simple Icons](https://simpleicons.org/) for brand and technology marks
@@ -149,6 +150,24 @@ yarn test
 Use `yarn test:watch` while developing to rerun affected tests after changes.
 Run `yarn test:coverage` to generate a local coverage report.
 Run `yarn cypress:open` while the development server is running to use the Cypress test runner.
+
+## Storybook
+
+Page-specific components live in focused folders under `components/`, with
+their stories beside them. Start the component explorer with:
+
+```sh
+yarn storybook
+```
+
+Open [http://localhost:6006](http://localhost:6006). Stories cover representative
+states for book lists, open-source projects, skills, certifications, work
+history, work projects, and the theme controls. Build the standalone Storybook
+site with:
+
+```sh
+yarn build-storybook
+```
 
 ## Pages
 
