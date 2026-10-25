@@ -147,6 +147,19 @@ describe("contact API route", () => {
     });
   });
 
+  it("continues only when Cloudflare returns the boolean value true", async () => {
+    jest.spyOn(global, "fetch").mockResolvedValue(
+      new Response(JSON.stringify({ success: "true" }), { status: 200 }),
+    );
+
+    const response = await POST(requestWith(validPayload));
+
+    expect(response.status).toBe(400);
+    await expect(response.json()).resolves.toEqual({
+      message: "Verification failed. Please try again.",
+    });
+  });
+
   it.each(["http-error", "network-error"])(
     "reports Turnstile as unavailable after a %s",
     async (failure) => {
