@@ -150,7 +150,6 @@ Use `yarn test:watch` while developing to rerun affected tests after changes.
 Run `yarn test:coverage` to generate a local coverage report.
 Run `yarn cypress:open` while the development server is running to use the Cypress test runner.
 
-
 ## Pages
 
 - `/` — Home (`app/page.tsx`)
