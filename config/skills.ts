@@ -1,7 +1,7 @@
 export const skillGroups = [
   {
     title: "Frameworks and runtimes",
-    skills: ["Next.js", "React", "React Native", "Node.js", "Express.js", "NestJS", "Fastify", "Spring Boot"],
+    skills: ["Next.js", "React", "React Native", "Vue.js", "Node.js", "Express.js", "NestJS", "Fastify", "Spring Boot"],
   },
   {
     title: "Other React-based frameworks",

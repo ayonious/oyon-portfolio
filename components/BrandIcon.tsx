@@ -1,4 +1,5 @@
 import {
+  siVuedotjs,
   siAdyen,
   siDocusaurus,
   siGatsby,
@@ -79,6 +80,7 @@ import type { CSSProperties } from "react";
 import { MailIcon } from "./icons/SidebarIcons";
 
 const icons: Record<string, SimpleIcon> = {
+  "Vue.js": siVuedotjs,
   Adyen: siAdyen,
   "Docusaurus": siDocusaurus,
   "Gatsby": siGatsby,
