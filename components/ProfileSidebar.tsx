@@ -143,7 +143,12 @@ export default function ProfileSidebar() {
           </div>
           <p className="mt-5 border-b border-slate-200 pb-5 text-slate-600 dark:border-slate-700 dark:text-slate-300 lg:max-w-xs">
             {sidebarContent.introduction.textBefore}
-            <Link href="/about">{sidebarContent.introduction.linkText}</Link>
+            <Link
+              href="/about"
+              className="inline-block transition-[color,scale] duration-200 ease-out hover:text-[var(--accent)] motion-safe:hover:scale-103 motion-safe:hover:underline motion-safe:focus-visible:scale-103 motion-safe:focus-visible:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent)] motion-reduce:transition-none"
+            >
+              {sidebarContent.introduction.linkText}
+            </Link>
             {sidebarContent.introduction.textAfter}
           </p>
         </div>

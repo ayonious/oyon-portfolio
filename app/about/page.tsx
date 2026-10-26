@@ -15,7 +15,11 @@ export default function AboutPage() {
               <p key={paragraphIndex}>
                 {paragraph.parts.map((part, partIndex) =>
                   part.href ? (
-                    <Link key={partIndex} href={part.href}>
+                    <Link
+                      key={partIndex}
+                      href={part.href}
+                      className="inline-block transition-[color,scale] duration-200 ease-out hover:text-[var(--accent)] motion-safe:hover:scale-103 motion-safe:hover:underline motion-safe:focus-visible:scale-103 motion-safe:focus-visible:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent)] motion-reduce:transition-none"
+                    >
                       {part.text}
                     </Link>
                   ) : (
@@ -45,7 +49,7 @@ export default function AboutPage() {
               href={profile.url}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-4 py-4 no-underline transition-colors hover:text-[var(--accent)]"
+              className="flex items-center gap-4 py-4 no-underline transition-[color,translate] duration-200 ease-out hover:text-[var(--accent)] motion-safe:hover:translate-x-1 motion-safe:focus-visible:translate-x-1 motion-reduce:transition-none"
             >
               <BrandIcon name={profile.name} className="h-6 w-6 shrink-0" />
               <span className="min-w-0 flex-1">
