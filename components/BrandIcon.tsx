@@ -19,6 +19,7 @@ import {
   siGradle,
   siSwc,
   siNestjs,
+  siFastify,
   siMarkdown,
   siHomebrew,
 
@@ -98,6 +99,7 @@ const icons: Record<string, SimpleIcon> = {
   "Gradle": siGradle,
   "SWC": siSwc,
   "NestJS": siNestjs,
+  Fastify: siFastify,
   "Markdown": siMarkdown,
   "Homebrew": siHomebrew,
 
@@ -190,7 +192,7 @@ export default function BrandIcon({ name, className = "h-5 w-5" }: BrandIconProp
     return null;
   }
 
-  const darkColor = ["Express.js", "GitHub", "Console Table Printer", "Next.js", "Apple", "Apple Pay", "Braintree", "iOS", "Vercel"].includes(
+  const darkColor = ["Express.js", "Fastify", "GitHub", "Console Table Printer", "Next.js", "Apple", "Apple Pay", "Braintree", "iOS", "Vercel"].includes(
     name,
   )
     ? "#ffffff"
