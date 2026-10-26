@@ -10,8 +10,6 @@
 
 Create my personal profile and portfolio website using Next.js, TypeScript, and Tailwind CSS to showcase my background, skills, and projects.
 
-https://github.com/user-attachments/assets/393cb886-f3fd-49f1-a611-a20bf0393735
-
 ## Built with
 
 - [Next.js](https://nextjs.org/) and [React](https://react.dev/) for the website
