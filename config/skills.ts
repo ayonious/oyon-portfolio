@@ -13,7 +13,7 @@ export const skillGroups = [
   },
   {
     title: "Frontend",
-    skills: ["Tailwind CSS", "Atomic design", "Reusable component architecture"],
+    skills: ["Tailwind CSS", "Styled Components", "Atomic design", "Reusable component architecture"],
   },
   {
     title: "Testing and tooling",
