@@ -46,7 +46,7 @@ export default function ColorPalette() {
         aria-expanded={open}
         title="Choose accent color"
         onClick={() => setOpen((current) => !current)}
-        className="peer flex h-10 w-10 cursor-pointer items-center justify-center rounded-xl transition-colors hover:bg-[var(--accent-soft)]"
+        className="hover-lift peer flex h-10 w-10 cursor-pointer items-center justify-center rounded-xl hover:bg-[var(--accent-soft)]"
       >
         <span
           aria-hidden="true"
@@ -78,7 +78,7 @@ export default function ColorPalette() {
                 applyAccent(option.value);
                 setOpen(false);
               }}
-              className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800"
+              className="hover-lift flex h-9 w-9 cursor-pointer items-center justify-center rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800"
             >
               <span
                 aria-hidden="true"

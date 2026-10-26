@@ -4,7 +4,7 @@ import BrandText from "../BrandText";
 
 export default function WorkProjectCard({ project, scaleTitle }: { project: WorkProject; scaleTitle: string }) {
   return (
-    <article className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-slate-900">
+    <article className="interactive-card rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-slate-900">
       <h3 className="text-2xl font-bold text-slate-950 dark:text-slate-50">{project.title}</h3>
       <TechnologyTags technologies={project.technologies} />
       <p className="mt-6 leading-7 text-slate-600 dark:text-slate-300"><BrandText text={`${project.situation} ${project.task} ${project.action} ${project.result}`} /></p>

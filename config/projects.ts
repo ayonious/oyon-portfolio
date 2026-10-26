@@ -165,18 +165,18 @@ export const openSourceProjectsConfig = {
   organization: {
     label: "Console Table Printer organization",
     downloadStat: {
-      label: "2.4M weekly npm downloads",
+      label: "3.4M downloads / Week",
       url: "https://www.npmjs.com/package/console-table-printer",
-      period: "October 16–22, 2026",
+      period: "Weekly npm downloads",
       icon: "npm",
     },
     description: "Open-source tools and documentation from the Console Table Printer organization, focused on readable terminal output.",
     limit: 4,
     url: "https://github.com/console-table-printer",
     projects: [
-      { name: "console-table-printer", downloadStat: { label: "2.45M weekly npm downloads", url: "https://www.npmjs.com/package/console-table-printer", period: "October 16–22, 2026", icon: "npm" }, demoUrl: "https://console-table.netlify.app", demoLabel: "Explore live documentation", url: "https://github.com/console-table-printer/console-table-printer", description: "Print colorful, readable tables in the console.", language: "TypeScript", technologies: ["Node.js", "npm", "Jest", "SWC"], stars: 227 },
-      { name: "simple-wcswidth", downloadStat: { label: "2.43M weekly npm downloads", url: "https://www.npmjs.com/package/simple-wcswidth", period: "October 16–22, 2026", icon: "npm" }, url: "https://github.com/console-table-printer/simple-wcswidth", description: "A simple TypeScript implementation of Markus Kuhn's wcswidth function.", language: "TypeScript", technologies: ["Node.js", "npm", "Jest"], stars: 5 },
-      { name: "table-printer-cli", downloadStat: { label: "91 weekly npm downloads", url: "https://www.npmjs.com/package/table-printer-cli", period: "October 16–22, 2026", icon: "npm" }, url: "https://github.com/console-table-printer/table-printer-cli", description: "A command-line tool for printing terminal tables.", language: "TypeScript", technologies: ["Node.js", "CLI", "npm", "Jest", "Commander.js"], stars: 2 },
+      { name: "console-table-printer", downloadStat: { label: "3.4M downloads / Week", url: "https://www.npmjs.com/package/console-table-printer", period: "Weekly npm downloads", icon: "npm" }, demoUrl: "https://console-table.netlify.app", demoLabel: "Explore live documentation", url: "https://github.com/console-table-printer/console-table-printer", description: "Print colorful, readable tables in the console.", language: "TypeScript", technologies: ["Node.js", "npm", "Jest", "SWC"], stars: 227 },
+      { name: "simple-wcswidth", downloadStat: { label: "2.43M downloads / Week", url: "https://www.npmjs.com/package/simple-wcswidth", period: "October 16–22, 2026", icon: "npm" }, url: "https://github.com/console-table-printer/simple-wcswidth", description: "A simple TypeScript implementation of Markus Kuhn's wcswidth function.", language: "TypeScript", technologies: ["Node.js", "npm", "Jest"], stars: 5 },
+      { name: "table-printer-cli", downloadStat: { label: "91 downloads / Week", url: "https://www.npmjs.com/package/table-printer-cli", period: "October 16–22, 2026", icon: "npm" }, url: "https://github.com/console-table-printer/table-printer-cli", description: "A command-line tool for printing terminal tables.", language: "TypeScript", technologies: ["Node.js", "CLI", "npm", "Jest", "Commander.js"], stars: 2 },
       { name: "console-table-docu", url: "https://github.com/console-table-printer/console-table-docu", description: "Documentation for Console Table Printer.", language: "TypeScript", technologies: ["React", "Docusaurus", "Markdown", "Styled Components", "Node.js", "Jest", "React Testing Library", "Cypress", "Netlify"], stars: 1 },
       { name: "chrome-extension-table-printer", url: "https://github.com/console-table-printer/chrome-extension-table-printer", description: "A Chrome extension for formatting JSON.", language: "JavaScript", technologies: ["HTML", "CSS", "Chrome Extensions"], stars: 0 },
       { name: "e2e", url: "https://github.com/console-table-printer/e2e", description: "End-to-end tests for the organization's packages and websites.", language: "TypeScript", technologies: ["Node.js", "Jest"], stars: 0 },

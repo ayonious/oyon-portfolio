@@ -120,8 +120,8 @@ describe("site pages", () => {
     expect(
       screen.getAllByRole("heading", { level: 2 }).map((heading) => heading.textContent),
     ).toEqual([
-      "Pinned personal repositories",
       "Console Table Printer organization",
+      "Pinned personal repositories",
       "Gamified projects",
       "For Software Engineers",
       "University animation projects",

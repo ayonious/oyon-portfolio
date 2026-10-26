@@ -1,5 +1,6 @@
 import BrandIcon, { brandNames } from "../BrandIcon";
 import ProjectCard from "./ProjectCard";
+import ScrollReveal from "../ScrollReveal";
 import ProjectStars from "./ProjectStars";
 import NpmDownloads from "./NpmDownloads";
 import { getProjectTechnologies } from "./projectUtils";
@@ -27,7 +28,7 @@ export default function ProjectGroup({ label, limit, onlyPinned, projects, descr
     <section className="mt-12">
       <div className="flex flex-wrap items-baseline justify-between gap-3">
         <h2 className="text-2xl font-bold text-slate-950 dark:text-slate-50">{label}</h2>
-        {url && <a href={url} target="_blank" rel="noreferrer" className="font-medium">{pageContent.projects.viewOnGitHub}</a>}
+        {url && <a href={url} target="_blank" rel="noreferrer" className="hover-lift inline-block cursor-pointer font-medium">{pageContent.projects.viewOnGitHub}</a>}
       </div>
       {description && <p className="mt-2 max-w-3xl text-slate-600 dark:text-slate-300">{description}</p>}
       {showStats && (
@@ -46,9 +47,13 @@ export default function ProjectGroup({ label, limit, onlyPinned, projects, descr
         <ul className="mt-6 divide-y divide-slate-200 border-y border-slate-200 dark:divide-slate-700 dark:border-slate-700">
           {visibleProjects.map((project) => {
             const technologies = getProjectTechnologies(project);
+            const linkLabel = project.url.includes("github.com") ? "Open in GitHub" : "Open project";
             return (
-              <li key={project.url} className="flex min-w-0 items-center gap-3 py-2.5 text-sm">
-                <a href={project.url} target="_blank" rel="noreferrer" title={project.description} className="min-w-0 truncate font-semibold">{project.name} <span aria-hidden="true">↗</span></a>
+              <ScrollReveal as="li" key={project.url} className="flex min-w-0 items-center gap-3 py-2.5 text-sm">
+                <a href={project.url} target="_blank" rel="noreferrer" title={linkLabel} className="hover-lift group relative inline-flex min-w-0 cursor-pointer truncate font-semibold">
+                  <span className="truncate">{project.name}</span>
+                  <span aria-hidden="true" className="sidebar-tooltip absolute bottom-full left-0 mb-2 w-max group-hover:opacity-100 group-focus-visible:opacity-100">{linkLabel}</span>
+                </a>
                 <ProjectStars stars={project.stars} />
                 {technologies.length > 0 && (
                   <span className="ml-auto hidden shrink-0 items-center gap-2 sm:inline-flex" aria-label="Technologies used">
@@ -61,15 +66,15 @@ export default function ProjectGroup({ label, limit, onlyPinned, projects, descr
                   </span>
                 )}
                 {project.demoUrl && project.demoLabel && (
-                  <a href={project.demoUrl} target="_blank" rel="noreferrer" className="shrink-0 whitespace-nowrap font-medium">{project.demoLabel} ↗</a>
+                  <a href={project.demoUrl} target="_blank" rel="noreferrer" className="hover-lift relative z-20 inline-flex shrink-0 whitespace-nowrap font-medium">{project.demoLabel} ↗</a>
                 )}
-              </li>
+              </ScrollReveal>
             );
           })}
         </ul>
       ) : (
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
-          {visibleProjects.map((project) => <ProjectCard key={project.url} project={project} />)}
+          {visibleProjects.map((project, index) => <ScrollReveal key={project.url} delay={(index % 2) * 80}><ProjectCard project={project} /></ScrollReveal>)}
         </div>
       )}
     </section>

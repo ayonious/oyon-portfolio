@@ -135,11 +135,6 @@ export const pageContent = {
     projectsIntroduction:
       "Each project is presented as a concise narrative and includes every service-scale figure available in my career records.",
     scaleTitle: "Documented service scale",
-    recommendations: {
-      label: "Read my recommendations on LinkedIn",
-      url: "https://www.linkedin.com/in/nahiyan-k-0782743a/details/recommendations/?detailScreenTabIndex=0",
-      icon: "LinkedIn",
-    },
   },
   projects: {
     title: "Open-source projects",

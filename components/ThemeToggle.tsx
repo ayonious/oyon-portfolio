@@ -43,7 +43,7 @@ export default function ThemeToggle() {
         aria-label={actionLabel}
         title={actionLabel}
         onClick={toggleTheme}
-        className="peer flex h-10 w-10 cursor-pointer items-center justify-center rounded-xl text-[var(--accent)] transition-colors hover:bg-[var(--accent-soft)]"
+        className="hover-lift peer flex h-10 w-10 cursor-pointer items-center justify-center rounded-xl text-[var(--accent)] hover:bg-[var(--accent-soft)]"
       >
         {theme === "light" ? <MoonIcon /> : <SunIcon />}
       </button>
