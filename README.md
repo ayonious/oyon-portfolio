@@ -174,3 +174,42 @@ The contact form is the final section of `/about`, and its server endpoint is
 yarn build
 yarn start
 ```
+
+
+## Storybook
+
+Run `yarn storybook` and open http://localhost:6006 to browse isolated portfolio
+components. Stories reuse content from `config/`, load the site's Tailwind styles,
+and serve images from `public/`. Use the toolbar to change the light/dark theme
+and accent palette. Controls let you edit component props; Docs shows the generated
+component documentation. Add stories under `stories/` using `*.stories.tsx`.
+
+Build the standalone static site with:
+
+```sh
+yarn build-storybook
+```
+
+The deployable output is `storybook-static/`. This directory is generated and
+ignored by Git. It can be hosted by any static web host.
+
+### Deploy stories on Vercel
+
+Create a **separate Vercel project** and import this same Git repository. Set:
+
+| Setting | Value |
+| --- | --- |
+| Root Directory | Repository root |
+| Framework Preset | Other |
+| Install Command | `yarn install --frozen-lockfile` |
+| Build Command | `yarn build-storybook` |
+| Output Directory | `storybook-static` |
+
+Click **Deploy** to get a shareable Storybook URL. Future pushes to that project's
+production branch rebuild the stories, and pull requests can receive preview
+URLs. Configure these overrides on the new Storybook project; the portfolio's
+existing Vercel project continues to use `yarn build` and the Next.js preset.
+Storybook does not require the contact form's email or Turnstile secrets.
+
+See [Storybook's Next.js/Vite guide](https://storybook.js.org/docs/get-started/frameworks/nextjs-vite)
+and [Vercel's build settings](https://vercel.com/docs/builds/configure-a-build).
