@@ -19,7 +19,7 @@ export default function BlogPage() {
             </span>
             <div>
               <h2 className="text-xl font-bold text-slate-950 dark:text-slate-50">
-                <a href={post.url} target="_blank" rel="noreferrer">
+                <a href={post.url} target="_blank" rel="noreferrer" className="inline-flex transition-[color,translate] duration-200 ease-out motion-safe:hover:translate-x-1 motion-safe:focus-visible:translate-x-1 motion-reduce:transition-none">
                   {post.title} ↗
                 </a>
               </h2>

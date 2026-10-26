@@ -10,7 +10,7 @@ export default function CertificationItem({ certification, completedLabel, dateL
             href={certification.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-sm text-[var(--accent)] underline decoration-[var(--accent)]/40 underline-offset-4 hover:decoration-current focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--accent)]"
+            className="inline-block rounded-sm text-[var(--accent)] underline decoration-[var(--accent)]/40 underline-offset-4 transition-[color,translate] duration-200 ease-out hover:decoration-current motion-safe:hover:translate-x-1 motion-safe:focus-visible:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--accent)] motion-reduce:transition-none"
           >
             {certification.name} <span aria-hidden="true">↗</span>
           </a> : certification.name}

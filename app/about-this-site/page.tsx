@@ -25,7 +25,7 @@ export default function AboutThisSitePage() {
                   href={dependency.url}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center gap-2 no-underline hover:underline"
+                  className="flex items-center gap-2 no-underline transition-[color,translate] duration-200 ease-out hover:underline motion-safe:hover:translate-x-1 motion-safe:focus-visible:translate-x-1 motion-reduce:transition-none"
                 >
                   <BrandIcon name={dependency.name} className="h-5 w-5 shrink-0" />
                   <span>{dependency.name} ↗</span>
@@ -90,7 +90,7 @@ export default function AboutThisSitePage() {
           href={aboutSiteContent.reuse.repositoryUrl}
           target="_blank"
           rel="noreferrer"
-          className="mt-6 inline-flex rounded-xl border border-[var(--accent)] px-4 py-2 font-semibold no-underline transition-colors hover:bg-[var(--accent-soft)]"
+          className="mt-6 inline-flex rounded-xl border border-[var(--accent)] px-4 py-2 font-semibold no-underline transition-[background-color,translate] duration-200 ease-out hover:bg-[var(--accent-soft)] motion-safe:hover:translate-x-1 motion-safe:focus-visible:translate-x-1 motion-reduce:transition-none"
         >
           {aboutSiteContent.reuse.repositoryLabel}
         </a>
