@@ -20,7 +20,7 @@ describe("site pages", () => {
     ).toBeTruthy();
     expect(screen.getByText(/Senior Fullstack Software Engineer/i)).toBeTruthy();
     expect(screen.getByText(/I currently work at Omio/i)).toBeTruthy();
-    expect(screen.getByText(/open-source tools, reusable project templates/i)).toBeTruthy();
+    expect(screen.getByText(/open-source tools and playful experiments/i)).toBeTruthy();
     expect(screen.getByText(/travel, learn languages, and read philosophy/i)).toBeTruthy();
   });
 
@@ -109,10 +109,9 @@ describe("site pages", () => {
     ).toBe("https://exploringbug.netlify.app");
     expect(screen.getAllByText("React").length).toBeGreaterThanOrEqual(2);
     expect(screen.getByRole("heading", { name: "For Software Engineers" })).toBeTruthy();
-    expect(screen.getByRole("link", { name: /nextjs-template/ })).toBeTruthy();
-    expect(screen.getAllByText("Next.js").length).toBeGreaterThanOrEqual(2);
+    expect(screen.queryByRole("link", { name: /nextjs-template/ })).toBeNull();
     expect(
-      screen.getByText(/Reusable starter repositories to help bootstrap/),
+      screen.getByText(/Hands-on examples for learning libraries and development tools/),
     ).toBeTruthy();
     expect(
       screen.getByRole("heading", { name: "Console Table Printer organization" }),

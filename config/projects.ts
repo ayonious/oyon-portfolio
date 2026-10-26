@@ -76,59 +76,14 @@ export const openSourceProjectsConfig = {
       },
     ] satisfies OpenSourceProject[],
   },
-  templates: {
+  engineering: {
     label: "For Software Engineers",
-    description: "Reusable starter repositories to help bootstrap new React, Next.js, Express, NestJS, and HTML projects, alongside hands-on library and development-tool examples.",
+    description: "Hands-on examples for learning libraries and development tools.",
     showStats: false,
     view: "list" as const,
     projects: [
       { name: "lombok-examples", url: "https://github.com/ayonious/lombok-examples", description: "Practical Java examples for learning Project Lombok.", language: "Java", technologies: ["Lombok", "Maven"], stars: 8 },
       { name: "Vagrant-Best-Practices", url: "https://github.com/ayonious/Vagrant-Best-Practices", description: "Practice useful Vagrant features through simple examples.", technologies: ["Vagrant", "SaltStack", "Shell"], stars: 17 },
-      {
-        name: "nextjs-template",
-        url: "https://github.com/ayonious/nextjs-template",
-        description:
-          "A Next.js starting point with a practical set of tools and project defaults.",
-        language: "TypeScript",
-        technologies: ["Next.js", "React", "Jest", "React Testing Library", "Cypress"],
-        stars: 0,
-      },
-      {
-        name: "template-react-ts",
-        url: "https://github.com/ayonious/template-react-ts",
-        description:
-          "A React and TypeScript starter for projects that do not use Create React App.",
-        language: "TypeScript",
-        technologies: ["React", "Webpack", "Babel", "Styled Components"],
-        stars: 0,
-      },
-      {
-        name: "template-express-microservice-ts",
-        url: "https://github.com/ayonious/template-express-microservice-ts",
-        description:
-          "A minimal Express and TypeScript foundation for starting a microservice.",
-        language: "TypeScript",
-        technologies: ["Node.js", "Express.js", "Jest", "Swagger", "Zod", "Supertest"],
-        stars: 0,
-      },
-      {
-        name: "nestjs-bootstrap",
-        url: "https://github.com/ayonious/nestjs-bootstrap",
-        description:
-          "A NestJS bootstrap project with common boilerplate configuration ready to extend.",
-        stars: 0,
-        technologies: ["NestJS", "Node.js", "TypeScript"],
-      },
-      {
-        name: "simple-html-template",
-        url: "https://github.com/ayonious/simple-html-template",
-        demoUrl: "https://ayonious.github.io/simple-html-template",
-        demoLabel: "View the example page",
-        description:
-          "A small HTML starter for quickly publishing a simple static webpage.",
-        stars: 0,
-        technologies: ["HTML", "CSS", "JavaScript", "GitHub Pages"],
-      },
     ] satisfies OpenSourceProject[],
   },
   university: {

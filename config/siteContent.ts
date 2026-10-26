@@ -12,7 +12,7 @@ export const homeContent = {
   currentWork:
     "I currently work at Omio, focusing on authentication, payments, and services used by travelers around the world.",
   openSource:
-    "I also build open-source tools, reusable project templates, and playful experiments that help me learn by making.",
+    "I also build open-source tools and playful experiments that help me learn by making.",
   outsideWork:
     "Away from the keyboard, I travel, learn languages, and read philosophy and psychology to better understand people, society, and the world. 🌍",
 };
