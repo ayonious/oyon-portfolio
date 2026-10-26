@@ -1,5 +1,7 @@
 import {
   siVuedotjs,
+  siStorybook,
+  siVite,
   siAdyen,
   siDocusaurus,
   siGatsby,
@@ -82,6 +84,8 @@ import { MailIcon } from "./icons/SidebarIcons";
 const icons: Record<string, SimpleIcon> = {
   "Vue.js": siVuedotjs,
   Adyen: siAdyen,
+  Storybook: siStorybook,
+  Vite: siVite,
   "Docusaurus": siDocusaurus,
   "Gatsby": siGatsby,
   "Material UI": siMui,

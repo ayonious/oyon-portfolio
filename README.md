@@ -16,6 +16,8 @@ Create my personal profile and portfolio website using Next.js, TypeScript, and 
 - [Tailwind CSS](https://tailwindcss.com/) for styling
 - [Jest](https://jestjs.io/) and [Testing Library](https://testing-library.com/) for component tests
 - [Cypress](https://www.cypress.io/) for browser tests
+- [Storybook](https://storybook.js.org/) for isolated component previews and documentation
+- [Vite](https://vite.dev/) for Storybook’s development server and static builds
 - [Vercel](https://vercel.com/) for deployment
 - [Yarn](https://yarnpkg.com/) for package management
 - [Simple Icons](https://simpleicons.org/) for brand and technology marks
@@ -174,3 +176,62 @@ The contact form is the final section of `/about`, and its server endpoint is
 yarn build
 yarn start
 ```
+
+
+## Storybook and Vite
+
+[Storybook](https://storybook.js.org/docs/get-started/frameworks/nextjs-vite) is a
+workshop for developing UI components on their own. Each story renders one
+component with a specific set of props or interaction state, such as an empty
+list, a payment badge, or a project card with a demo link. It provides a browser
+catalog, editable controls, generated documentation, and interaction checks.
+
+[Vite](https://vite.dev/guide/) is a frontend development server and build tool.
+The `@storybook/nextjs-vite` integration uses it to serve stories with fast updates
+while developing and bundle them into a static website for deployment. Next.js
+continues to build and serve the portfolio itself.
+
+Run `yarn storybook` and open http://localhost:6006 to browse isolated portfolio
+components. Stories reuse content from `config/`, load the site's Tailwind styles,
+and serve images from `public/`. Use the toolbar to change the light/dark theme
+and accent palette. Controls let you edit component props; Docs shows the generated
+component documentation. Keep one `*.stories.tsx` file beside each covered
+component, with named stories for its different scenarios—for example, `components/MetricBadge.stories.tsx` beside
+`components/MetricBadge.tsx`.
+
+Stories focus on simple presentational components: badges, tags, brand icons and
+text, project and work cards, certifications, skill groups, book lists, and the
+home introduction. `SidebarIcons` includes a labeled gallery and individual icon
+stories. Examples reuse configured content and need no network or service mocks.
+Forms, verification widgets, navigation, theme controls, scroll behavior, and
+larger project groups are outside this Storybook's scope.
+
+Build the standalone static site with:
+
+```sh
+yarn build-storybook
+```
+
+The deployable output is `storybook-static/`. This directory is generated and
+ignored by Git. It can be hosted by any static web host.
+
+### Deploy stories on Vercel
+
+Create a **separate Vercel project** and import this same Git repository. Set:
+
+| Setting | Value |
+| --- | --- |
+| Root Directory | Repository root |
+| Framework Preset | Other |
+| Install Command | `yarn install --frozen-lockfile` |
+| Build Command | `yarn build-storybook` |
+| Output Directory | `storybook-static` |
+
+Click **Deploy** to get a shareable Storybook URL. Future pushes to that project's
+production branch rebuild the stories, and pull requests can receive preview
+URLs. Configure these overrides on the new Storybook project; the portfolio's
+existing Vercel project continues to use `yarn build` and the Next.js preset.
+Storybook does not require the contact form's email or Turnstile secrets.
+
+See [Storybook's Next.js/Vite guide](https://storybook.js.org/docs/get-started/frameworks/nextjs-vite)
+and [Vercel's build settings](https://vercel.com/docs/builds/configure-a-build).
