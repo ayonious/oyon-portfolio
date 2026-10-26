@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 import ColorPalette from "./ColorPalette";
 import ThemeToggle from "./ThemeToggle";
 import BrandIcon from "./BrandIcon";
@@ -12,10 +13,12 @@ import {
 import {
   BooksIcon,
   BriefcaseIcon,
+  CloseIcon,
   DiplomaIcon,
   PawIcon,
   LightningIcon,
   MailIcon,
+  MenuIcon,
   MegaphoneIcon,
   SailboatIcon,
   RobotIcon,
@@ -37,25 +40,108 @@ const navigationIcons: Record<NavigationIcon, typeof BriefcaseIcon> = {
 
 export default function ProfileSidebar() {
   const pathname = usePathname();
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+    menuButtonRef.current?.focus();
+  };
+
+  useEffect(() => {
+    const desktop = window.matchMedia("(min-width: 1024px)");
+    const closeOnDesktop = () => {
+      if (desktop.matches) setMenuOpen(false);
+    };
+    desktop.addEventListener("change", closeOnDesktop);
+    return () => desktop.removeEventListener("change", closeOnDesktop);
+  }, []);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+    const main = document.querySelector("main");
+    const previousOverflow = document.body.style.overflow;
+    const wasInert = main?.inert ?? false;
+    document.body.style.overflow = "hidden";
+    if (main) main.inert = true;
+    closeButtonRef.current?.focus();
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      if (main) main.inert = wasInert;
+    };
+  }, [menuOpen]);
 
   return (
-    <aside className="border-b border-slate-200 px-6 py-8 transition-colors dark:border-slate-700 dark:bg-slate-900 sm:px-8 lg:sticky lg:top-0 lg:h-screen lg:overflow-y-auto lg:border-r lg:border-b-0 lg:px-7 lg:py-10">
-      <div className="flex h-full flex-col">
+    <>
+    <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 px-4 py-2 dark:border-slate-700 sm:px-8 lg:hidden">
+      <Link href="/" className="flex items-center gap-2 text-xl font-bold text-slate-950 no-underline dark:text-slate-50">
+        <SailboatIcon className="shrink-0" />
+        <span>{sidebarContent.name}</span>
+      </Link>
+      <div className="ml-auto flex shrink-0 items-center">
+      <ColorPalette />
+      <ThemeToggle />
+      <button
+        ref={menuButtonRef}
+        type="button"
+        aria-label={menuOpen ? sidebarContent.closeMenuLabel : sidebarContent.openMenuLabel}
+        aria-expanded={menuOpen}
+        aria-controls="profile-sidebar"
+        onClick={() => setMenuOpen((open) => !open)}
+        className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-xl text-[#253047] hover:bg-[var(--accent-soft)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent)] dark:text-slate-200"
+      >
+        <MenuIcon />
+      </button>
+      </div>
+    </div>
+    <aside
+      id="profile-sidebar"
+      role={menuOpen ? "dialog" : undefined}
+      aria-modal={menuOpen ? true : undefined}
+      aria-label={menuOpen ? sidebarContent.menuLabel : undefined}
+      onClickCapture={(event) => {
+        if ((event.target as HTMLElement).closest("a") && menuOpen) closeMenu();
+      }}
+      onKeyDown={(event) => {
+        if (event.key === "Escape" && menuOpen) {
+          event.preventDefault();
+          closeMenu();
+        }
+        if (event.key === "Tab" && menuOpen) {
+          const items = Array.from(event.currentTarget.querySelectorAll<HTMLElement>('a[href], button:not([disabled])'));
+          const first = items[0];
+          const last = items[items.length - 1];
+          if (event.shiftKey && document.activeElement === first) {
+            event.preventDefault();
+            last?.focus();
+          } else if (!event.shiftKey && document.activeElement === last) {
+            event.preventDefault();
+            first?.focus();
+          }
+        }
+      }}
+      className={`${menuOpen ? "fixed inset-0 z-50 block h-dvh overflow-y-auto" : "hidden"} min-w-0 border-b border-slate-200 bg-slate-50 px-4 pb-5 transition-colors dark:border-slate-700 dark:bg-slate-900 sm:px-8 sm:pb-8 lg:sticky lg:inset-auto lg:top-0 lg:z-auto lg:block lg:h-screen lg:overflow-y-auto lg:border-r lg:border-b-0 lg:px-7 lg:py-10`}
+    >
+      <div className="flex min-h-full flex-col">
         <div>
-          <div className="flex items-center justify-between gap-4 border-b border-slate-200 pb-5 dark:border-slate-700">
+          <div className="-mx-4 flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 px-4 py-2 dark:border-slate-700 sm:-mx-8 sm:px-8 lg:mx-0 lg:gap-3 lg:px-0 lg:pt-0 lg:pb-5">
             <Link
-              className="flex items-center gap-2 text-2xl font-bold text-slate-950 no-underline dark:text-slate-50"
+              className="flex items-center gap-2 text-xl font-bold text-slate-950 no-underline dark:text-slate-50 lg:text-2xl"
               href="/"
             >
               <SailboatIcon className="shrink-0" />
               <span>{sidebarContent.name}</span>
             </Link>
-            <div className="flex items-center">
+            <div className="ml-auto flex shrink-0 items-center lg:ml-0">
               <ColorPalette />
               <ThemeToggle />
+              <button ref={closeButtonRef} type="button" onClick={closeMenu} aria-label={sidebarContent.closeMenuLabel} className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-xl text-[#253047] hover:bg-[var(--accent-soft)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent)] dark:text-slate-200 lg:hidden">
+                <CloseIcon />
+              </button>
             </div>
           </div>
-          <p className="mt-5 max-w-xs border-b border-slate-200 pb-5 text-slate-600 dark:border-slate-700 dark:text-slate-300">
+          <p className="mt-5 border-b border-slate-200 pb-5 text-slate-600 dark:border-slate-700 dark:text-slate-300 lg:max-w-xs">
             {sidebarContent.introduction.textBefore}
             <Link href="/about">{sidebarContent.introduction.linkText}</Link>
             {sidebarContent.introduction.textAfter}
@@ -64,7 +150,7 @@ export default function ProfileSidebar() {
 
         <nav
           aria-label="Main navigation"
-          className="mt-8 flex flex-wrap gap-2 lg:flex-col"
+          className="mt-5 flex flex-col gap-2 lg:mt-8"
         >
           {sidebarContent.navigation.map(({ href, label, icon }) => {
             const Icon = navigationIcons[icon];
@@ -75,9 +161,9 @@ export default function ProfileSidebar() {
                 <span>{label}</span>
               </>
             );
-            const className = `flex items-center gap-3 rounded-xl border px-3 py-2 text-base font-semibold no-underline transition-[color,background-color,translate] duration-200 ease-out motion-safe:hover:translate-x-1 motion-safe:focus-visible:translate-x-1 motion-reduce:transition-none ${
+            const className = `flex min-h-11 min-w-0 items-center gap-2 rounded-xl border px-3 py-2 text-sm font-semibold no-underline transition-[color,background-color,translate] duration-200 ease-out sm:text-base lg:gap-3 lg:motion-safe:hover:translate-x-1 lg:motion-safe:focus-visible:translate-x-1 motion-reduce:transition-none ${
               isActive
-                ? "border-[var(--accent)] bg-[var(--accent-soft)] text-[var(--accent)]"
+                ? "lg:motion-safe:translate-x-1 border-[var(--accent)] bg-[var(--accent-soft)] text-[var(--accent)]"
                 : "border-transparent text-slate-700 hover:bg-[var(--accent-soft)] hover:text-slate-950 dark:text-slate-200 dark:hover:text-white"
             }`;
 
@@ -126,5 +212,6 @@ export default function ProfileSidebar() {
         </div>
       </div>
     </aside>
+    </>
   );
 }

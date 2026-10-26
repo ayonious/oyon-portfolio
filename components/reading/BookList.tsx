@@ -1,4 +1,5 @@
 import type { Book } from "../../config/books";
+import TopicTags from "../TopicTags";
 
 export default function BookList({ books }: { books: Book[] }) {
   return (
@@ -16,11 +17,7 @@ export default function BookList({ books }: { books: Book[] }) {
             {book.details && (
               <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">{book.details}</p>
             )}
-            <ul aria-label={`Topics for ${book.title}`} className="mt-2 flex flex-wrap gap-2">
-              {book.tags.map((tag) => (
-                <li key={tag} className="text-xs font-medium text-[var(--accent)]">#{tag}</li>
-              ))}
-            </ul>
+            <TopicTags tags={book.tags} title={book.title} />
           </div>
         </li>
       ))}
