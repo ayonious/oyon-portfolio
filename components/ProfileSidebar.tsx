@@ -155,7 +155,7 @@ export default function ProfileSidebar() {
 
         <nav
           aria-label="Main navigation"
-          className="mt-5 flex flex-col gap-2 lg:mt-8"
+          className="mx-auto mt-5 flex w-max max-w-full flex-col gap-2 lg:mx-0 lg:mt-8 lg:w-full lg:max-w-none"
         >
           {sidebarContent.navigation.map(({ href, label, icon }) => {
             const Icon = navigationIcons[icon];
