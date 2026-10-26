@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
-import TechnologyTags from "../components/work/TechnologyTags";
-import { workProjects } from "../config/workProjects";
+import TechnologyTags from "./TechnologyTags";
+import { workProjects } from "../../config/workProjects";
 
 const meta = {
   title: "Work/TechnologyTags",

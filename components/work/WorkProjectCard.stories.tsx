@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
-import WorkProjectCard from "../components/work/WorkProjectCard";
-import { workProjects } from "../config/workProjects";
-import { pageContent } from "../config/siteContent";
+import WorkProjectCard from "./WorkProjectCard";
+import { workProjects } from "../../config/workProjects";
+import { pageContent } from "../../config/siteContent";
 
 const meta = {
   title: "Work/WorkProjectCard",

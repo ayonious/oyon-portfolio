@@ -16,6 +16,8 @@ Create my personal profile and portfolio website using Next.js, TypeScript, and 
 - [Tailwind CSS](https://tailwindcss.com/) for styling
 - [Jest](https://jestjs.io/) and [Testing Library](https://testing-library.com/) for component tests
 - [Cypress](https://www.cypress.io/) for browser tests
+- [Storybook](https://storybook.js.org/) for isolated component previews and documentation
+- [Vite](https://vite.dev/) for Storybook’s development server and static builds
 - [Vercel](https://vercel.com/) for deployment
 - [Yarn](https://yarnpkg.com/) for package management
 - [Simple Icons](https://simpleicons.org/) for brand and technology marks
@@ -176,13 +178,38 @@ yarn start
 ```
 
 
-## Storybook
+## Storybook and Vite
+
+[Storybook](https://storybook.js.org/docs/get-started/frameworks/nextjs-vite) is a
+workshop for developing UI components on their own. Each story renders one
+component with a specific set of props or interaction state, such as an empty
+list, a payment badge, or a form showing validation errors. It provides a browser
+catalog, editable controls, generated documentation, and interaction checks.
+
+[Vite](https://vite.dev/guide/) is a frontend development server and build tool.
+The `@storybook/nextjs-vite` integration uses it to serve stories with fast updates
+while developing and bundle them into a static website for deployment. Next.js
+continues to build and serve the portfolio itself.
 
 Run `yarn storybook` and open http://localhost:6006 to browse isolated portfolio
 components. Stories reuse content from `config/`, load the site's Tailwind styles,
 and serve images from `public/`. Use the toolbar to change the light/dark theme
 and accent palette. Controls let you edit component props; Docs shows the generated
-component documentation. Add stories under `stories/` using `*.stories.tsx`.
+component documentation. Keep one `*.stories.tsx` file beside each component, with named stories for its
+different scenarios—for example, `components/MetricBadge.stories.tsx` beside
+`components/MetricBadge.tsx`.
+
+Every React component in `components/` has a dedicated neighboring story file, including
+shared badges, tags, brand icons and text, theme controls, navigation, cards,
+book lists, and the contact form. `SidebarIcons` includes a labeled gallery of
+all exported icons. `projectUtils.ts` contains data helpers rather than a UI
+component, so it has no standalone story.
+
+The contact form and Turnstile stories run offline with Storybook-only simulated
+verification buttons and intercepted `/api/contact` responses. They never send
+email or load Cloudflare scripts. Use the verification buttons before submitting;
+`DeliveryError` simulates a failed delivery. These mocks only apply in Storybook.
+The navigation's Mobile story uses a phone viewport; its menu remains interactive.
 
 Build the standalone static site with:
 

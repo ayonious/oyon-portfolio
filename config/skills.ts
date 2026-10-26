@@ -21,7 +21,7 @@ export const skillGroups = [
   },
   {
     title: "Testing and tooling",
-    skills: ["Jest", "Cypress", "npm", "Yarn"],
+    skills: ["Jest", "Cypress", "Storybook", "Vite", "npm", "Yarn"],
   },
   {
     title: "Databases and data",

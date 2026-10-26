@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
-import SkillGroup from "../components/skills/SkillGroup";
-import { skillGroups } from "../config/skills";
+import SkillGroup from "./SkillGroup";
+import { skillGroups } from "../../config/skills";
 
 const meta = {
   title: "Skills/SkillGroup",
@@ -14,3 +14,5 @@ type Story = StoryObj<typeof meta>;
 export const Frameworks: Story = {};
 export const Languages: Story = { args: skillGroups[2] };
 export const Cloud: Story = { args: skillGroups[7] };
+
+export const TestingAndTooling: Story = { args: skillGroups[5] };
