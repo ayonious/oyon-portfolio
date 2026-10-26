@@ -5,7 +5,7 @@ export const skillGroups = [
   },
   {
     title: "Frameworks",
-    skills: ["Next.js", "React", "React Native", "Vue.js", "Node.js", "Express.js", "NestJS", "Fastify", "Spring Boot", "Docusaurus", "Gatsby"],
+    skills: ["Node.js", "Express.js", "NestJS", "Next.js", "React", "React Native", "Vue.js", "Fastify", "Spring Boot", "Docusaurus", "Gatsby"],
   },
   {
     title: "Databases and data",
@@ -32,12 +32,12 @@ export const skillGroups = [
     skills: ["Codex", "Claude Code", "Cursor", "ChatGPT", "MCP servers"],
   },
   {
-    title: "APIs and messaging",
-    skills: ["OAuth", "SSO", "GraphQL", "Google Pub/Sub", "Microservices"],
-  },
-  {
     title: "Monitoring",
     skills: ["Grafana", "Kibana"],
+  },
+  {
+    title: "APIs and messaging",
+    skills: ["GraphQL", "OAuth", "SSO", "Google Pub/Sub", "Microservices"],
   },
   {
     title: "Product domains",
