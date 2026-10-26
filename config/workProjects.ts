@@ -25,7 +25,7 @@ export const workProjects: WorkProject[] = [
     task: "Unify the payment experience and reduce duplicated platform work.",
     action: "Led the migration of the Pay Page from native iOS and Android implementations to React Native while coordinating frontend and backend integration.",
     result: "Created a shared cross-platform payment experience with a more maintainable implementation.",
-    scale: ["About 1,000 requests/second", "iOS and Android travelers", "Shared mobile payment flow"],
+    scale: ["About 1,000 requests/second", "iOS travelers", "Android travelers", "Shared mobile payment flow"],
   },
   {
     title: "LLM travel guide",

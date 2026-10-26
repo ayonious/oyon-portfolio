@@ -1,4 +1,5 @@
 import WorkHistoryCard from "../../components/work/WorkHistoryCard";
+import BrandIcon from "../../components/BrandIcon";
 import WorkProjectCard from "../../components/work/WorkProjectCard";
 import { pageContent } from "../../config/siteContent";
 import { workHistory } from "../../config/workHistory";
@@ -25,6 +26,12 @@ export default function WorkHistoryPage() {
           ))}
         </div>
       </section>
+      <p className="mt-12">
+        <a href={pageContent.work.recommendations.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-semibold">
+          <BrandIcon name={pageContent.work.recommendations.icon} className="h-5 w-5 shrink-0" />
+          {pageContent.work.recommendations.label} <span aria-hidden="true">↗</span>
+        </a>
+      </p>
     </div>
   );
 }

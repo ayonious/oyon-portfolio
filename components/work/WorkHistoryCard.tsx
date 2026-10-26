@@ -1,4 +1,5 @@
 import BrandIcon from "../BrandIcon";
+import BrandText from "../BrandText";
 import type { WorkHistoryEntry } from "../../config/workHistory";
 import TechnologyTags from "./TechnologyTags";
 
@@ -15,7 +16,7 @@ export default function WorkHistoryCard({ job }: { job: WorkHistoryEntry }) {
       </div>
       {job.technologies && <TechnologyTags technologies={job.technologies} />}
       <ul className="mt-5 list-disc space-y-2 pl-5 text-slate-600 dark:text-slate-300">
-        {job.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}
+        {job.highlights.map((highlight) => <li key={highlight}><BrandText text={highlight} /></li>)}
       </ul>
     </article>
   );

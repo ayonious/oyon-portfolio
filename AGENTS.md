@@ -13,6 +13,8 @@
 - Keep shared SVG icon components in `components/icons/SidebarIcons.tsx` and reference them from configured navigation through an icon key.
 - Store site images under `public/images/` and keep their paths and alternative text in config when they are content assets.
 - Preserve the palette-aware CSS variables and light/dark theme behavior when adding UI.
+- Show relevant icons beside named technologies, platforms, payment methods, login providers, and brands wherever they appear in content, including prose, work highlights, project descriptions, and tags—not only technology lists. Reuse `BrandIcon` and `BrandText`, and extend the shared icon mapping when adding a missing brand.
+- Keep the visible name alongside each icon, mark decorative icons as hidden from assistive technology, and ensure icons remain legible in both themes. Use an appropriate generic icon for unbranded concepts such as email login; do not substitute an unrelated brand logo. Match full names so Apple Pay and Google Pay keep their payment logos.
 
 ## Validation
 
