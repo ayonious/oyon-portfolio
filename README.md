@@ -10,6 +10,10 @@
 
 Create my personal profile and portfolio website using Next.js, TypeScript, and Tailwind CSS to showcase my background, skills, and projects.
 
+## Portfolio demo
+
+[Watch the portfolio recording](https://cdn-ayonious.vercel.app/480pportfolio.mov)
+
 ## Built with
 
 - [Next.js](https://nextjs.org/) and [React](https://react.dev/) for the website
