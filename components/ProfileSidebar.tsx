@@ -75,7 +75,7 @@ export default function ProfileSidebar() {
                 <span>{label}</span>
               </>
             );
-            const className = `flex items-center gap-3 rounded-xl border px-3 py-2 text-base font-semibold no-underline transition-colors ${
+            const className = `flex items-center gap-3 rounded-xl border px-3 py-2 text-base font-semibold no-underline transition-[color,background-color,translate] duration-200 ease-out motion-safe:hover:translate-x-1 motion-safe:focus-visible:translate-x-1 motion-reduce:transition-none ${
               isActive
                 ? "border-[var(--accent)] bg-[var(--accent-soft)] text-[var(--accent)]"
                 : "border-transparent text-slate-700 hover:bg-[var(--accent-soft)] hover:text-slate-950 dark:text-slate-200 dark:hover:text-white"
