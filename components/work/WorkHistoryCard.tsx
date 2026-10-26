@@ -10,7 +10,12 @@ export default function WorkHistoryCard({ job }: { job: WorkHistoryEntry }) {
         <div>
           <h2 className="flex items-center gap-2 text-2xl font-bold text-slate-950 dark:text-slate-50">
             <BrandIcon name={job.company} className="h-6 w-6 shrink-0" />
-            {job.url ? <a href={job.url} target="_blank" rel="noreferrer" className="cursor-default no-underline hover:underline">{job.company} <span aria-hidden="true">↗</span></a> : job.company}
+            {job.url ? (
+              <a href={job.url} target="_blank" rel="noreferrer" title="Open Website" className="hover-lift group relative inline-flex cursor-pointer no-underline hover:underline">
+                {job.company}
+                <span aria-hidden="true" className="sidebar-tooltip absolute bottom-full left-0 mb-2 w-max group-hover:opacity-100 group-focus-visible:opacity-100">Open Website</span>
+              </a>
+            ) : job.company}
           </h2>
           <p className="mt-1 font-semibold text-slate-700 dark:text-slate-200">{job.role}</p>
           <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">{job.location}</p>
