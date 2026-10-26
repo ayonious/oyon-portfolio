@@ -8,10 +8,10 @@ export default function ProjectCard({ project }: { project: OpenSourceProject })
   const technologies = getProjectTechnologies(project);
 
   return (
-    <article className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-colors dark:border-slate-700 dark:bg-slate-900">
+    <article className="interactive-card rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-slate-900">
       <div className="flex items-start justify-between gap-4">
         <h3 className="text-xl font-bold text-slate-950 dark:text-slate-50">
-          <a href={project.url} target="_blank" rel="noreferrer" className="no-underline hover:underline">
+          <a href={project.url} target="_blank" rel="noreferrer" className="cursor-default no-underline hover:underline">
             {project.name}
           </a>
         </h3>
@@ -30,7 +30,7 @@ export default function ProjectCard({ project }: { project: OpenSourceProject })
         </div>
       )}
       {project.demoUrl && project.demoLabel && (
-        <a href={project.demoUrl} target="_blank" rel="noreferrer" className="project-demo-button mt-5">
+        <a href={project.demoUrl} target="_blank" rel="noreferrer" className="project-demo-button relative z-20 mt-5">
           {project.demoLabel} ↗
         </a>
       )}

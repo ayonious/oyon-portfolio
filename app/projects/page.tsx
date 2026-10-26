@@ -11,8 +11,8 @@ export default function ProjectsPage() {
         <h1 className="text-4xl font-bold tracking-tight text-slate-950 dark:text-slate-50">{pageContent.projects.title}</h1>
         <p className="mt-4 text-lg text-slate-600 dark:text-slate-300">{pageContent.projects.introduction}</p>
       </header>
-      <ProjectGroup {...profile} />
       <ProjectGroup {...organization} />
+      <ProjectGroup {...profile} />
       <ProjectGroup {...gamified} />
       <ProjectGroup {...templates} />
       <ProjectGroup {...university} />

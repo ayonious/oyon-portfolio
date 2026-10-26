@@ -1,5 +1,6 @@
 export type WorkHistoryEntry = {
   company: string;
+  url?: string;
   end: string;
   highlights: string[];
   location: string;
@@ -11,6 +12,7 @@ export type WorkHistoryEntry = {
 export const workHistory: WorkHistoryEntry[] = [
   {
     company: "Omio",
+    url: "https://www.omio.com/",
     role: "Senior Fullstack Software Engineer",
     location: "Berlin, Germany",
     start: "September 2025",
@@ -26,6 +28,7 @@ export const workHistory: WorkHistoryEntry[] = [
   },
   {
     company: "Omio",
+    url: "https://www.omio.com/",
     role: "Software Engineer",
     location: "Berlin, Germany",
     start: "November 2016",
@@ -58,6 +61,7 @@ export const workHistory: WorkHistoryEntry[] = [
   },
   {
     company: "Booking.com",
+    url: "https://www.booking.com/",
     role: "Graduate Software Developer",
     location: "Amsterdam, Netherlands",
     start: "August 2015",

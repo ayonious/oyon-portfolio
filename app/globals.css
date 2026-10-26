@@ -99,8 +99,39 @@ h1 {
 }
 
 @layer components {
+  .scroll-reveal {
+    opacity: 1;
+    translate: 0 0;
+    transition: opacity 450ms ease-out var(--reveal-delay, 0ms),
+      translate 450ms ease-out var(--reveal-delay, 0ms);
+  }
+
+  .scroll-reveal[data-pending="true"] {
+    opacity: 0;
+    translate: 0 18px;
+    transition: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .scroll-reveal,
+    .scroll-reveal[data-pending="true"] {
+      opacity: 1;
+      translate: none;
+      transition: none;
+    }
+  }
+
+  .interactive-card {
+    @apply relative isolate transition-[box-shadow,border-color] duration-200 ease-out hover:border-[var(--accent)] hover:shadow-md focus-within:border-[var(--accent)] focus-within:shadow-md motion-reduce:transition-none;
+  }
+
+  .hover-lift,
   .project-demo-button {
-    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-[var(--accent)] bg-[var(--accent-soft)] px-4 py-2 text-sm font-semibold text-[var(--accent)] no-underline transition-shadow hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--accent)];
+    @apply transition-[background-color,box-shadow,translate,scale] duration-200 ease-out motion-safe:hover:-translate-y-0.5 motion-safe:hover:scale-105 motion-safe:focus-visible:-translate-y-0.5 motion-safe:focus-visible:scale-105 motion-reduce:transition-none;
+  }
+
+  .project-demo-button {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-[var(--accent)] bg-[var(--accent-soft)] px-4 py-2 text-sm font-semibold text-[var(--accent)] no-underline hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--accent)];
   }
 
   .sidebar-tooltip {
