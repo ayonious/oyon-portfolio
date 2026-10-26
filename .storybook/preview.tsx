@@ -26,18 +26,6 @@ const preview: Preview = {
     },
   },
   initialGlobals: { theme: "light", accent: "blue" },
-  beforeEach: (context) => {
-    const previousTheme = localStorage.getItem("theme");
-    const previousAccent = localStorage.getItem("accent");
-    localStorage.setItem("theme", context.globals.theme);
-    localStorage.setItem("accent", context.globals.accent);
-    return () => {
-      if (previousTheme === null) localStorage.removeItem("theme");
-      else localStorage.setItem("theme", previousTheme);
-      if (previousAccent === null) localStorage.removeItem("accent");
-      else localStorage.setItem("accent", previousAccent);
-    };
-  },
   decorators: [
     function PortfolioTheme(Story, context) {
       useEffect(() => {
