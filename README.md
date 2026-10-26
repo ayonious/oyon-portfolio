@@ -200,10 +200,8 @@ component documentation. Keep one `*.stories.tsx` file beside each covered
 component, with named stories for its different scenarios—for example, `components/MetricBadge.stories.tsx` beside
 `components/MetricBadge.tsx`.
 
-Stories focus on simple presentational components: badges, tags, brand icons and
-text, project and work cards, certifications, skill groups, book lists, and the
-home introduction. `SidebarIcons` includes a labeled gallery and individual icon
-stories. Examples reuse configured content and need no network or service mocks.
+Stories focus on simple presentational components: badges, tags, project and work cards, certifications, skill groups, book lists, and the
+home introduction. `SidebarIcons` includes one labeled gallery for all icons. Examples reuse configured content and need no network or service mocks.
 Forms, verification widgets, navigation, theme controls, scroll behavior, and
 larger project groups are outside this Storybook's scope.
 
