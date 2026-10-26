@@ -6,13 +6,17 @@ import { getProjectTechnologies } from "./projectUtils";
 
 export default function ProjectCard({ project }: { project: OpenSourceProject }) {
   const technologies = getProjectTechnologies(project);
+  const linkLabel = project.url.includes("github.com") ? "Open in GitHub" : "Open project";
 
   return (
     <article className="interactive-card rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-slate-900">
       <div className="flex items-start justify-between gap-4">
         <h3 className="text-xl font-bold text-slate-950 dark:text-slate-50">
-          <a href={project.url} target="_blank" rel="noreferrer" className="cursor-default no-underline hover:underline">
+          <a href={project.url} target="_blank" rel="noreferrer" title={linkLabel} className="hover-lift group relative inline-flex cursor-pointer no-underline hover:underline">
             {project.name}
+            <span aria-hidden="true" className="sidebar-tooltip absolute bottom-full left-0 mb-2 w-max group-hover:opacity-100 group-focus-visible:opacity-100">
+              {linkLabel}
+            </span>
           </a>
         </h3>
         <ProjectStars stars={project.stars} />
