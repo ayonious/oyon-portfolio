@@ -6,7 +6,7 @@ const meta = {
   title: "Work/WorkHistoryCard",
   component: WorkHistoryCard,
   tags: ["autodocs"],
-  
+
   args: { job: workHistory[0] },
 } satisfies Meta<typeof WorkHistoryCard>;
 export default meta;

@@ -6,7 +6,7 @@ const meta = {
   title: "Projects/ProjectStars",
   component: ProjectStars,
   tags: ["autodocs"],
-  
+
   args: { stars: openSourceProjectsConfig.profile.projects[0].stars },
 } satisfies Meta<typeof ProjectStars>;
 export default meta;

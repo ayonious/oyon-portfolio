@@ -6,7 +6,7 @@ const meta = {
   title: "Shared/BrandText",
   component: BrandText,
   tags: ["autodocs"],
-  
+
   args: { text: workProjects[4].action },
 } satisfies Meta<typeof BrandText>;
 export default meta;

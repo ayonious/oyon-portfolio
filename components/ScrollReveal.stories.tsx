@@ -9,7 +9,7 @@ const meta = {
   title: "Shared/ScrollReveal",
   component: ScrollReveal,
   tags: ["autodocs"],
-  
+
   args: { children: <WorkProjectCard project={workProjects[0]} scaleTitle={pageContent.work.scaleTitle} /> },
 } satisfies Meta<typeof ScrollReveal>;
 export default meta;

@@ -6,7 +6,7 @@ const meta = {
   title: "Shared/MetricBadge",
   component: MetricBadge,
   tags: ["autodocs"],
-  
+
   args: { ...storyContent.metric },
 } satisfies Meta<typeof MetricBadge>;
 export default meta;

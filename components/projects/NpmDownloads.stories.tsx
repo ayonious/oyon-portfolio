@@ -6,7 +6,7 @@ const meta = {
   title: "Projects/NpmDownloads",
   component: NpmDownloads,
   tags: ["autodocs"],
-  
+
   args: { stat: storyContent.downloadStat },
 } satisfies Meta<typeof NpmDownloads>;
 export default meta;

@@ -7,7 +7,7 @@ const meta = {
   title: "Certifications/CertificationItem",
   component: CertificationItem,
   tags: ["autodocs"],
-  
+
   args: { certification: certifications[0], completedLabel: pageContent.certifications.sections[0].statusLabel, dateLabel: pageContent.certifications.sections[0].dateLabel },
 } satisfies Meta<typeof CertificationItem>;
 export default meta;

@@ -6,7 +6,7 @@ const meta = {
   title: "Reading/BookList",
   component: BookList,
   tags: ["autodocs"],
-  
+
   args: { books: programmingBooks },
 } satisfies Meta<typeof BookList>;
 export default meta;

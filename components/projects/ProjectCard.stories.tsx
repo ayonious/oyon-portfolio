@@ -7,7 +7,7 @@ const meta = {
   title: "Projects/ProjectCard",
   component: ProjectCard,
   tags: ["autodocs"],
-  
+
   args: { project: openSourceProjectsConfig.profile.projects[0] },
 } satisfies Meta<typeof ProjectCard>;
 export default meta;

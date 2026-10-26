@@ -6,7 +6,7 @@ const meta = {
   title: "Home/Introduction",
   component: Introduction,
   tags: ["autodocs"],
-  
+
   args: {  },
 } satisfies Meta<typeof Introduction>;
 export default meta;

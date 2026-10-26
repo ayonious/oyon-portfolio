@@ -6,7 +6,7 @@ const meta = {
   title: "Projects/ProjectGroup",
   component: ProjectGroup,
   tags: ["autodocs"],
-  
+
   args: { ...openSourceProjectsConfig.profile },
 } satisfies Meta<typeof ProjectGroup>;
 export default meta;
