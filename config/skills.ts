@@ -1,15 +1,19 @@
 export const skillGroups = [
   {
-    title: "Frameworks and runtimes",
-    skills: ["Next.js", "React", "React Native", "Vue.js", "Node.js", "Express.js", "NestJS", "Fastify", "Spring Boot"],
-  },
-  {
-    title: "Other React-based frameworks",
-    skills: ["Docusaurus", "Gatsby"],
-  },
-  {
     title: "Languages",
     skills: ["TypeScript", "JavaScript", "Java", "SQL", "PHP"],
+  },
+  {
+    title: "Frameworks",
+    skills: ["Next.js", "React", "React Native", "Vue.js", "Node.js", "Express.js", "NestJS", "Fastify", "Spring Boot", "Docusaurus", "Gatsby"],
+  },
+  {
+    title: "Databases and data",
+    skills: ["MySQL", "PostgreSQL", "Couchbase", "BigQuery"],
+  },
+  {
+    title: "Cloud and infrastructure",
+    skills: ["Google Cloud", "Google Cloud Storage", "Docker", "Kubernetes"],
   },
   {
     title: "Mobile development",
@@ -24,12 +28,8 @@ export const skillGroups = [
     skills: ["Jest", "Cypress", "Storybook", "Vite", "npm", "Yarn"],
   },
   {
-    title: "Databases and data",
-    skills: ["MySQL", "PostgreSQL", "Couchbase", "BigQuery"],
-  },
-  {
-    title: "Cloud and infrastructure",
-    skills: ["Google Cloud", "Google Cloud Storage", "Docker", "Kubernetes"],
+    title: "AI",
+    skills: ["Codex", "Claude Code", "Cursor", "ChatGPT", "MCP servers"],
   },
   {
     title: "APIs and messaging",
@@ -38,10 +38,6 @@ export const skillGroups = [
   {
     title: "Monitoring",
     skills: ["Grafana", "Kibana"],
-  },
-  {
-    title: "AI development tools",
-    skills: ["Codex", "Claude Code", "Cursor", "ChatGPT", "MCP servers"],
   },
   {
     title: "Product domains",

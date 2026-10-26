@@ -6,13 +6,13 @@ const meta = {
   title: "Skills/SkillGroup",
   component: SkillGroup,
   tags: ["autodocs"],
-  args: skillGroups[0],
+  args: skillGroups.find(group => group.title === "Frameworks")!,
 } satisfies Meta<typeof SkillGroup>;
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Frameworks: Story = {};
-export const Languages: Story = { args: skillGroups[2] };
-export const Cloud: Story = { args: skillGroups[7] };
+export const Languages: Story = { args: skillGroups.find(group => group.title === "Languages")! };
+export const Cloud: Story = { args: skillGroups.find(group => group.title === "Cloud and infrastructure")! };
 
-export const TestingAndTooling: Story = { args: skillGroups[5] };
+export const TestingAndTooling: Story = { args: skillGroups.find(group => group.title === "Testing and tooling")! };
