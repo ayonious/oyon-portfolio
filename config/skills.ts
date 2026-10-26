@@ -4,6 +4,10 @@ export const skillGroups = [
     skills: ["Next.js", "React", "React Native", "Node.js", "Express.js", "NestJS", "Fastify", "Spring Boot"],
   },
   {
+    title: "Other React-based frameworks",
+    skills: ["Docusaurus", "Gatsby"],
+  },
+  {
     title: "Languages",
     skills: ["TypeScript", "JavaScript", "Java", "SQL", "PHP"],
   },
@@ -12,8 +16,8 @@ export const skillGroups = [
     skills: ["React Native", "Swift with AI assistance", "Kotlin with AI assistance"],
   },
   {
-    title: "Frontend",
-    skills: ["Tailwind CSS", "Styled Components", "Atomic design", "Reusable component architecture"],
+    title: "Frontend Styling",
+    skills: ["CSS", "Tailwind CSS", "Styled Components", "Material UI", "Atomic design", "Reusable component architecture"],
   },
   {
     title: "Testing and tooling",
