@@ -6,6 +6,7 @@ export type Certification = {
   url?: string;
   description?: string;
   result?: string;
+  tags?: string[];
 };
 
 export const certifications: Certification[] = [
@@ -25,6 +26,7 @@ export const certifications: Certification[] = [
   {
     category: "course",
     name: "Learn and Understand NodeJS",
+    tags: ["JavaScript", "Node.js", "Backend"],
     url: "https://www.udemy.com/course/understand-nodejs/",
     issuer: "Udemy",
     issued: "November 2018",
@@ -32,6 +34,7 @@ export const certifications: Certification[] = [
   {
     category: "course",
     name: "Node with React: Fullstack Web Development",
+    tags: ["JavaScript", "Node.js", "React", "Fullstack"],
     url: "https://www.udemy.com/course/node-with-react-fullstack-web-development/",
     issuer: "Udemy",
     issued: "November 2018",
@@ -39,6 +42,7 @@ export const certifications: Certification[] = [
   {
     category: "course",
     name: "Introduction to Psychology",
+    tags: ["Psychology", "HumanBehavior", "SoftSkills"],
     url: "https://www.coursera.org/learn/introduction-psychology",
     issuer: "Coursera",
     issued: "Completed",

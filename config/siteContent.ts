@@ -29,6 +29,9 @@ export type NavigationIcon =
   | "megaphone";
 
 export const sidebarContent = {
+  openMenuLabel: "Open navigation menu",
+  closeMenuLabel: "Close navigation menu",
+  menuLabel: "Navigation menu",
   name: "Nahiyan K",
   introduction: {
     linkText: "Nahiyan",
