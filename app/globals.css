@@ -99,6 +99,10 @@ h1 {
 }
 
 @layer components {
+  .project-demo-button {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-[var(--accent)] bg-[var(--accent-soft)] px-4 py-2 text-sm font-semibold text-[var(--accent)] no-underline transition-shadow hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--accent)];
+  }
+
   .sidebar-tooltip {
     @apply pointer-events-none z-30 rounded-lg bg-slate-950 px-3 py-1.5 font-medium text-white opacity-0 shadow-lg transition-opacity dark:bg-slate-100 dark:text-slate-950;
     font-size: var(--sidebar-label-font-size);

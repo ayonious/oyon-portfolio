@@ -3,7 +3,7 @@ import { openSourceProjectsConfig } from "../../config/projects";
 import { pageContent } from "../../config/siteContent";
 
 export default function ProjectsPage() {
-  const { profile, gamified, templates, organization } = openSourceProjectsConfig;
+  const { profile, gamified, templates, organization, university } = openSourceProjectsConfig;
 
   return (
     <div className="max-w-4xl py-8 sm:py-16">
@@ -15,6 +15,7 @@ export default function ProjectsPage() {
       <ProjectGroup {...organization} />
       <ProjectGroup {...gamified} />
       <ProjectGroup {...templates} />
+      <ProjectGroup {...university} />
     </div>
   );
 }

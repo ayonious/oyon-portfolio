@@ -1,5 +1,42 @@
 import {
   siAdyen,
+  siDocusaurus,
+  siGatsby,
+  siMui,
+  siStyledcomponents,
+  siWebpack,
+  siBabel,
+  siNetlify,
+  siApachemaven,
+  siJunit5,
+  siHtml5,
+  siCss,
+  siGit,
+  siGithubpages,
+  siSwagger,
+  siZod,
+  siSaltproject,
+  siGradle,
+  siSwc,
+  siNestjs,
+  siMarkdown,
+  siHomebrew,
+
+  siVercel,
+  siTestinglibrary,
+  siOpengl,
+  siVagrant,
+  siApple,
+  siGoogle,
+  siFacebook,
+  siAndroid,
+  siIos,
+  siAlipay,
+  siApplepay,
+  siGooglepay,
+  siKlarna,
+  siPaypal,
+  siWechat,
   siAnthropic,
   siBookingdotcom,
   siBraintree,
@@ -38,9 +75,47 @@ import {
   type SimpleIcon,
 } from "simple-icons";
 import type { CSSProperties } from "react";
+import { MailIcon } from "./icons/SidebarIcons";
 
 const icons: Record<string, SimpleIcon> = {
   Adyen: siAdyen,
+  "Docusaurus": siDocusaurus,
+  "Gatsby": siGatsby,
+  "Material UI": siMui,
+  "Styled Components": siStyledcomponents,
+  "Webpack": siWebpack,
+  "Babel": siBabel,
+  "Netlify": siNetlify,
+  "Maven": siApachemaven,
+  "JUnit": siJunit5,
+  "HTML": siHtml5,
+  "CSS": siCss,
+  "Git": siGit,
+  "GitHub Pages": siGithubpages,
+  "Swagger": siSwagger,
+  "Zod": siZod,
+  "SaltStack": siSaltproject,
+  "Gradle": siGradle,
+  "SWC": siSwc,
+  "NestJS": siNestjs,
+  "Markdown": siMarkdown,
+  "Homebrew": siHomebrew,
+
+  Vercel: siVercel,
+  "React Testing Library": siTestinglibrary,
+  OpenGL: siOpengl,
+  Vagrant: siVagrant,
+  Apple: siApple,
+  Google: siGoogle,
+  Facebook: siFacebook,
+  Android: siAndroid,
+  iOS: siIos,
+  Alipay: siAlipay,
+  "Apple Pay": siApplepay,
+  "Google Pay": siGooglepay,
+  "Klarna Sofort": siKlarna,
+  PayPal: siPaypal,
+  "WeChat Pay": siWechat,
   Anthropic: siAnthropic,
   "Booking.com": siBookingdotcom,
   Braintree: siBraintree,
@@ -84,12 +159,18 @@ const icons: Record<string, SimpleIcon> = {
   Yarn: siYarn,
 };
 
+export const brandNames = [...Object.keys(icons), "LinkedIn", "email login"];
+
 type BrandIconProps = {
   name: string;
   className?: string;
 };
 
 export default function BrandIcon({ name, className = "h-5 w-5" }: BrandIconProps) {
+  if (name === "email login") {
+    return <MailIcon className={className} />;
+  }
+
   if (name === "LinkedIn") {
     return (
       <svg
@@ -109,7 +190,7 @@ export default function BrandIcon({ name, className = "h-5 w-5" }: BrandIconProp
     return null;
   }
 
-  const darkColor = ["Express.js", "GitHub", "Console Table Printer", "Next.js"].includes(
+  const darkColor = ["Express.js", "GitHub", "Console Table Printer", "Next.js", "Apple", "Apple Pay", "Braintree", "iOS", "Vercel"].includes(
     name,
   )
     ? "#ffffff"

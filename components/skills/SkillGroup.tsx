@@ -7,7 +7,7 @@ export default function SkillGroup({ title, skills }: { title: string; skills: s
       <ul className="mt-3 flex flex-wrap gap-2 sm:mt-0">
         {skills.map((skill) => (
           <li key={skill} className="rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm font-medium text-slate-700 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200">
-            <span className="flex items-center gap-2"><BrandIcon name={skill} className="h-4 w-4 shrink-0" />{skill}</span>
+            <span className="flex items-center gap-2"><BrandIcon name={skill} className="h-[1.2rem] w-[1.2rem] shrink-0" />{skill}</span>
           </li>
         ))}
       </ul>

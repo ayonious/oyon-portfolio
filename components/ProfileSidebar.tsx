@@ -104,7 +104,7 @@ export default function ProfileSidebar() {
                 rel={link.url.startsWith("http") ? "noreferrer" : undefined}
                 aria-label={link.label === "Mail" ? "Open contact form" : `Open ${link.label} profile`}
                 title={link.label === "Mail" ? "Open contact form" : `Open ${link.label} profile`}
-                className="group relative flex h-10 w-10 items-center justify-center rounded-xl no-underline transition-colors hover:bg-[var(--accent-soft)]"
+                className="group relative flex h-10 w-10 items-center justify-center rounded-xl no-underline transition-[background-color,translate,scale] duration-200 ease-out hover:bg-[var(--accent-soft)] motion-safe:hover:-translate-y-1 motion-safe:hover:scale-110 motion-safe:focus-visible:-translate-y-1 motion-safe:focus-visible:scale-110 motion-reduce:transition-none"
               >
                 {link.label === "Mail" ? (
                   <MailIcon className="h-5 w-5 text-[var(--accent)]" />

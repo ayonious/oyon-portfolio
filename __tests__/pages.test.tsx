@@ -72,13 +72,18 @@ describe("site pages", () => {
     expect(
       screen.getByRole("heading", { name: "telc Deutsch C1 Hochschule" }),
     ).toBeTruthy();
-    expect(screen.getByText("Result: Befriedigend")).toBeTruthy();
+    expect(screen.queryByText("Result: Befriedigend")).toBeNull();
     expect(
       screen.getByRole("heading", { name: "Introduction to Psychology" }),
     ).toBeTruthy();
     expect(screen.queryByText(/Credential ID/)).toBeNull();
     expect(screen.queryByRole("link", { name: "Show credential ↗" })).toBeNull();
+    expect(screen.getByRole("heading", { name: "BSc in Computer Science and Engineering" })).toBeTruthy();
+    expect(screen.getByText("Bangladesh University of Engineering and Technology (BUET)")).toBeTruthy();
     expect(screen.getAllByText("Completed")).toHaveLength(4);
+    for (const name of ["Education", "Certifications", "Courses"]) {
+      expect(screen.getByRole("region", { name })).toBeTruthy();
+    }
   });
 
   it("shows pinned and organization open-source projects", () => {
@@ -87,7 +92,12 @@ describe("site pages", () => {
     expect(
       screen.getByRole("heading", { name: "Pinned personal repositories" }),
     ).toBeTruthy();
-    expect(screen.getByRole("link", { name: "oyon-portfolio" })).toBeTruthy();
+    expect(screen.getByRole("link", { name: "portfolio" })).toBeTruthy();
+    expect(screen.getByRole("link", { name: "Try Random Names live ↗" }).getAttribute("href")).toBe("https://random-names.netlify.app");
+    expect(screen.getByRole("link", { name: "Explore live documentation ↗" }).getAttribute("href")).toBe("https://console-table.netlify.app");
+    for (const name of ["interview-cheatsheet", "lombok-examples", "tower-of-hanoi-simulation", "Vagrant-Best-Practices", "OPENGL-St.-Basil-s-Cathedral", "OPENGL-House-Furnitures"]) {
+      expect(screen.getByRole("link", { name }).getAttribute("href")).toBe(`https://github.com/ayonious/${name}`);
+    }
     expect(screen.getByText("Gatsby")).toBeTruthy();
     expect(
       screen.getByRole("heading", { name: "Gamified projects" }),
@@ -98,9 +108,9 @@ describe("site pages", () => {
         .getAttribute("href"),
     ).toBe("https://exploringbug.netlify.app");
     expect(screen.getAllByText("React").length).toBeGreaterThanOrEqual(2);
-    expect(screen.getByRole("heading", { name: "Templates" })).toBeTruthy();
+    expect(screen.getByRole("heading", { name: "For Software Engineers" })).toBeTruthy();
     expect(screen.getByRole("link", { name: /nextjs-template/ })).toBeTruthy();
-    expect(screen.getByText("Next.js")).toBeTruthy();
+    expect(screen.getAllByText("Next.js").length).toBeGreaterThanOrEqual(2);
     expect(
       screen.getByText(/Reusable starter repositories to help bootstrap/),
     ).toBeTruthy();
@@ -113,7 +123,8 @@ describe("site pages", () => {
       "Pinned personal repositories",
       "Console Table Printer organization",
       "Gamified projects",
-      "Templates",
+      "For Software Engineers",
+      "University animation projects",
     ]);
   });
 
