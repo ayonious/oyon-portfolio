@@ -89,7 +89,7 @@ export default function ProfileSidebar() {
         aria-expanded={menuOpen}
         aria-controls="profile-sidebar"
         onClick={() => setMenuOpen((open) => !open)}
-        className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-xl text-[#253047] hover:bg-[var(--accent-soft)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent)] dark:text-slate-200"
+        className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-xl text-[var(--accent)] hover:bg-[var(--accent-soft)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent)]"
       >
         <MenuIcon />
       </button>
@@ -136,7 +136,7 @@ export default function ProfileSidebar() {
             <div className="ml-auto flex shrink-0 items-center lg:ml-0">
               <ColorPalette />
               <ThemeToggle />
-              <button ref={closeButtonRef} type="button" onClick={closeMenu} aria-label={sidebarContent.closeMenuLabel} className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-xl text-[#253047] hover:bg-[var(--accent-soft)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent)] dark:text-slate-200 lg:hidden">
+              <button ref={closeButtonRef} type="button" onClick={closeMenu} aria-label={sidebarContent.closeMenuLabel} className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-xl text-[var(--accent)] hover:bg-[var(--accent-soft)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent)] lg:hidden">
                 <CloseIcon />
               </button>
             </div>
