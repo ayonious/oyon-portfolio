@@ -18,7 +18,7 @@ export default function ProjectCard({ project }: { project: OpenSourceProject })
             {project.name}
           </HeadingLink>
         </h3>
-        <ProjectStars stars={project.stars} />
+        <ProjectStars stars={project.stars} url={project.url} />
       </div>
       {project.downloadStat && <div className="mt-3"><NpmDownloads stat={project.downloadStat} /></div>}
       <p className="mt-3 text-slate-600 dark:text-slate-300">{project.description}</p>

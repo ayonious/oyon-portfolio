@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
-import { expect, fn, userEvent, within } from "storybook/test";
+import { expect, fn, userEvent, waitFor, within } from "storybook/test";
 import Button from "./Button";
 import { aboutContent } from "../config/siteContent";
 import { storyContent } from "../config/storybook";
@@ -50,6 +50,36 @@ export const ExternalLink: Story = {
     await expect(link).toHaveAttribute("href", args.href);
     await expect(link).toHaveAttribute("target", "_blank");
     await expect(link).toHaveAttribute("rel", "noreferrer");
+  },
+};
+export const HoverTooltip: Story = {
+  args: { tooltip: storyContent.buttonTooltip },
+  decorators: [(Story) => <div className="px-20 pt-16"><Story /></div>],
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole("button");
+    const tooltip = canvas.getByText(storyContent.buttonTooltip);
+    await expect(button).toHaveAccessibleName(aboutContent.contactForm.submitLabel);
+    await expect(tooltip).toHaveStyle({ opacity: "0" });
+    await userEvent.hover(button);
+    await waitFor(() => expect(tooltip).toHaveStyle({ opacity: "1" }));
+    await userEvent.unhover(button);
+    await waitFor(() => expect(tooltip).toHaveStyle({ opacity: "0" }));
+    await userEvent.hover(button);
+    await waitFor(() => expect(tooltip).toHaveStyle({ opacity: "1" }));
+  },
+};
+export const HoverTooltipDark: Story = {
+  ...HoverTooltip,
+  globals: { theme: "dark" },
+};
+export const FocusTooltip: Story = {
+  ...HoverTooltip,
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await userEvent.tab();
+    await expect(canvas.getByRole("button")).toHaveFocus();
+    await waitFor(() => expect(canvas.getByText(storyContent.buttonTooltip)).toHaveStyle({ opacity: "1" }));
   },
 };
 export const Dark: Story = { globals: { theme: "dark" } };

@@ -36,7 +36,7 @@ export default function ProjectGroup({ label, limit, onlyPinned, projects, descr
       {showStats && (
         <p className="mt-2 flex flex-wrap items-center gap-2 text-slate-600 dark:text-slate-300">
           <span>{visibleProjects.length} projects</span>
-          {totalStars > 0 && <><span aria-hidden="true">·</span><ProjectStars stars={totalStars} /></>}
+          {totalStars > 0 && <><span aria-hidden="true">·</span><ProjectStars stars={totalStars} url={url} /></>}
           {downloadStat && (
             <>
               <span aria-hidden="true">·</span>
@@ -55,7 +55,7 @@ export default function ProjectGroup({ label, limit, onlyPinned, projects, descr
                 <HeadingLink href={project.url} tooltip={linkLabel} className="min-w-0 font-semibold">
                   <span className="truncate">{project.name}</span>
                 </HeadingLink>
-                <ProjectStars stars={project.stars} />
+                <ProjectStars stars={project.stars} url={project.url} />
                 {technologies.length > 0 && (
                   <span className="ml-auto hidden shrink-0 items-center gap-2 sm:inline-flex" aria-label="Technologies used">
                     {technologies.map((technology) => (

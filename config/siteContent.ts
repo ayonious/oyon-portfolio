@@ -143,6 +143,7 @@ export const pageContent = {
     title: "Open-source projects",
     introduction:
       "Projects I maintain personally and with the Console Table Printer organization.",
+    openOnGitHub: "Open on GitHub",
     viewOnGitHub: "View on GitHub →",
   },
   skills: {

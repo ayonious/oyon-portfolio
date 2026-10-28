@@ -49,4 +49,24 @@ export const WithTooltip: Story = {
     await waitFor(() => expect(canvas.getByText(linkContent.openWebsite)).toHaveStyle({ opacity: "1" }));
   },
 };
+export const HoverTooltip: Story = {
+  args: { tooltip: linkContent.openWebsite },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const link = canvas.getByRole("link");
+    const tooltip = canvas.getByText(linkContent.openWebsite);
+    await expect(tooltip).toHaveStyle({ opacity: "0" });
+    await userEvent.hover(link);
+    await waitFor(() => expect(tooltip).toHaveStyle({ opacity: "1" }));
+    await userEvent.unhover(link);
+    await waitFor(() => expect(tooltip).toHaveStyle({ opacity: "0" }));
+    // Leave the tooltip open so the story previews the hover state.
+    await userEvent.hover(link);
+    await waitFor(() => expect(tooltip).toHaveStyle({ opacity: "1" }));
+  },
+};
+export const HoverTooltipDark: Story = {
+  ...HoverTooltip,
+  globals: { theme: "dark" },
+};
 export const Dark: Story = { globals: { theme: "dark" } };
