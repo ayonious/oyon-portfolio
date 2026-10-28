@@ -42,27 +42,3 @@ export const majorDependencies = [
       "Supplies the one-color brand and technology marks shown beside social profiles and recognized skills. The library is CC0, while individual brand trademarks and usage guidelines still apply.",
   },
 ];
-
-export const allPackages = [
-  "@hookform/resolvers",
-  "react-hook-form",
-  "next",
-  "react",
-  "react-dom",
-  "simple-icons",
-  "zod",
-  "@tailwindcss/postcss",
-  "@testing-library/dom",
-  "@testing-library/jest-dom",
-  "@testing-library/react",
-  "@types/jest",
-  "@types/node",
-  "@types/react",
-  "@types/react-dom",
-  "cypress",
-  "jest",
-  "jest-environment-jsdom",
-  "postcss",
-  "tailwindcss",
-  "typescript",
-];
