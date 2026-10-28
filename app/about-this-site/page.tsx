@@ -1,3 +1,4 @@
+import PageHeader from "../../components/PageHeader";
 import HeadingLink from "../../components/HeadingLink";
 import Button from "../../components/Button";
 import { allPackages, majorDependencies } from "../../config/siteCredits";
@@ -7,12 +8,7 @@ import BrandIcon from "../../components/BrandIcon";
 export default function AboutThisSitePage() {
   return (
     <div className="max-w-4xl py-8 sm:py-16">
-      <header>
-        <h1 className="text-4xl font-bold tracking-tight">{aboutSiteContent.title}</h1>
-        <p className="mt-4 max-w-3xl text-lg text-slate-600 dark:text-slate-300">
-          {aboutSiteContent.introduction}
-        </p>
-      </header>
+      <PageHeader title={aboutSiteContent.title} introduction={aboutSiteContent.introduction} />
 
       <section className="mt-12">
         <h2 className="text-2xl font-bold">{aboutSiteContent.majorTitle}</h2>
