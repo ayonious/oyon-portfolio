@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
+import { expect, userEvent, waitFor, within } from "storybook/test";
 import CertificationItem from "./CertificationItem";
 import { certifications } from "../../config/certifications";
-import { pageContent } from "../../config/siteContent";
+import { pageContent, linkContent } from "../../config/siteContent";
 
 const meta = {
   title: "Certifications/CertificationItem",
@@ -15,3 +16,19 @@ type Story = StoryObj<typeof meta>;
 
 export const Education: Story = {};
 export const Course: Story = { args: { certification: certifications[2], completedLabel: pageContent.certifications.completedLabel, dateLabel: pageContent.certifications.sections[2].dateLabel } };
+
+export const CourseTooltipInList: Story = {
+  ...Course,
+  decorators: [(Story) => (
+    <div className="pt-12">
+      <ul className="divide-y divide-slate-200 border-y border-slate-200 dark:divide-slate-700 dark:border-slate-700">
+        <li><Story /></li>
+      </ul>
+    </div>
+  )],
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await userEvent.hover(canvas.getByRole("link"));
+    await waitFor(() => expect(canvas.getByText(linkContent.destinations[1].tooltip)).toHaveStyle({ opacity: "1" }));
+  },
+};
