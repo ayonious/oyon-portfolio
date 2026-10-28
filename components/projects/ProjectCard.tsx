@@ -1,3 +1,5 @@
+import HeadingLink from "../HeadingLink";
+import Button from "../Button";
 import BrandIcon from "../BrandIcon";
 import ProjectStars from "./ProjectStars";
 import NpmDownloads from "./NpmDownloads";
@@ -12,12 +14,9 @@ export default function ProjectCard({ project }: { project: OpenSourceProject })
     <article className="interactive-card rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-slate-900">
       <div className="flex items-start justify-between gap-4">
         <h3 className="text-xl font-bold text-slate-950 dark:text-slate-50">
-          <a href={project.url} target="_blank" rel="noreferrer" title={linkLabel} className="hover-lift group relative inline-flex cursor-pointer no-underline hover:underline">
+          <HeadingLink href={project.url} tooltip={linkLabel}>
             {project.name}
-            <span aria-hidden="true" className="sidebar-tooltip absolute bottom-full left-0 mb-2 w-max group-hover:opacity-100 group-focus-visible:opacity-100">
-              {linkLabel}
-            </span>
-          </a>
+          </HeadingLink>
         </h3>
         <ProjectStars stars={project.stars} />
       </div>
@@ -34,9 +33,9 @@ export default function ProjectCard({ project }: { project: OpenSourceProject })
         </div>
       )}
       {project.demoUrl && project.demoLabel && (
-        <a href={project.demoUrl} target="_blank" rel="noreferrer" className="project-demo-button relative z-20 mt-5">
+        <Button href={project.demoUrl} target="_blank" rel="noreferrer" className="relative z-20 mt-5">
           {project.demoLabel} ↗
-        </a>
+        </Button>
       )}
     </article>
   );

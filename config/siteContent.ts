@@ -190,7 +190,7 @@ export const pageContent = {
 export const aboutSiteContent = {
   title: "About this site",
   introduction:
-    "This portfolio is built with open-source software. Thank you to the maintainers and contributors behind every package that makes it possible.",
+    "This portfolio is built with open-source software and is designed to adapt to phones, tablets, and desktop screens. The layout, navigation, and contact form adjust to the space available. Thank you to the maintainers and contributors behind every package that makes it possible.",
   majorTitle: "Major technologies",
   packagesTitle: "All packages",
   packagesIntroduction:
@@ -218,7 +218,7 @@ export const aboutSiteContent = {
       {
         title: "Cloudflare Turnstile",
         description:
-          "The contact form uses Cloudflare Turnstile as a spam-protection layer. The browser receives a temporary token, and the Vercel Function verifies it with Cloudflare before sending any email.",
+          "Cloudflare Turnstile helps protect the contact form from automated spam. It usually checks your browser automatically and may ask you to tick a checkbox. Before sending your message, the site checks that this verification passed. This helps keep unwanted messages out of my inbox.",
       },
     ],
   },
@@ -261,4 +261,8 @@ export const aboutSiteContent = {
       url: "https://vercel.com/",
     },
   ],
+};
+
+export const linkContent = {
+  openWebsite: "Open Website",
 };

@@ -1,3 +1,5 @@
+import { linkContent } from "../../config/siteContent";
+import HeadingLink from "../HeadingLink";
 import BrandIcon from "../BrandIcon";
 import BrandText from "../BrandText";
 import type { WorkHistoryEntry } from "../../config/workHistory";
@@ -11,10 +13,9 @@ export default function WorkHistoryCard({ job }: { job: WorkHistoryEntry }) {
           <h2 className="flex items-center gap-2 text-2xl font-bold text-slate-950 dark:text-slate-50">
             <BrandIcon name={job.company} className="h-6 w-6 shrink-0" />
             {job.url ? (
-              <a href={job.url} target="_blank" rel="noreferrer" title="Open Website" className="hover-lift group relative inline-flex cursor-pointer no-underline hover:underline">
+              <HeadingLink href={job.url} tooltip={linkContent.openWebsite}>
                 {job.company}
-                <span aria-hidden="true" className="sidebar-tooltip absolute bottom-full left-0 mb-2 w-max group-hover:opacity-100 group-focus-visible:opacity-100">Open Website</span>
-              </a>
+              </HeadingLink>
             ) : job.company}
           </h2>
           <p className="mt-1 font-semibold text-slate-700 dark:text-slate-200">{job.role}</p>

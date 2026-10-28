@@ -1,3 +1,4 @@
+import Button from "../../components/Button";
 import { otherBooks, programmingBooks } from "../../config/books";
 import { pageContent } from "../../config/siteContent";
 import BookList from "../../components/reading/BookList";
@@ -10,14 +11,14 @@ export default function ReadingPage() {
         <p className="mt-4 text-lg text-slate-600 dark:text-slate-300">
           {pageContent.books.introduction}
         </p>
-        <a
+        <Button
           href={pageContent.books.goodreadsUrl}
           target="_blank"
           rel="noreferrer"
-          className="mt-5 inline-flex rounded-xl border border-[var(--accent)] px-4 py-2 font-semibold text-[var(--accent)] no-underline transition-colors hover:bg-[var(--accent-soft)]"
+          className="mt-5"
         >
           {pageContent.books.goodreadsLabel}
-        </a>
+        </Button>
       </header>
 
       <section className="mt-14">

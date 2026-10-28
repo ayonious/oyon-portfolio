@@ -1,3 +1,4 @@
+import HeadingLink from "../../components/HeadingLink";
 import { pageContent } from "../../config/siteContent";
 import { featuredBlogPosts } from "../../config/blogPosts";
 
@@ -19,9 +20,9 @@ export default function BlogPage() {
             </span>
             <div>
               <h2 className="text-xl font-bold text-slate-950 dark:text-slate-50">
-                <a href={post.url} target="_blank" rel="noreferrer" className="inline-flex transition-[color,translate] duration-200 ease-out motion-safe:hover:translate-x-1 motion-safe:focus-visible:translate-x-1 motion-reduce:transition-none">
+                <HeadingLink href={post.url}>
                   {post.title} ↗
-                </a>
+                </HeadingLink>
               </h2>
               <p className="mt-2 leading-7 text-slate-600 dark:text-slate-300">
                 {post.summary}
