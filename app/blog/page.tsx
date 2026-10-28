@@ -1,3 +1,4 @@
+import Button from "../../components/Button";
 import HeadingLink from "../../components/HeadingLink";
 import { pageContent } from "../../config/siteContent";
 import { featuredBlogPosts } from "../../config/blogPosts";
@@ -32,14 +33,14 @@ export default function BlogPage() {
         ))}
       </ol>
 
-      <a
+      <Button
         href={pageContent.blog.url}
         target="_blank"
         rel="noreferrer"
-        className="mt-8 inline-flex rounded-xl bg-[var(--accent)] px-5 py-3 font-semibold !text-white no-underline transition-opacity hover:opacity-85"
+        className="mt-8"
       >
         {pageContent.blog.linkLabel}
-      </a>
+      </Button>
     </section>
   );
 }
