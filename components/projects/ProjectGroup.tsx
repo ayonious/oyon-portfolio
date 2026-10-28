@@ -30,7 +30,7 @@ export default function ProjectGroup({ label, limit, onlyPinned, projects, descr
     <section className="mt-12">
       <div className="flex flex-wrap items-baseline justify-between gap-3">
         <h2 className="text-2xl font-bold text-slate-950 dark:text-slate-50">{label}</h2>
-        {url && <a href={url} target="_blank" rel="noreferrer" className="hover-lift inline-block cursor-pointer font-medium">{pageContent.projects.viewOnGitHub}</a>}
+        {url && <Button href={url} target="_blank" rel="noreferrer">{pageContent.projects.viewOnGitHub}</Button>}
       </div>
       {description && <p className="mt-2 max-w-3xl text-slate-600 dark:text-slate-300">{description}</p>}
       {showStats && (

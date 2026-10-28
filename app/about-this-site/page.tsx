@@ -101,9 +101,9 @@ export default function AboutThisSitePage() {
                 {credit.emoji}
               </span>
               {credit.role}:{" "}
-              <a href={credit.url} target="_blank" rel="noreferrer">
+              <HeadingLink href={credit.url}>
                 {credit.name}
-              </a>
+              </HeadingLink>
             </li>
           ))}
         </ul>
