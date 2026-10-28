@@ -30,6 +30,22 @@ export const majorDependencies = [
       "Provide fast component and layout tests. They verify important metadata, shared navigation, links, and page structure from a user-facing perspective.",
   },
   {
+    name: "Storybook",
+    action: {
+      label: "Explore the Storybook stories →",
+      url: "https://storybook-oyon-portfolio.vercel.app/?path=/story/shared-all-shared-components--overview",
+    },
+    url: "https://storybook.js.org/",
+    description:
+      "A component playground where you can explore buttons, links, cards, and other reusable parts of this site on their own. Its stories show different states and let you compare light and dark themes without navigating through every page.",
+  },
+  {
+    name: "Vite",
+    url: "https://vite.dev/",
+    description:
+      "Powers the Storybook playground with fast startup and quick previews as components change. It also packages the stories into the published playground you can browse online. Next.js handles building and serving the portfolio itself.",
+  },
+  {
     name: "Cypress",
     url: "https://www.cypress.io/",
     description:
