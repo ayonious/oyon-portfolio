@@ -3,6 +3,7 @@ import HeadingLink from "../../components/HeadingLink";
 import Button from "../../components/Button";
 import { majorDependencies } from "../../config/siteCredits";
 import { aboutSiteContent } from "../../config/siteContent";
+import BrandText from "../../components/BrandText";
 import BrandIcon from "../../components/BrandIcon";
 
 export default function AboutThisSitePage() {
@@ -28,11 +29,19 @@ export default function AboutThisSitePage() {
                 </HeadingLink>
               </h3>
               <p className="text-slate-600 dark:text-slate-300">
-                {dependency.description}
+                <BrandText text={dependency.description} />
               </p>
             </li>
           ))}
         </ul>
+        <Button
+          href={aboutSiteContent.storybookLink.url}
+          target="_blank"
+          rel="noreferrer"
+          className="mt-6"
+        >
+          <BrandText text={aboutSiteContent.storybookLink.label} />
+        </Button>
       </section>
 
       <section className="mt-14">
