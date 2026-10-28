@@ -1,3 +1,5 @@
+import HeadingLink from "../../components/HeadingLink";
+import Button from "../../components/Button";
 import { allPackages, majorDependencies } from "../../config/siteCredits";
 import { aboutSiteContent } from "../../config/siteContent";
 import BrandIcon from "../../components/BrandIcon";
@@ -21,15 +23,13 @@ export default function AboutThisSitePage() {
               className="grid gap-2 border-b border-slate-200 py-5 sm:grid-cols-[13rem_minmax(0,1fr)] sm:gap-8 dark:border-slate-700"
             >
               <h3 className="font-bold">
-                <a
+                <HeadingLink
                   href={dependency.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center gap-2 no-underline transition-[color,translate] duration-200 ease-out hover:underline motion-safe:hover:translate-x-1 motion-safe:focus-visible:translate-x-1 motion-reduce:transition-none"
+                  className="gap-2"
                 >
                   <BrandIcon name={dependency.name} className="h-5 w-5 shrink-0" />
                   <span>{dependency.name} ↗</span>
-                </a>
+                </HeadingLink>
               </h3>
               <p className="text-slate-600 dark:text-slate-300">
                 {dependency.description}
@@ -86,14 +86,14 @@ export default function AboutThisSitePage() {
             <li key={note}>{note}</li>
           ))}
         </ul>
-        <a
+        <Button
           href={aboutSiteContent.reuse.repositoryUrl}
           target="_blank"
           rel="noreferrer"
-          className="mt-6 inline-flex rounded-xl border border-[var(--accent)] px-4 py-2 font-semibold no-underline transition-[background-color,translate] duration-200 ease-out hover:bg-[var(--accent-soft)] motion-safe:hover:translate-x-1 motion-safe:focus-visible:translate-x-1 motion-reduce:transition-none"
+          className="mt-6"
         >
           {aboutSiteContent.reuse.repositoryLabel}
-        </a>
+        </Button>
       </section>
 
       <section className="mt-14 rounded-2xl bg-[var(--accent-soft)] p-6">

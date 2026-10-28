@@ -1,3 +1,5 @@
+import HeadingLink from "../HeadingLink";
+import Button from "../Button";
 import BrandIcon, { brandNames } from "../BrandIcon";
 import ProjectCard from "./ProjectCard";
 import ScrollReveal from "../ScrollReveal";
@@ -34,7 +36,7 @@ export default function ProjectGroup({ label, limit, onlyPinned, projects, descr
       {showStats && (
         <p className="mt-2 flex flex-wrap items-center gap-2 text-slate-600 dark:text-slate-300">
           <span>{visibleProjects.length} projects</span>
-          {totalStars > 0 && <><span aria-hidden="true">·</span><ProjectStars stars={totalStars} /></>}
+          {totalStars > 0 && <><span aria-hidden="true">·</span><ProjectStars stars={totalStars} url={url} /></>}
           {downloadStat && (
             <>
               <span aria-hidden="true">·</span>
@@ -50,11 +52,10 @@ export default function ProjectGroup({ label, limit, onlyPinned, projects, descr
             const linkLabel = project.url.includes("github.com") ? "Open in GitHub" : "Open project";
             return (
               <ScrollReveal as="li" key={project.url} className="flex min-w-0 items-center gap-3 py-2.5 text-sm">
-                <a href={project.url} target="_blank" rel="noreferrer" title={linkLabel} className="hover-lift group relative inline-flex min-w-0 cursor-pointer truncate font-semibold">
+                <HeadingLink href={project.url} tooltip={linkLabel} className="min-w-0 font-semibold">
                   <span className="truncate">{project.name}</span>
-                  <span aria-hidden="true" className="sidebar-tooltip absolute bottom-full left-0 mb-2 w-max group-hover:opacity-100 group-focus-visible:opacity-100">{linkLabel}</span>
-                </a>
-                <ProjectStars stars={project.stars} />
+                </HeadingLink>
+                <ProjectStars stars={project.stars} url={project.url} />
                 {technologies.length > 0 && (
                   <span className="ml-auto hidden shrink-0 items-center gap-2 sm:inline-flex" aria-label="Technologies used">
                     {technologies.map((technology) => (
@@ -66,7 +67,7 @@ export default function ProjectGroup({ label, limit, onlyPinned, projects, descr
                   </span>
                 )}
                 {project.demoUrl && project.demoLabel && (
-                  <a href={project.demoUrl} target="_blank" rel="noreferrer" className="hover-lift relative z-20 inline-flex shrink-0 whitespace-nowrap font-medium">{project.demoLabel} ↗</a>
+                  <Button href={project.demoUrl} target="_blank" rel="noreferrer" className="relative z-20 shrink-0">{project.demoLabel} ↗</Button>
                 )}
               </ScrollReveal>
             );

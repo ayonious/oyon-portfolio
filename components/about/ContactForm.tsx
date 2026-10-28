@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { contactSchema, ContactFormData } from "../../config/contactSchema";
 import { aboutContent } from "../../config/siteContent";
+import Button from "../Button";
 import TurnstileWidget from "./TurnstileWidget";
 
 type FormStatus = "idle" | "success" | "error";
@@ -56,7 +57,18 @@ export default function ContactForm() {
 
   return (
     <section id="contact" className="mt-14 max-w-2xl scroll-mt-8">
-      <h2 className="text-2xl font-bold">{aboutContent.contactForm.title}</h2>
+      <div className="flex flex-wrap items-center justify-between gap-4">
+        <h2 className="text-2xl font-bold">{aboutContent.contactForm.title}</h2>
+        {siteKey && (
+          <div className="w-full min-w-0 sm:w-[300px]">
+            <TurnstileWidget
+              siteKey={siteKey}
+              resetSignal={resetSignal}
+              onTokenChange={setTurnstileToken}
+            />
+          </div>
+        )}
+      </div>
       <p className="mt-3 text-slate-600 dark:text-slate-300">
         {aboutContent.contactForm.introduction}
       </p>
@@ -116,13 +128,7 @@ export default function ContactForm() {
         </div>
 
         <input type="hidden" {...register("turnstileToken")} />
-        {siteKey ? (
-          <TurnstileWidget
-            siteKey={siteKey}
-            resetSignal={resetSignal}
-            onTokenChange={setTurnstileToken}
-          />
-        ) : (
+        {!siteKey && (
           <p className="text-sm text-amber-700 dark:text-amber-300">
             {aboutContent.contactForm.verificationUnavailable}
           </p>
@@ -133,15 +139,14 @@ export default function ContactForm() {
           </p>
         )}
 
-        <button
+        <Button
           type="submit"
           disabled={isSubmitting || !siteKey}
-          className="rounded-xl bg-[var(--accent)] px-5 py-3 font-semibold !text-white transition-opacity hover:opacity-85 disabled:cursor-not-allowed disabled:opacity-50"
         >
           {isSubmitting
             ? aboutContent.contactForm.sendingLabel
             : aboutContent.contactForm.submitLabel}
-        </button>
+        </Button>
 
         {status === "success" && (
           <p role="status" className="text-sm font-medium text-emerald-700 dark:text-emerald-300">

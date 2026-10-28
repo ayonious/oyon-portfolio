@@ -1,3 +1,5 @@
+import { linkContent } from "../../config/siteContent";
+import HeadingLink from "../HeadingLink";
 import type { Book } from "../../config/books";
 import TopicTags from "../TopicTags";
 
@@ -9,9 +11,9 @@ export default function BookList({ books }: { books: Book[] }) {
           <span aria-hidden="true" className="pt-0.5 text-lg">📖</span>
           <div>
             <h3 className="font-bold">
-              <a href={book.url} target="_blank" rel="noreferrer" className="no-underline hover:underline">
+              <HeadingLink href={book.url} tooltip={linkContent.seeInGoodreads}>
                 {book.title} <span aria-hidden="true">↗</span>
-              </a>
+              </HeadingLink>
             </h3>
             <p className="text-sm text-slate-600 dark:text-slate-300">{book.authors}</p>
             {book.details && (

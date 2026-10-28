@@ -143,6 +143,9 @@ export const pageContent = {
     title: "Open-source projects",
     introduction:
       "Projects I maintain personally and with the Console Table Printer organization.",
+    openInNpm: "Open in npm",
+    openLink: "Open link",
+    openOnGitHub: "Open on GitHub",
     viewOnGitHub: "View on GitHub →",
   },
   skills: {
@@ -190,7 +193,7 @@ export const pageContent = {
 export const aboutSiteContent = {
   title: "About this site",
   introduction:
-    "This portfolio is built with open-source software. Thank you to the maintainers and contributors behind every package that makes it possible.",
+    "This portfolio is built with open-source software and is designed to adapt to phones, tablets, and desktop screens. The layout, navigation, and contact form adjust to the space available. Thank you to the maintainers and contributors behind every package that makes it possible.",
   majorTitle: "Major technologies",
   packagesTitle: "All packages",
   packagesIntroduction:
@@ -218,7 +221,7 @@ export const aboutSiteContent = {
       {
         title: "Cloudflare Turnstile",
         description:
-          "The contact form uses Cloudflare Turnstile as a spam-protection layer. The browser receives a temporary token, and the Vercel Function verifies it with Cloudflare before sending any email.",
+          "Cloudflare Turnstile helps protect the contact form from automated spam. It usually checks your browser automatically and may ask you to tick a checkbox. Before sending your message, the site checks that this verification passed. This helps keep unwanted messages out of my inbox.",
       },
     ],
   },
@@ -260,5 +263,15 @@ export const aboutSiteContent = {
       emoji: "🚀",
       url: "https://vercel.com/",
     },
+  ],
+};
+
+export const linkContent = {
+  openWebsite: "Open website",
+  seeInGoodreads: "See in Goodreads",
+  destinations: [
+    { hostname: "coursera.org", tooltip: "See in Coursera" },
+    { hostname: "udemy.com", tooltip: "See in Udemy" },
+    { hostname: "goodreads.com", tooltip: "See in Goodreads" },
   ],
 };
