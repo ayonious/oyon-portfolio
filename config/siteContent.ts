@@ -275,3 +275,9 @@ export const linkContent = {
     { hostname: "goodreads.com", tooltip: "See in Goodreads" },
   ],
 };
+
+export const tagContent = {
+  topicsPrefix: "Topics for",
+  technologies: "Technologies",
+  technologiesUsed: "Technologies used",
+};

@@ -1,3 +1,4 @@
+import PageHeader from "../../components/PageHeader";
 import ProjectGroup from "../../components/projects/ProjectGroup";
 import { openSourceProjectsConfig } from "../../config/projects";
 import { pageContent } from "../../config/siteContent";
@@ -7,10 +8,7 @@ export default function ProjectsPage() {
 
   return (
     <div className="max-w-4xl py-8 sm:py-16">
-      <header>
-        <h1 className="text-4xl font-bold tracking-tight text-slate-950 dark:text-slate-50">{pageContent.projects.title}</h1>
-        <p className="mt-4 text-lg text-slate-600 dark:text-slate-300">{pageContent.projects.introduction}</p>
-      </header>
+      <PageHeader title={pageContent.projects.title} introduction={pageContent.projects.introduction} />
       <ProjectGroup {...organization} />
       <ProjectGroup {...profile} />
       <ProjectGroup {...gamified} />

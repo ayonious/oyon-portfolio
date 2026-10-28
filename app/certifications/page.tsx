@@ -1,3 +1,4 @@
+import PageHeader from "../../components/PageHeader";
 import { certifications } from "../../config/certifications";
 import { pageContent } from "../../config/siteContent";
 import CertificationItem from "../../components/certifications/CertificationItem";
@@ -5,14 +6,7 @@ import CertificationItem from "../../components/certifications/CertificationItem
 export default function CertificationsPage() {
   return (
     <div className="max-w-4xl py-8 sm:py-16">
-      <header>
-        <h1 className="text-4xl font-bold tracking-tight">
-          {pageContent.certifications.title}
-        </h1>
-        <p className="mt-4 text-lg text-slate-600 dark:text-slate-300">
-          {pageContent.certifications.introduction}
-        </p>
-      </header>
+      <PageHeader title={pageContent.certifications.title} introduction={pageContent.certifications.introduction} />
 
       {pageContent.certifications.sections.map((section) => (
         <section key={section.category} className="mt-10" aria-label={section.title}>

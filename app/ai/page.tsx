@@ -1,15 +1,11 @@
+import PageHeader from "../../components/PageHeader";
 import { aiCapabilities, aiTools, aiWork } from "../../config/ai";
 import { pageContent } from "../../config/siteContent";
 
 export default function AiPage() {
   return (
     <div className="max-w-4xl py-8 sm:py-16">
-      <header>
-        <h1 className="text-4xl font-bold tracking-tight">{pageContent.ai.title}</h1>
-        <p className="mt-4 max-w-3xl text-lg text-slate-600 dark:text-slate-300">
-          {pageContent.ai.introduction}
-        </p>
-      </header>
+      <PageHeader title={pageContent.ai.title} introduction={pageContent.ai.introduction} />
 
       <section className="mt-12">
         <h2 className="text-2xl font-bold">{pageContent.ai.workTitle}</h2>
