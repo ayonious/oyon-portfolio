@@ -5,19 +5,32 @@ type HeadingLinkProps = ComponentPropsWithRef<"a"> & {
   tooltip?: string;
 };
 
-export default function HeadingLink({ children, className = "", tooltip = linkContent.openWebsite, ...props }: HeadingLinkProps) {
+function destinationTooltip(href?: string) {
+  if (!href) return linkContent.openWebsite;
+  try {
+    const { hostname } = new URL(href);
+    return linkContent.destinations.find((destination) =>
+      hostname === destination.hostname || hostname.endsWith(`.${destination.hostname}`),
+    )?.tooltip ?? linkContent.openWebsite;
+  } catch {
+    return linkContent.openWebsite;
+  }
+}
+
+export default function HeadingLink({ children, className = "", tooltip, ...props }: HeadingLinkProps) {
+  const tip = tooltip ?? destinationTooltip(props.href);
   return (
     <a
       target="_blank"
       rel="noopener noreferrer"
       {...props}
-      title={props.title ?? tooltip}
+      title={props.title ?? tip}
       className={`heading-link group ${className}`}
     >
       {children}
-      {tooltip && (
+      {tip && (
         <span aria-hidden="true" className="sidebar-tooltip absolute bottom-full left-0 mb-2 w-max group-hover:opacity-100 group-focus-visible:opacity-100">
-          {tooltip}
+          {tip}
         </span>
       )}
     </a>

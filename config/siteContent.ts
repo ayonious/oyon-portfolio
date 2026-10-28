@@ -269,4 +269,9 @@ export const aboutSiteContent = {
 export const linkContent = {
   openWebsite: "Open website",
   seeInGoodreads: "See in Goodreads",
+  destinations: [
+    { hostname: "coursera.org", tooltip: "See in Coursera" },
+    { hostname: "udemy.com", tooltip: "See in Udemy" },
+    { hostname: "goodreads.com", tooltip: "See in Goodreads" },
+  ],
 };

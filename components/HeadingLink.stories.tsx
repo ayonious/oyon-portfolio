@@ -70,3 +70,22 @@ export const HoverTooltipDark: Story = {
   globals: { theme: "dark" },
 };
 export const Dark: Story = { globals: { theme: "dark" } };
+
+export const Coursera: Story = {
+  args: {
+    href: certifications.find((item) => item.url?.includes("coursera.org"))!.url,
+    children: certifications.find((item) => item.url?.includes("coursera.org"))!.name,
+  },
+  play: async ({ canvasElement }) => {
+    await expect(within(canvasElement).getByRole("link")).toHaveAttribute("title", linkContent.destinations[0].tooltip);
+  },
+};
+export const Udemy: Story = {
+  args: {
+    href: certifications.find((item) => item.url?.includes("udemy.com"))!.url,
+    children: certifications.find((item) => item.url?.includes("udemy.com"))!.name,
+  },
+  play: async ({ canvasElement }) => {
+    await expect(within(canvasElement).getByRole("link")).toHaveAttribute("title", linkContent.destinations[1].tooltip);
+  },
+};
