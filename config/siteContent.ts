@@ -195,9 +195,6 @@ export const aboutSiteContent = {
   introduction:
     "This portfolio is built with open-source software and is designed to adapt to phones, tablets, and desktop screens. The layout, navigation, and contact form adjust to the space available. Thank you to the maintainers and contributors behind every package that makes it possible.",
   majorTitle: "Major technologies",
-  packagesTitle: "All packages",
-  packagesIntroduction:
-    "Runtime and development dependencies currently listed in the project.",
   deployment: {
     title: "Deployment and contact delivery",
     introduction:

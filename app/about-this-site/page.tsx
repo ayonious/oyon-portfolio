@@ -1,7 +1,7 @@
 import PageHeader from "../../components/PageHeader";
 import HeadingLink from "../../components/HeadingLink";
 import Button from "../../components/Button";
-import { allPackages, majorDependencies } from "../../config/siteCredits";
+import { majorDependencies } from "../../config/siteCredits";
 import { aboutSiteContent } from "../../config/siteContent";
 import BrandIcon from "../../components/BrandIcon";
 
@@ -30,23 +30,6 @@ export default function AboutThisSitePage() {
               <p className="text-slate-600 dark:text-slate-300">
                 {dependency.description}
               </p>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <section className="mt-14">
-        <h2 className="text-2xl font-bold">{aboutSiteContent.packagesTitle}</h2>
-        <p className="mt-3 text-slate-600 dark:text-slate-300">
-          {aboutSiteContent.packagesIntroduction}
-        </p>
-        <ul className="mt-5 flex flex-wrap gap-2 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-slate-900">
-          {allPackages.map((packageName) => (
-            <li
-              key={packageName}
-              className="rounded-lg bg-slate-100 px-3 py-1.5 font-mono text-sm text-slate-700 dark:bg-slate-800 dark:text-slate-200"
-            >
-              {packageName}
             </li>
           ))}
         </ul>
