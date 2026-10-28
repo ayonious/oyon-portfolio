@@ -61,9 +61,11 @@ describe("site pages", () => {
 
     expect(screen.getByRole("heading", { name: "Blog" })).toBeTruthy();
     expect(screen.getByText(/Notes about software engineering/i)).toBeTruthy();
-    expect(
-      screen.getByRole("link", { name: "Visit my blog ↗" }).className,
-    ).toContain("!text-white");
+    const blogLink = screen.getByRole("link", { name: "Visit my blog ↗" });
+    expect(blogLink.className).toContain("action-button");
+    expect(blogLink.getAttribute("href")).toBe("https://that-it-guy.netlify.app");
+    expect(blogLink.getAttribute("target")).toBe("_blank");
+    expect(blogLink.getAttribute("rel")).toBe("noreferrer");
   });
 
   it("shows certifications and completed courses without credential IDs", () => {
