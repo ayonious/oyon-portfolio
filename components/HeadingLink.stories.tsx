@@ -36,7 +36,7 @@ export const WithBrandIcon: Story = {
     children: <><BrandIcon name={company.company} />{company.company}</>,
   },
 };
-export const Book: Story = { args: { href: book.url, children: book.title } };
+export const Book: Story = { args: { href: book.url, children: book.title, tooltip: linkContent.seeInGoodreads } };
 export const Course: Story = { args: { href: course.url, children: course.name } };
 export const WithTooltip: Story = {
   args: { tooltip: linkContent.openWebsite },

@@ -1,10 +1,11 @@
+import { linkContent } from "../config/siteContent";
 import type { ComponentPropsWithRef } from "react";
 
 type HeadingLinkProps = ComponentPropsWithRef<"a"> & {
   tooltip?: string;
 };
 
-export default function HeadingLink({ children, className = "", tooltip, ...props }: HeadingLinkProps) {
+export default function HeadingLink({ children, className = "", tooltip = linkContent.openWebsite, ...props }: HeadingLinkProps) {
   return (
     <a
       target="_blank"

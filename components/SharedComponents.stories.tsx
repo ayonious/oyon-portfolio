@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import Button from "./Button";
 import HeadingLink from "./HeadingLink";
 import ProjectStars from "./projects/ProjectStars";
-import MetricBadge from "./MetricBadge";
+import NpmDownloads from "./projects/NpmDownloads";
 import BrandIcon from "./BrandIcon";
 import { storyContent } from "../config/storybook";
 import { aboutContent, linkContent } from "../config/siteContent";
@@ -36,7 +36,7 @@ function SharedComponents() {
         <h2 className="text-2xl font-bold">{content.headingsTitle}</h2>
         <div className="mt-12 grid gap-8 sm:grid-cols-2">
           <h3 className="text-xl font-bold"><HeadingLink href={company.url} tooltip={linkContent.openWebsite} className="gap-2"><BrandIcon name={company.company} />{company.company}</HeadingLink></h3>
-          <h3 className="text-xl font-bold"><HeadingLink href={book.url}>{book.title}</HeadingLink></h3>
+          <h3 className="text-xl font-bold"><HeadingLink href={book.url} tooltip={linkContent.seeInGoodreads}>{book.title}</HeadingLink></h3>
           <h3 className="text-xl font-bold"><HeadingLink href={course.url}>{course.name}</HeadingLink></h3>
         </div>
       </section>
@@ -44,9 +44,7 @@ function SharedComponents() {
         <h2 className="text-2xl font-bold">{content.metricsTitle}</h2>
         <div className="mt-8 flex flex-wrap items-center gap-5">
           <ProjectStars stars={storyContent.packageProject.stars} url={storyContent.packageProject.url} />
-          <MetricBadge icon={storyContent.downloadStat.icon} label={`${storyContent.downloadStat.label}, ${storyContent.downloadStat.period}`} symbol="↓" href={storyContent.downloadStat.url} linkLabel={storyContent.downloadStat.period}>
-            {storyContent.downloadStat.label}
-          </MetricBadge>
+          <NpmDownloads stat={storyContent.downloadStat} />
         </div>
       </section>
     </div>

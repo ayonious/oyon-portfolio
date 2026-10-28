@@ -1,4 +1,5 @@
 import type { DownloadStat } from "../../config/projects";
+import { pageContent } from "../../config/siteContent";
 import MetricBadge from "../MetricBadge";
 
 export default function NpmDownloads({ stat }: { stat: DownloadStat }) {
@@ -8,7 +9,7 @@ export default function NpmDownloads({ stat }: { stat: DownloadStat }) {
       symbol="↓"
       label={`${stat.label}, ${stat.period}`}
       href={stat.url}
-      linkLabel={stat.url.includes("npmjs.com") ? "Open on npm" : "Open link"}
+      linkLabel={stat.url.includes("npmjs.com") ? pageContent.projects.openInNpm : pageContent.projects.openLink}
     >
       {stat.label}
     </MetricBadge>

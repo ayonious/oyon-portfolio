@@ -143,6 +143,8 @@ export const pageContent = {
     title: "Open-source projects",
     introduction:
       "Projects I maintain personally and with the Console Table Printer organization.",
+    openInNpm: "Open in npm",
+    openLink: "Open link",
     openOnGitHub: "Open on GitHub",
     viewOnGitHub: "View on GitHub →",
   },
@@ -265,5 +267,6 @@ export const aboutSiteContent = {
 };
 
 export const linkContent = {
-  openWebsite: "Open Website",
+  openWebsite: "Open website",
+  seeInGoodreads: "See in Goodreads",
 };
