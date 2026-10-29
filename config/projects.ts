@@ -44,7 +44,7 @@ export const openSourceProjectsConfig = {
       {
         name: "Random Names",
         url: "https://github.com/ayonious/random-names",
-        demoUrl: "https://random-names.netlify.app",
+        demoUrl: "https://ayonious.github.io/random-names",
         demoLabel: "Try Random Names live",
         description:
           "Explore randomly generated names from different regions in an interactive React app.",
@@ -55,7 +55,7 @@ export const openSourceProjectsConfig = {
       {
         name: "Explorer Bug",
         url: "https://github.com/ayonious/explorer-bug",
-        demoUrl: "https://exploringbug.netlify.app",
+        demoUrl: "https://ayonious.github.io/explorer-bug",
         demoLabel: "Play Explorer Bug",
         description:
           "Move a small bug around a two-dimensional world while exploring keyboard interaction and interface boundaries.",
