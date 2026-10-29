@@ -1,21 +1,14 @@
-# 👋 Nahiyan’s Portfolio
+# 👋 Portfolio
+
+[![CI](https://github.com/ayonious/oyon-portfolio/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/ayonious/oyon-portfolio/actions/workflows/ci.yml)
+[![Coverage Tests](https://github.com/ayonious/oyon-portfolio/actions/workflows/codecov.yml/badge.svg?branch=master)](https://github.com/ayonious/oyon-portfolio/actions/workflows/codecov.yml)
+[![Cypress Tests](https://github.com/ayonious/oyon-portfolio/actions/workflows/cypress.yml/badge.svg?branch=master)](https://github.com/ayonious/oyon-portfolio/actions/workflows/cypress.yml)
+[![codecov](https://codecov.io/gh/ayonious/oyon-portfolio/graph/badge.svg?token=vLJAmyTSkC)](https://codecov.io/gh/ayonious/oyon-portfolio)
+[![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@main/badge/badge-storybook.svg)](https://storybook-oyon-portfolio.vercel.app/)
+
+<img width="1709" height="863" alt="Bildschirmfoto 2026-10-29 um 11 56 00" src="https://github.com/user-attachments/assets/27a81aaa-9c08-4d70-868e-1861b16ae9c3" />
 
 Welcome to my digital introduction! This personal website brings together my background, work, open-source projects, and the things I enjoy learning about.
-
-## 🧭 Explore the portfolio
-
-| Section | What you’ll find |
-| --- | --- |
-| 🏠 Home | A quick introduction to me and my work |
-| 💼 Work | My professional experience and career journey |
-| 🛠️ Open source | Projects, tools, and experiments I’ve built |
-| ⚡ Skills | The technologies and areas I work with |
-| 🤖 AI | AI tools, capabilities, and production work |
-| 📚 Books | Favorite reads and my Goodreads profile |
-| 🎓 Certifications | Certifications and credentials |
-| ✍️ Blog | Articles and ideas |
-| 🙋 About me | More about me, plus a contact form to get in touch |
-| 🐾 About this site | The packages and people behind the portfolio |
 
 ## 🎨 Design inspiration
 
@@ -36,17 +29,6 @@ and this project's [third-party notices](THIRD_PARTY_NOTICES.md).
 ## 🔧 Technical details
 
 Setup, development, testing, and deployment notes are tucked away below. Expand a section when you need it.
-
-<details>
-<summary>Build status and coverage</summary>
-
-[![CI](https://github.com/ayonious/oyon-portfolio/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/ayonious/oyon-portfolio/actions/workflows/ci.yml)
-[![Coverage Tests](https://github.com/ayonious/oyon-portfolio/actions/workflows/codecov.yml/badge.svg?branch=master)](https://github.com/ayonious/oyon-portfolio/actions/workflows/codecov.yml)
-[![Cypress Tests](https://github.com/ayonious/oyon-portfolio/actions/workflows/cypress.yml/badge.svg?branch=master)](https://github.com/ayonious/oyon-portfolio/actions/workflows/cypress.yml)
-[![codecov](https://codecov.io/gh/ayonious/oyon-portfolio/graph/badge.svg?token=vLJAmyTSkC)](https://codecov.io/gh/ayonious/oyon-portfolio)
-[![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@main/badge/badge-storybook.svg)](https://storybook-oyon-portfolio.vercel.app/)
-
-</details>
 
 <details>
 <summary>Built with</summary>
