@@ -1,4 +1,44 @@
-# Portfolio
+# 👋 Nahiyan’s Portfolio
+
+Welcome to my digital introduction! This personal website brings together my background, work, open-source projects, and the things I enjoy learning about.
+
+## 🧭 Explore the portfolio
+
+| Section | What you’ll find |
+| --- | --- |
+| 🏠 Home | A quick introduction to me and my work |
+| 💼 Work | My professional experience and career journey |
+| 🛠️ Open source | Projects, tools, and experiments I’ve built |
+| ⚡ Skills | The technologies and areas I work with |
+| 🤖 AI | AI tools, capabilities, and production work |
+| 📚 Books | Favorite reads and my Goodreads profile |
+| 🎓 Certifications | Certifications and credentials |
+| ✍️ Blog | Articles and ideas |
+| 🙋 About me | More about me, plus a contact form to get in touch |
+| 🐾 About this site | The packages and people behind the portfolio |
+
+## 🎨 Design inspiration
+
+The layout and design direction are inspired by [Tania Rascia's personal website](https://www.taniarascia.com/), particularly its persistent profile navigation and scrollable content area. This project adapts those ideas for my own profile, experience, and projects.
+
+## 🙏 Credits and acknowledgements
+
+The navigation, interface, and sailboat assets were sourced from
+[Icons For Free](https://iconsforfree.com/). Brand and technology marks are supplied
+by [Simple Icons](https://simpleicons.org/), whose project is released under
+[CC0 1.0](https://github.com/simple-icons/simple-icons/blob/develop/LICENSE.md).
+Individual logos can still be protected by their owners' licenses, trademarks, and
+brand guidelines; see the [Simple Icons disclaimer](https://github.com/simple-icons/simple-icons/blob/develop/DISCLAIMER.md)
+and this project's [third-party notices](THIRD_PARTY_NOTICES.md).
+
+---
+
+## 🔧 Technical details
+
+Setup, development, testing, and deployment notes are tucked away below. Expand a section when you need it.
+
+<details>
+<summary>Build status and coverage</summary>
 
 [![CI](https://github.com/ayonious/oyon-portfolio/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/ayonious/oyon-portfolio/actions/workflows/ci.yml)
 [![Coverage Tests](https://github.com/ayonious/oyon-portfolio/actions/workflows/codecov.yml/badge.svg?branch=master)](https://github.com/ayonious/oyon-portfolio/actions/workflows/codecov.yml)
@@ -6,11 +46,10 @@
 [![codecov](https://codecov.io/gh/ayonious/oyon-portfolio/graph/badge.svg?token=vLJAmyTSkC)](https://codecov.io/gh/ayonious/oyon-portfolio)
 [![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@main/badge/badge-storybook.svg)](https://storybook-oyon-portfolio.vercel.app/)
 
-## Purpose
+</details>
 
-Create my personal profile and portfolio website using Next.js, TypeScript, and Tailwind CSS to showcase my background, skills, and projects.
-
-## Built with
+<details>
+<summary>Built with</summary>
 
 - [Next.js](https://nextjs.org/) and [React](https://react.dev/) for the website
 - [TypeScript](https://www.typescriptlang.org/) for type-safe development
@@ -23,27 +62,19 @@ Create my personal profile and portfolio website using Next.js, TypeScript, and 
 - [Yarn](https://yarnpkg.com/) for package management
 - [Simple Icons](https://simpleicons.org/) for brand and technology marks
 
-## Why Tailwind CSS
+</details>
+
+<details>
+<summary>Why Tailwind CSS</summary>
 
 Tailwind CSS is a better fit than styled-components for this portfolio because most of the styling is presentational and closely tied to individual React components. Its utility classes make responsive layouts and visual changes quick to understand without introducing a runtime CSS-in-JS layer. It also keeps spacing, colors, and typography consistent while allowing the design to evolve one component at a time.
 
 For a small, mostly static site, this means fewer styling abstractions, no client-side style generation, and less maintenance as new sections are added.
 
-## Design inspiration
+</details>
 
-The layout and design direction are inspired by [Tania Rascia's personal website](https://www.taniarascia.com/), particularly its persistent profile navigation and scrollable content area. This project adapts those ideas for my own profile, experience, and projects.
-
-## Asset credits and licenses
-
-The navigation, interface, and sailboat assets were sourced from
-[Icons For Free](https://iconsforfree.com/). Brand and technology marks are supplied
-by [Simple Icons](https://simpleicons.org/), whose project is released under
-[CC0 1.0](https://github.com/simple-icons/simple-icons/blob/develop/LICENSE.md).
-Individual logos can still be protected by their owners' licenses, trademarks, and
-brand guidelines; see the [Simple Icons disclaimer](https://github.com/simple-icons/simple-icons/blob/develop/DISCLAIMER.md)
-and this project's [third-party notices](THIRD_PARTY_NOTICES.md).
-
-## Run locally
+<details>
+<summary>Run locally</summary>
 
 Install the project dependencies, copy the example environment configuration,
 and start the Next.js development server:
@@ -79,7 +110,10 @@ Sending an actual email locally still requires a valid `RESEND_API_KEY`,
 `RESEND_FROM_EMAIL`, and `CONTACT_EMAIL` in `.env.local`. Restart `yarn dev`
 after changing environment variables.
 
-## Contact form setup
+</details>
+
+<details>
+<summary>Contact form setup</summary>
 
 The About me form uses Cloudflare Turnstile for bot verification, a Next.js
 Route Handler for server-side validation, and the Resend API to deliver messages
@@ -133,7 +167,10 @@ short delay. Resend's testing sender may restrict delivery to the email address
 associated with the Resend account. A verified custom domain is required later
 for unrestricted production sending.
 
-## Content management
+</details>
+
+<details>
+<summary>Content management</summary>
 
 Editable text, links, navigation labels, theme options, and structured profile
 data live in `config/`. Shared copy and metadata are in
@@ -143,7 +180,10 @@ certifications, and work history stays in its corresponding config file.
 Files in `app/` and `components/` focus on layout, rendering, and interaction.
 Repository guidance for future changes is documented in `AGENTS.md`.
 
-## Test
+</details>
+
+<details>
+<summary>Testing</summary>
 
 ```sh
 yarn test
@@ -153,7 +193,10 @@ Use `yarn test:watch` while developing to rerun affected tests after changes.
 Run `yarn test:coverage` to generate a local coverage report.
 Run `yarn cypress:open` while the development server is running to use the Cypress test runner.
 
-## Pages
+</details>
+
+<details>
+<summary>Page routes and source files</summary>
 
 - `/` — Home (`app/page.tsx`)
 - `/work` — Work history (`app/work/page.tsx`)
@@ -171,15 +214,20 @@ in `components/ProfileSidebar.tsx`, and global styles live in `app/globals.css`.
 The contact form is the final section of `/about`, and its server endpoint is
 `/api/contact`.
 
-## Production
+</details>
+
+<details>
+<summary>Production build</summary>
 
 ```sh
 yarn build
 yarn start
 ```
 
+</details>
 
-## Storybook and Vite
+<details>
+<summary>Component previews: Storybook and Vite</summary>
 
 [Storybook](https://storybook.js.org/docs/get-started/frameworks/nextjs-vite) is a
 workshop for developing UI components on their own. Each story renders one
@@ -234,3 +282,5 @@ Storybook does not require the contact form's email or Turnstile secrets.
 
 See [Storybook's Next.js/Vite guide](https://storybook.js.org/docs/get-started/frameworks/nextjs-vite)
 and [Vercel's build settings](https://vercel.com/docs/builds/configure-a-build).
+
+</details>
