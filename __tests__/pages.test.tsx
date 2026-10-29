@@ -95,7 +95,7 @@ describe("site pages", () => {
       screen.getByRole("heading", { name: "Pinned personal repositories" }),
     ).toBeTruthy();
     expect(screen.getByRole("link", { name: "portfolio" })).toBeTruthy();
-    expect(screen.getByRole("link", { name: "Try Random Names live ↗" }).getAttribute("href")).toBe("https://random-names.netlify.app");
+    expect(screen.getByRole("link", { name: "Try Random Names live ↗" }).getAttribute("href")).toBe("https://ayonious.github.io/random-names");
     expect(screen.getByRole("link", { name: "Explore live documentation ↗" }).getAttribute("href")).toBe("https://console-table.netlify.app");
     for (const name of ["interview-cheatsheet", "lombok-examples", "tower-of-hanoi-simulation", "Vagrant-Best-Practices", "OPENGL-St.-Basil-s-Cathedral", "OPENGL-House-Furnitures"]) {
       expect(screen.getByRole("link", { name }).getAttribute("href")).toBe(`https://github.com/ayonious/${name}`);
@@ -108,7 +108,7 @@ describe("site pages", () => {
       screen
         .getByRole("link", { name: "Play Explorer Bug ↗" })
         .getAttribute("href"),
-    ).toBe("https://exploringbug.netlify.app");
+    ).toBe("https://ayonious.github.io/explorer-bug");
     expect(screen.getAllByText("React").length).toBeGreaterThanOrEqual(2);
     expect(screen.getByRole("heading", { name: "For Software Engineers" })).toBeTruthy();
     expect(screen.queryByRole("link", { name: /nextjs-template/ })).toBeNull();
