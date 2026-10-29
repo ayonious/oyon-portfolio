@@ -10,7 +10,7 @@
 
 Welcome to my digital introduction! This personal website brings together my background, work, open-source projects, and the things I enjoy learning about.
 
-## 🛠️ Built with — and why
+## 🛠️ Built with
 
 The tools behind the portfolio help keep the site easy to update, consistent to browse, and straightforward to maintain.
 
