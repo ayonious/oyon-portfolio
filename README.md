@@ -10,6 +10,22 @@
 
 Welcome to my digital introduction! This personal website brings together my background, work, open-source projects, and the things I enjoy learning about.
 
+## 🛠️ Built with — and why
+
+The tools behind the portfolio help keep the site easy to update, consistent to browse, and straightforward to maintain.
+
+| Tool | Why it’s used here |
+| --- | --- |
+| [Next.js](https://nextjs.org/) & [React](https://react.dev/) | Reusable components keep the pages consistent, while static page generation suits the portfolio’s mostly informational content. The contact form’s server endpoint lives in the same project. |
+| [TypeScript](https://www.typescriptlang.org/) | Checks the shape of page content and component inputs to catch mistakes before they reach the website. |
+| [Tailwind CSS](https://tailwindcss.com/) | Makes responsive layouts easy to adjust and keeps spacing, typography, and colors consistent without generating styles in the browser. |
+| [Jest](https://jestjs.io/) & [Testing Library](https://testing-library.com/) | Check components through the content and interactions visitors use, helping catch regressions when the site changes. |
+| [Cypress](https://www.cypress.io/) | Tests visitor journeys in a browser to check that pages and interactions work together. |
+| [Storybook](https://storybook.js.org/) & [Vite](https://vite.dev/) | Provide a separate component workshop for reviewing individual UI states, themes, and palettes. Vite serves and builds that workshop. |
+| [Vercel](https://vercel.com/) | Hosts the portfolio and runs the contact form’s server endpoint without a separate backend service to maintain. |
+| [Yarn](https://yarnpkg.com/) | Keeps dependency installation and development commands consistent across local work and automated builds. |
+| [Simple Icons](https://simpleicons.org/) | Supplies recognizable brand and technology marks from one shared icon collection. |
+
 ## 🎨 Design inspiration
 
 The layout and design direction are inspired by [Tania Rascia's personal website](https://www.taniarascia.com/), particularly its persistent profile navigation and scrollable content area. This project adapts those ideas for my own profile, experience, and projects.
@@ -29,31 +45,6 @@ and this project's [third-party notices](THIRD_PARTY_NOTICES.md).
 ## 🔧 Technical details
 
 Setup, development, testing, and deployment notes are tucked away below. Expand a section when you need it.
-
-<details>
-<summary>Built with</summary>
-
-- [Next.js](https://nextjs.org/) and [React](https://react.dev/) for the website
-- [TypeScript](https://www.typescriptlang.org/) for type-safe development
-- [Tailwind CSS](https://tailwindcss.com/) for styling
-- [Jest](https://jestjs.io/) and [Testing Library](https://testing-library.com/) for component tests
-- [Cypress](https://www.cypress.io/) for browser tests
-- [Storybook](https://storybook.js.org/) for isolated component previews and documentation
-- [Vite](https://vite.dev/) for Storybook’s development server and static builds
-- [Vercel](https://vercel.com/) for deployment
-- [Yarn](https://yarnpkg.com/) for package management
-- [Simple Icons](https://simpleicons.org/) for brand and technology marks
-
-</details>
-
-<details>
-<summary>Why Tailwind CSS</summary>
-
-Tailwind CSS is a better fit than styled-components for this portfolio because most of the styling is presentational and closely tied to individual React components. Its utility classes make responsive layouts and visual changes quick to understand without introducing a runtime CSS-in-JS layer. It also keeps spacing, colors, and typography consistent while allowing the design to evolve one component at a time.
-
-For a small, mostly static site, this means fewer styling abstractions, no client-side style generation, and less maintenance as new sections are added.
-
-</details>
 
 <details>
 <summary>Run locally</summary>
@@ -174,27 +165,6 @@ yarn test
 Use `yarn test:watch` while developing to rerun affected tests after changes.
 Run `yarn test:coverage` to generate a local coverage report.
 Run `yarn cypress:open` while the development server is running to use the Cypress test runner.
-
-</details>
-
-<details>
-<summary>Page routes and source files</summary>
-
-- `/` — Home (`app/page.tsx`)
-- `/work` — Work history (`app/work/page.tsx`)
-- `/projects` — Open-source projects (`app/projects/page.tsx`)
-- `/skills` — Skills (`app/skills/page.tsx`)
-- `/ai` — AI tools, capabilities, and production work (`app/ai/page.tsx`)
-- `/reading` — Favorite books and Goodreads profile (`app/reading/page.tsx`)
-- `/certifications` — Certifications and credentials (`app/certifications/page.tsx`)
-- `/about` — About me (`app/about/page.tsx`)
-- `/about-this-site` — Packages and project acknowledgements (`app/about-this-site/page.tsx`)
-- `/blog` — Blog (`app/blog/page.tsx`)
-
-Shared navigation content lives in `config/siteContent.ts`, its component lives
-in `components/ProfileSidebar.tsx`, and global styles live in `app/globals.css`.
-The contact form is the final section of `/about`, and its server endpoint is
-`/api/contact`.
 
 </details>
 
