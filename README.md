@@ -6,7 +6,7 @@
 [![codecov](https://codecov.io/gh/ayonious/oyon-portfolio/graph/badge.svg?token=vLJAmyTSkC)](https://codecov.io/gh/ayonious/oyon-portfolio)
 [![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@main/badge/badge-storybook.svg)](https://storybook-oyon-portfolio.vercel.app/)
 
-<img width="1709" height="863" alt="Bildschirmfoto 2026-10-29 um 11 56 00" src="https://github.com/user-attachments/assets/27a81aaa-9c08-4d70-868e-1861b16ae9c3" />
+<img width="800" height="567" alt="Bildschirmaufnahme2026-10-29um15 02 57-ezgif com-optimize" src="https://github.com/user-attachments/assets/f1132fe4-caaf-4c32-961c-b2674f44ed63" />
 
 Welcome to my digital introduction! This personal website brings together my background, work, open-source projects, and the things I enjoy learning about.
 
